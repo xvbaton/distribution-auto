@@ -1,0 +1,8 @@
+name = "distribution-auto"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat_v2"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "distribution-auto"
+database_id = "940a0006-70a2-4978-9272-061d398beb82"

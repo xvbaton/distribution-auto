@@ -1,0 +1,31 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getDB, getBrand, getModelsByBrand } from '../../lib/db';
+
+const { brand: brandSlug } = Astro.params;
+const db = getDB();
+
+const brand = await getBrand(db, brandSlug!);
+if (!brand) return Astro.redirect('/distribution');
+
+const models = await getModelsByBrand(db, (brand as any).id);
+---
+<Base
+  title={`Chaîne ou courroie ${(brand as any).name} — tous les modèles`}
+  description={`Trouvez le type de distribution de votre ${(brand as any).name}. ${models.length} modèles disponibles.`}
+>
+  <nav style="margin-bottom:1.5rem; font-size:0.9rem; color:#666;">
+    <a href="/" style="color:#2563eb;">Accueil</a> ›
+    <a href="/distribution" style="color:#2563eb;">Marques</a> ›
+    {(brand as any).name}
+  </nav>
+  <h1 style="font-size:1.8rem; margin-bottom:0.5rem;">Chaîne ou courroie {(brand as any).name}</h1>
+  <p style="color:#555; margin-bottom:2rem;">{models.length} modèles disponibles</p>
+  <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(200px,1fr)); gap:0.75rem;">
+    {models.map((model: any) => (
+      <a href={`/distribution/${brandSlug}/${model.slug}`} style="display:block; padding:1rem; background:white; border-radius:8px; border:1px solid #e0e0e0; text-decoration:none; color:#1a1a1a; font-weight:500;">
+        {model.name}
+      </a>
+    ))}
+  </div>
+</Base>

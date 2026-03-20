@@ -1,0 +1,2228 @@
+PS C:\Users\thoma\Desktop\Toast\Nouveau dossier> python toast.py
+1:"$Sreact.fragment"
+3:I[79520,["/_next/static/chunks/63c94b6a5a686dea.js","/_next/static/chunks/0c8f1173dfecaa50.js"],""]
+4:I[39756,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/6153d1a363729c2c.js"],"default"]
+5:I[37457,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/6153d1a363729c2c.js"],"default"]
+7:I[22016,["/_next/static/chunks/63c94b6a5a686dea.js","/_next/static/chunks/0c8f1173dfecaa50.js","/_next/static/chunks/d93c4165f3ffce48.js","/_next/static/chunks/22abcb73df6c28a4.js"],""]
+c:I[68027,[],"default"]
+:HL["/_next/static/chunks/705497ceae18ad2f.css","style"]
+:HL["/_next/static/media/5c285b27cdda1fe8-s.p.a62025f2.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/75affa71d1e2f6a7-s.p.51cde8ff.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+0:{"P":null,"b":"i6p67BUkpGt2oK8lTUFZe","c":["","cote","dacia-sandero"],"q":"","i":false,"f":[[["",{"children":["cote",{"children":[["slug","dacia-sandero","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/705497ceae18ad2f.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/63c94b6a5a686dea.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/0c8f1173dfecaa50.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"fr","suppressHydrationWarning":true,"children":[["$","head",null,{"children":[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"AutoEstim\",\"url\":\"https://www.autoestim.com\",\"logo\":\"https://www.autoestim.com/logo.svg\",\"description\":\"Service d'estimation de vÃ©hicules en France. Obtenez une estimation gratuite et instantanÃ©e de la valeur de votre voiture.\",\"address\":{\"@type\":\"PostalAddress\",\"addressCountry\":\"FR\"}}"}}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n              (function() {\n                const stored = localStorage.getItem('theme');\n                const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;\n                const theme = stored === 'dark' || (stored !== 'light' && systemDark) ? 'dark' : 'light';\n                document.documentElement.classList.add(theme);\n              })();\n            "}}]]}],["$","body",null,{"className":"archivo_41320f5-module__qf-j3q__variable dm_sans_f162108c-module__9N_cQa__variable antialiased","children":["$L2",["$","$L3",null,{"src":"https://cloud.umami.is/script.js","data-website-id":"61929c35-b0c4-4e7b-a046-59c78c4d6c9d","strategy":"lazyOnload"}]]}]]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","div",null,{"className":"min-h-screen bg-background flex flex-col","children":["$L6",["$","main",null,{"className":"flex-1 flex items-center justify-center py-20","children":["$","div",null,{"className":"\n        w-full mx-auto px-4 sm:px-6 lg:px-8\n        max-w-2xl\n        text-center\n      ","children":[["$","div",null,{"className":"w-16 h-16 rounded-full bg-coral/10 flex items-center justify-center mx-auto mb-6 text-coral","children":["$","svg",null,{"className":"w-8 h-8","fill":"none","viewBox":"0 0 24 24","stroke":"currentColor","strokeWidth":2,"children":["$","path",null,{"strokeLinecap":"round","strokeLinejoin":"round","d":"M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"}]}]}],["$","h1",null,{"className":"\n        font-[family-name:var(--font-heading)]\n        font-bold tracking-tight\n        text-foreground\n        text-5xl md:text-6xl lg:text-7xl\n        \n        mb-4\n      ","children":"ModÃ¨le non trouvÃ©"}],["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-base\n        font-normal\n        text-foreground-muted\n        mb-8\n      ","children":"La cote demandÃ©e n'est pas disponible. Le modÃ¨le n'existe pas ou nous n'avons pas encore de donnÃ©es pour ce vÃ©hicule."}],["$","div",null,{"className":"flex flex-col sm:flex-row gap-4 justify-center","children":[["$","$L7",null,{"href":"/","className":"inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-[var(--radius-md)] bg-coral text-white hover:bg-coral-dark transition-all duration-200","children":"Estimer un vÃ©hicule"}],"$L8"]}]]}]}],"$L9"]}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["$La",{},null,false,false]},null,false,false]},null,false,false]},null,false,false],"$Lb",false]],"m":"$undefined","G":["$c",[]],"S":true}
+e:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/6153d1a363729c2c.js"],"OutletBoundary"]
+f:"$Sreact.suspense"
+11:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/6153d1a363729c2c.js"],"ViewportBoundary"]
+13:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/6153d1a363729c2c.js"],"MetadataBoundary"]
+8:["$","$L7",null,{"href":"/guides","className":"inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-[var(--radius-md)] border border-foreground/10 text-foreground hover:bg-surface transition-all duration-200","children":"Consulter nos guides"}]
+a:["$","$1","c",{"children":["$Ld",[["$","script","script-0",{"src":"/_next/static/chunks/d93c4165f3ffce48.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/22abcb73df6c28a4.js","async":true,"nonce":"$undefined"}]],["$","$Le",null,{"children":["$","$f",null,{"name":"Next.MetadataOutlet","children":"$@10"}]}]]}]
+b:["$","$1","h",{"children":[null,["$","$L11",null,{"children":"$L12"}],["$","div",null,{"hidden":true,"children":["$","$L13",null,{"children":["$","$f",null,{"name":"Next.Metadata","children":"$L14"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}]
+15:I[3530,["/_next/static/chunks/63c94b6a5a686dea.js","/_next/static/chunks/0c8f1173dfecaa50.js","/_next/static/chunks/d93c4165f3ffce48.js","/_next/static/chunks/22abcb73df6c28a4.js"],"StickyWrapper"]
+16:I[78976,["/_next/static/chunks/63c94b6a5a686dea.js","/_next/static/chunks/0c8f1173dfecaa50.js","/_next/static/chunks/d93c4165f3ffce48.js","/_next/static/chunks/22abcb73df6c28a4.js"],"ThemeToggle"]
+6:["$","$L15",null,{"children":["$","div",null,{"className":"\n        w-full mx-auto px-4 sm:px-6 lg:px-8\n        max-w-7xl\n        \n      ","children":["$","div",null,{"className":"flex items-center justify-between h-16","children":[["$","$L7",null,{"href":"/","children":["$","div",null,{"className":"flex items-center ","children":["$","span",null,{"className":"bg-clip-text text-transparent bg-gradient-to-r from-coral to-teal font-[family-name:var(--font-heading)] font-extrabold text-2xl tracking-tight","children":[["$","span",null,{"children":"Auto"}],["$","span",null,{"children":"Estim"}]]}]}]}],false,["$","div",null,{"className":"flex items-center gap-3","children":["$undefined",["$","$L16",null,{}]]}]]}]}]}]
+9:["$","footer",null,{"className":"py-12 bg-background-alt border-t border-foreground/5","children":["$","div",null,{"className":"\n        w-full mx-auto px-4 sm:px-6 lg:px-8\n        max-w-7xl\n        \n      ","children":[["$","div",null,{"className":"grid grid-cols-1 md:grid-cols-4 gap-8 mb-8","children":[["$","div",null,{"children":[["$","div",null,{"className":"flex items-center mb-3","children":["$","span",null,{"className":"bg-clip-text text-transparent bg-gradient-to-r from-coral to-teal font-[family-name:var(--font-heading)] font-extrabold text-xl tracking-tight","children":[["$","span",null,{"children":"Auto"}],["$","span",null,{"children":"Estim"}]]}]}],["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-sm\n        font-normal\n        text-foreground-muted\n        \n      ","children":"Estimation gratuite et instantanÃ©e de la valeur de votre voiture d'occasion en France."}]]}],["$","div",null,{"children":[["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-sm\n        font-semibold\n        text-foreground\n        mb-3\n      ","children":"Service"}],["$","nav",null,{"aria-label":"Service","className":"flex flex-col gap-2","children":[["$","$L7",null,{"href":"/","className":"text-sm text-foreground-muted hover:text-foreground transition-colors","children":"Estimation gratuite"}],["$","$L7",null,{"href":"/cote","className":"text-sm text-foreground-muted hover:text-foreground transition-colors","children":"Toutes les cotes"}],["$","$L7",null,{"href":"/guides","className":"text-sm text-foreground-muted hover:text-foreground transition-colors","children":"Guides"}],["$","$L7",null,{"href":"/contact","className":"text-sm text-foreground-muted hover:text-foreground transition-colors","children":"Contact"}]]}]]}],["$","div",null,{"children":[["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-sm\n        font-semibold\n        text-foreground\n        mb-3\n      ","children":"Marques populaires"}],["$","nav",null,{"aria-label":"Marques populaires","className":"flex flex-col gap-2","children":[["$","$L7","renault",{"href":"/estimation/renault","className":"text-sm text-foreground-muted hover:text-foreground transition-colors","children":"Renault"}],["$","$L7","peugeot",{"href":"/estimation/peugeot","className":"text-sm text-foreground-muted hover:text-foreground transition-colors","children":"Peugeot"}],["$","$L7","citroen",{"href":"/estimation/citroen","className":"text-sm text-foreground-muted hover:text-foreground transition-colors","children":"CitroÃ«n"}],["$","$L7","volkswagen",{"href":"/estimation/volkswagen","className":"text-sm text-foreground-muted hover:text-foreground transition-colors","children":"Volkswagen"}],["$","$L7","bmw",{"href":"/estimation/bmw","className":"text-sm text-foreground-muted hover:text-foreground transition-colors","children":"BMW"}],["$","$L7","mercedes-benz",{"href":"/estimation/mercedes-benz","className":"text-sm text-foreground-muted hover:text-foreground transition-colors","children":"Mercedes-Benz"}]]}]]}],["$","div",null,{"children":[["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-sm\n        font-semibold\n        text-foreground\n        mb-3\n      ","children":"Informations"}],["$","nav",null,{"aria-label":"Informations","className":"flex flex-col gap-2","children":[["$","$L7",null,{"href":"/mentions-legales","className":"text-sm text-foreground-muted hover:text-foreground transition-colors","children":"Mentions lÃ©gales"}],["$","$L7",null,{"href":"/politique-de-confidentialite","className":"text-sm text-foreground-muted hover:text-foreground transition-colors","children":"Politique de confidentialitÃ©"}],["$","$L7",null,{"href":"/conditions-generales","className":"text-sm text-foreground-muted hover:text-foreground transition-colors","children":"CGU"}]]}]]}]]}],"$L17"]}]}]
+17:["$","div",null,{"className":"border-t border-foreground/5 pt-6 flex items-center justify-between","children":[["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-sm\n        font-normal\n        text-foreground-muted\n        \n      ","children":"Â© 2026 AutoEstim. Tous droits rÃ©servÃ©s."}],["$","a",null,{"href":"https://www.facebook.com/profile.php?id=61587632453064","target":"_blank","rel":"noopener noreferrer","aria-label":"Facebook","className":"text-foreground-muted hover:text-foreground transition-colors","children":["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","width":"20","height":"20","viewBox":"0 0 24 24","fill":"currentColor","children":["$","path",null,{"d":"M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"}]}]}]]}]
+18:I[75696,["/_next/static/chunks/63c94b6a5a686dea.js","/_next/static/chunks/0c8f1173dfecaa50.js"],"default"]
+2:["$","$L18",null,{"formats":"$undefined","locale":"fr","messages":{"metadata":{"title":"AutoEstim - Estimations instantanÃ©es de votre vÃ©hicule","description":"Obtenez des estimations prÃ©cises et instantanÃ©es de la valeur de votre voiture. Que vous achetiez, vendiez ou soyez simplement curieux, AutoEstim vous aide Ã  prendre des dÃ©cisions Ã©clairÃ©es.","ogImageAlt":"AutoEstim - Service d'estimation automobile en France","reportTitle":"Estimation {brand} {model} {year}","reportDescription":"Estimation de la valeur d'une {brand} {model} {year} avec {mileage} km. Prix recommandÃ© : {minPrice} â¬ - {maxPrice} â¬."},"common":{"getStarted":"Commencer","getFreeEstimate":"Estimation gratuite","getMyEstimate":"Obtenir mon estimation","newEstimate":"Nouvelle estimation","createNewEstimate":"CrÃ©er une nouvelle estimation","copyright":"Â© {year} AutoEstim. Tous droits rÃ©servÃ©s.","locked":"VerrouillÃ©","estimation":"Estimation"},"coteIndex":{"title":"Cote gratuite de toutes les voitures d'occasion","description":"DÃ©couvrez la cote et les prix du marchÃ© pour tous les modÃ¨les de voitures d'occasion. Estimations basÃ©es sur les donnÃ©es rÃ©elles du marchÃ© franÃ§ais.","heroTitle":"Cote gratuite de","heroTitleHighlight":"toutes les voitures","heroSubtitle":"Consultez la cote et les prix du marchÃ© pour {count} modÃ¨les de voitures d'occasion. DonnÃ©es actualisÃ©es basÃ©es sur les annonces rÃ©elles en France.","searchPlaceholder":"Rechercher une marque ou un modÃ¨le...","noResults":"Aucun modÃ¨le trouvÃ©","modelCount":"{count} modÃ¨les","yearRange":"{min} - {max}","viewCote":"Voir la cote"},"navigation":{"features":"FonctionnalitÃ©s","howItWorks":"Comment Ã§a marche"},"hero":{"badge":"UtilisÃ© par 10 000+ propriÃ©taires","title":"Estimez la","titleHighlight":"vraie valeur","titleSuffix":"de votre {brand}","subtitle":"Obtenez une estimation gratuite - prÃ©cise et instantanÃ©e de la valeur de votre voiture. Que vous achetiez, vendiez ou soyez simplement curieux, prenez des dÃ©cisions Ã©clairÃ©es avec AutoEstim.","loading":"Analyse des donnÃ©es du marchÃ©..."},"form":{"title":"Obtenez votre estimation gratuite","description":"Entrez les dÃ©tails de votre vÃ©hicule pour recevoir une estimation instantanÃ©e","freeBadge":"100% Gratuit - Sans inscription - RÃ©sultat immÃ©diat","benefits":{"instantResult":"RÃ©sultat immÃ©diat"},"brand":{"label":"Marque","placeholder":"SÃ©lectionnez une marque"},"model":{"label":"ModÃ¨le","placeholder":"SÃ©lectionnez un modÃ¨le","placeholderDisabled":"SÃ©lectionnez d'abord une marque"},"year":{"label":"AnnÃ©e","placeholder":"SÃ©lectionnez une annÃ©e","placeholderDisabled":"SÃ©lectionnez d'abord un modÃ¨le"},"gearType":{"label":"BoÃ®te de vitesses","placeholder":"SÃ©lectionnez une boÃ®te","placeholderDisabled":"SÃ©lectionnez d'abord une annÃ©e"},"energyType":{"label":"Ãnergie","placeholder":"SÃ©lectionnez un type d'Ã©nergie","placeholderDisabled":"SÃ©lectionnez d'abord une annÃ©e"},"version":{"label":"Version","placeholder":"SÃ©lectionnez une version","placeholderDisabled":"SÃ©lectionnez d'abord un type d'Ã©nergie"},"power":{"label":"Puissance","placeholder":"SÃ©lectionnez une puissance","placeholderDisabled":"SÃ©lectionnez d'abord une version"},"trimLevel":{"label":"Finition","placeholder":"SÃ©lectionnez une finition","placeholderDisabled":"SÃ©lectionnez d'abord une puissance"},"mileage":{"label":"KilomÃ©trage (km)","placeholder":"ex: 75000"},"postalCode":{"label":"Code postal","placeholder":"ex: 75001"},"options":{"label":"Ajouter des options notables","placeholder":"ex: SiÃ¨ges cuir, Toit ouvrant, GPS...","add":"Ajouter","helpText":"Ajoutez des options notables qui peuvent affecter la valeur de votre vÃ©hicule (appuyez sur EntrÃ©e ou cliquez sur Ajouter)","removeAriaLabel":"Supprimer {option}"}},"validation":{"brandRequired":"Veuillez sÃ©lectionner une marque","modelRequired":"Veuillez sÃ©lectionner un modÃ¨le","yearRequired":"Veuillez sÃ©lectionner une annÃ©e","energyTypeRequired":"Veuillez sÃ©lectionner un type d'Ã©nergie","versionRequired":"Veuillez sÃ©lectionner une version","powerRequired":"Veuillez sÃ©lectionner une puissance","gearTypeRequired":"Veuillez sÃ©lectionner une boÃ®te de vitesses","trimLevelRequired":"Veuillez sÃ©lectionner une finition","mileageRequired":"Veuillez entrer un kilomÃ©trage","mileagePositive":"Le kilomÃ©trage doit Ãªtre supÃ©rieur Ã  0","mileageMax":"Le kilomÃ©trage ne peut pas dÃ©passer 300 000 km","postalCodeRequired":"Veuillez entrer un code postal","postalCodeInvalid":"Code postal franÃ§ais invalide (ex: 75001, 01000)"},"errors":{"reportFailed":"Une erreur s'est produite avec votre rapport, veuillez rÃ©essayer plus tard."},"features":{"badge":"FonctionnalitÃ©s","title":"Une Ã©valuation claire de votre vÃ©hicule","subtitle":"Notre algorithme analyse les donnÃ©es pour vous donner l'estimation la plus prÃ©cise possible.","instant":{"title":"RÃ©sultats instantanÃ©s","description":"Obtenez la valeur estimÃ©e de votre voiture en quelques secondes. Notre analyse en temps rÃ©el dÃ©livre des informations immÃ©diates."},"accurate":{"title":"DonnÃ©es prÃ©cises","description":"BasÃ© sur des transactions rÃ©elles du marchÃ© et des prix vÃ©rifiÃ©s des concessionnaires pour une prÃ©cision maximale."},"trends":{"title":"Tendances du marchÃ©","description":"Suivez la valeur de votre vÃ©hicule dans le temps et obtenez des conseils sur le meilleur moment pour vendre."}},"howItWorks":{"badge":"Comment Ã§a marche","title":"Trois Ã©tapes simples pour votre estimation","subtitle":"Obtenir une estimation prÃ©cise de votre vÃ©hicule n'a jamais Ã©tÃ© aussi facile.","step1":{"number":"1","title":"Entrez les dÃ©tails","description":"Fournissez la marque, le modÃ¨le, l'annÃ©e et les dÃ©tails de votre vÃ©hicule."},"step2":{"number":"2","title":"Analyse","description":"Notre algorithme analyse les donnÃ©es actuelles du marchÃ© et les ventes comparables."},"step3":{"number":"3","title":"Recevez l'estimation","description":"Obtenez un rapport dÃ©taillÃ© avec une fourchette de prix et des informations sur le marchÃ©."}},"cta":{"badge":"Commencez aujourd'hui","title":"PrÃªt Ã  connaÃ®tre la valeur de votre voiture ?","subtitle":"Rejoignez des milliers de propriÃ©taires qui font confiance Ã  AutoEstim pour des estimations prÃ©cises et instantanÃ©es.","browseCote":"Consulter toutes les cotes","browseCoteDescription":"DÃ©couvrez les prix du marchÃ© pour tous les modÃ¨les"},"scrollingCards":{"badge":"Estimations rÃ©centes","energy":"Ãnergie","power":"Puissance","mileage":"KilomÃ©trage"},"report":{"badge":"Estimation terminÃ©e","title":"Rapport d'estimation","subtitle":"Voici notre analyse dÃ©taillÃ©e du marchÃ© pour votre","vehicleSpecs":{"gearType":"BoÃ®te","energy":"Ãnergie","power":"Puissance","mileage":"KilomÃ©trage"},"priceRanges":{"estimatedRange":"Fourchette estimÃ©e","recommended":"RecommandÃ©","quickSale":{"label":"Vente rapide","description":"Vendez rapidement en 2 semaines"},"marketPrice":{"label":"Prix du marchÃ©","description":"Juste Ã©quilibre, 2-4 semaines"},"maximumValue":{"label":"Valeur maximale","description":"Attente plus longue, 4-8 semaines"}},"analysis":{"title":"Analyse de vente","subtitle":"Points clÃ©s Ã  considÃ©rer avant de vendre","advantages":"Avantages","disadvantages":"InconvÃ©nients","recommendation":"Notre recommandation"},"projection":{"title":"Projection de valeur","subtitle":"DÃ©prÃ©ciation estimÃ©e dans le temps","inYears":"dans 3 ans","months":"mois","proTip":"Conseil pro :"},"confidence":{"title":"Indice de confiance","high":"Confiance Ã©levÃ©e","moderate":"Confiance modÃ©rÃ©e","low":"Confiance faible","basedOn":"BasÃ© sur {count} vÃ©hicules similaires vendus au cours des 90 derniers jours"},"share":{"button":"Partager","copied":"Lien copiÃ© !","title":"Estimation {brand} {model} - AutoEstim","text":"DÃ©couvre l'estimation de ma {brand} {model} {year} sur AutoEstim !"}},"notFound":{"title":"Rapport introuvable","description":"Ce rapport n'existe pas ou a expirÃ©. Veuillez crÃ©er une nouvelle estimation."},"pressSection":{"label":"Ils parlent de nous"},"testimonials":{"badge":"Avis clients","title":"Ce que disent nos utilisateurs","subtitle":"Des milliers de propriÃ©taires nous font confiance","review1":{"name":"Marie D.","location":"Paris","text":"Estimation prÃ©cise et rapide ! J'ai vendu ma voiture au prix conseillÃ©."},"review2":{"name":"Thomas L.","location":"Lyon","text":"Simple et efficace. Le rapport dÃ©taillÃ© m'a aidÃ© Ã  nÃ©gocier avec l'acheteur."},"review3":{"name":"Sophie M.","location":"Bordeaux","text":"Enfin un service gratuit et sans inscription ! RÃ©sultat en 30 secondes."}},"brandPage":{"title":"Estimation voiture {brand} gratuite","description":"Obtenez une estimation de la valeur de votre voiture {brand} gratuitement. RÃ©sultat instantanÃ© en 30 secondes basÃ© sur les donnÃ©es du marchÃ© franÃ§ais.","serviceName":"Estimation de vÃ©hicule {brand}","heroTitle":"Estimez la","heroTitleHighlight":"vraie valeur","heroTitleSuffix":"de votre {brand}","heroSubtitle":"Obtenez une estimation gratuite - prÃ©cise et instantanÃ©e de la valeur de votre {brand}. Que vous achetiez, vendiez ou soyez simplement curieux, prenez des dÃ©cisions Ã©clairÃ©es avec AutoEstim."},"footer":{"description":"Estimation gratuite et instantanÃ©e de la valeur de votre voiture d'occasion en France.","service":"Service","freeEstimate":"Estimation gratuite","allCotes":"Toutes les cotes","guides":"Guides","contact":"Contact","popularBrands":"Marques populaires","information":"Informations"},"contact":{"metaTitle":"Contact - AutoEstim","metaDescription":"Contactez l'Ã©quipe AutoEstim. Une question, une suggestion ou un problÃ¨me ? Nous sommes lÃ  pour vous aider.","badge":"Contact","title":"Contactez-nous","subtitle":"Une question, une suggestion ou un problÃ¨me ? Remplissez le formulaire ci-dessous et nous vous rÃ©pondrons dans les plus brefs dÃ©lais.","name":{"label":"Nom","placeholder":"Votre nom"},"email":{"label":"Email","placeholder":"votre@email.com"},"subject":{"label":"Sujet","placeholder":"Objet de votre message"},"message":{"label":"Message","placeholder":"DÃ©crivez votre demande..."},"submit":"Envoyer le message","successTitle":"Message envoyÃ© !","successMessage":"Merci pour votre message. Nous vous rÃ©pondrons dans les plus brefs dÃ©lais.","errorMessage":"Une erreur est survenue lors de l'envoi du message. Veuillez rÃ©essayer.","validation":{"nameRequired":"Veuillez entrer votre nom","nameTooShort":"Le nom doit contenir au moins 2 caractÃ¨res","nameTooLong":"Le nom ne peut pas dÃ©passer 100 caractÃ¨res","emailRequired":"Veuillez entrer votre adresse email","emailInvalid":"Adresse email invalide","subjectRequired":"Veuillez entrer un sujet","subjectTooShort":"Le sujet doit contenir au moins 3 caractÃ¨res","subjectTooLong":"Le sujet ne peut pas dÃ©passer 200 caractÃ¨res","messageRequired":"Veuillez entrer votre message","messageTooShort":"Le message doit contenir au moins 10 caractÃ¨res","messageTooLong":"Le message ne peut pas dÃ©passer 5000 caractÃ¨res"}},"missingVehicle":{"link":"Mon vÃ©hicule n'apparaÃ®t pas","dialogTitle":"Signaler un vÃ©hicule manquant","dialogDescription":"Aidez-nous Ã  complÃ©ter notre base de donnÃ©es en nous indiquant quel vÃ©hicule vous recherchez.","currentSelections":"SÃ©lection actuelle","noSelections":"Aucune sÃ©lection","blockedAtStepLabel":"Ã quelle Ã©tape Ãªtes-vous bloquÃ© ?","blockedAtStepPlaceholder":"SÃ©lectionnez l'Ã©tape","descriptionLabel":"Que recherchez-vous ?","descriptionPlaceholder":"Ex: Renault Twingo 3 2024, 1.0 SCe 75ch...","descriptionHint":"DÃ©crivez le vÃ©hicule ou l'option manquante","emailLabel":"Email (optionnel)","emailPlaceholder":"votre@email.com","emailHint":"Pour Ãªtre notifiÃ© quand votre vÃ©hicule sera ajoutÃ©","cancel":"Annuler","submit":"Envoyer","successTitle":"Merci !","successMessage":"Votre signalement a Ã©tÃ© enregistrÃ©. Nous nous efforÃ§ons d'ajouter les vÃ©hicules manquants rapidement.","alreadyReportedTitle":"Signalement dÃ©jÃ  envoyÃ©","alreadyReportedMessage":"Vous avez dÃ©jÃ  signalÃ© un vÃ©hicule manquant. Nous travaillons Ã  complÃ©ter notre base de donnÃ©es.","close":"Fermer","steps":{"brand":"Marque","model":"ModÃ¨le","year":"AnnÃ©e","energyType":"Ãnergie","version":"Version","power":"Puissance","gearType":"BoÃ®te de vitesses","trimLevel":"Finition"},"validation":{"blockedAtStepRequired":"Veuillez sÃ©lectionner l'Ã©tape oÃ¹ vous Ãªtes bloquÃ©","descriptionRequired":"Veuillez dÃ©crire ce que vous recherchez","descriptionTooShort":"La description doit contenir au moins 5 caractÃ¨res","descriptionTooLong":"La description ne peut pas dÃ©passer 500 caractÃ¨res","emailInvalid":"Adresse email invalide"}}},"now":"$undefined","timeZone":"UTC","children":["$L19","$L1a"]}]
+1b:I[65150,["/_next/static/chunks/63c94b6a5a686dea.js","/_next/static/chunks/0c8f1173dfecaa50.js","/_next/static/chunks/d93c4165f3ffce48.js","/_next/static/chunks/22abcb73df6c28a4.js"],"ThemeProvider"]
+1c:I[2355,["/_next/static/chunks/63c94b6a5a686dea.js","/_next/static/chunks/0c8f1173dfecaa50.js"],"Analytics"]
+19:["$","$L1b",null,{"children":["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]
+1a:["$","$L1c",null,{}]
+12:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+2b:I[27201,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/6153d1a363729c2c.js"],"IconMark"]
+1d:T853,{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Quel est le prix d'une Dacia Sandero en 2026 ?","acceptedAnswer":{"@type":"Answer","text":"La Dacia Sandero existe en 3 gÃ©nÃ©rations. La gÃ©nÃ©ration actuelle (Sandero III) se nÃ©gocie entre 10â¯500 et 21â¯500 euros. Les gÃ©nÃ©rations prÃ©cÃ©dentes sont disponibles Ã  partir de 1â¯800 euros."}},{"@type":"Question","name":"Comment estimer prÃ©cisÃ©ment ma Dacia Sandero ?","acceptedAnswer":{"@type":"Answer","text":"Pour obtenir une estimation prÃ©cise de votre Sandero, utilisez notre outil gratuit. Renseignez l'annÃ©e, le kilomÃ©trage et la motorisation pour une valeur personnalisÃ©e."}},{"@type":"Question","name":"La version Stepway vaut-elle le surcoÃ»t en occasion ?","acceptedAnswer":{"@type":"Answer","text":"Oui, la Stepway reprÃ©sente 70% des ventes. Son look baroudeur et sa garde au sol Ã©levÃ©e facilitent la revente et offrent une position de conduite plus haute."}},{"@type":"Question","name":"Le moteur GPL (Eco-G 100) est-il fiable ?","acceptedAnswer":{"@type":"Answer","text":"TrÃ¨s fiable. C'est une installation d'usine parfaitement intÃ©grÃ©e. Il permet de rÃ©duire le budget carburant de 30 Ã  40% par rapport Ã  l'essence."}},{"@type":"Question","name":"Quelle gÃ©nÃ©ration choisir pour un budget de 8 000 â¬ ?","acceptedAnswer":{"@type":"Answer","text":"Ã ce prix, privilÃ©giez une Sandero II restylÃ©e (aprÃ¨s 2016) en finition Stepway avec le moteur TCe 90, offrant un bon compromis modernitÃ©/prix."}},{"@type":"Question","name":"Pourquoi la Sandero III n'a-t-elle que 2 Ã©toiles au crash-test Euro NCAP ?","acceptedAnswer":{"@type":"Answer","text":"Ce score s'explique par l'absence de certains Ã©quipements de sÃ©curitÃ© Ã©lectronique sophistiquÃ©s, mais la protection structurelle des occupants reste de bon niveau."}},{"@type":"Question","name":"Le moteur essence SCe 65 est-il suffisant ?","acceptedAnswer":{"@type":"Answer","text":"Ce moteur atmosphÃ©rique est rÃ©servÃ© Ã  un usage strictement urbain. Pour de la route ou de l'autoroute, le TCe 90 ou l'Eco-G 100 sont vivement recommandÃ©s."}}]}d:[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"Dacia Sandero\",\"description\":\"Cote et prix Dacia Sandero d'occasion en 2026. Fourchette de prix observÃ©e : 1â¯800 â¬ - 21â¯500 â¬.\",\"category\":\"Vehicle\",\"brand\":{\"@type\":\"Brand\",\"name\":\"Dacia\"},\"offers\":{\"@type\":\"AggregateOffer\",\"priceCurrency\":\"EUR\",\"lowPrice\":1800,\"highPrice\":21500,\"offerCount\":3850}}"}}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.autoestim.com\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Toutes les cotes\",\"item\":\"https://www.autoestim.com/cote\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Dacia Sandero\",\"item\":\"https://www.autoestim.com/cote/dacia-sandero\"}]}"}}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$1d"}}],["$","div",null,{"className":"min-h-screen bg-background","children":["$L1e",["$","section",null,{"className":"relative py-16 overflow-hidden","children":[["$","div",null,{"className":"absolute inset-0 bg-gradient-to-br from-coral/10 via-teal/5 to-coral/10 dark:from-coral/5 dark:via-transparent dark:to-transparent"}],"$L1f","$L20"]}],"$L21","$L22","$L23","$L24","$L25","$L26","$L27","$L28","$L29","$L2a"]}]]
+10:null
+14:[["$","title","0",{"children":"Prix occasion Dacia Sandero : cote et estimation 2026"}],["$","meta","1",{"name":"description","content":"Prix occasion Dacia Sandero : fourchette 1â¯800 â 21â¯500 â¬ selon la gÃ©nÃ©ration. Cote actualisÃ©e, avec conseils d'achat et de revente."}],["$","link","2",{"rel":"manifest","href":"/site.webmanifest","crossOrigin":"$undefined"}],["$","meta","3",{"name":"robots","content":"index, follow"}],["$","meta","4",{"name":"googlebot","content":"index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"}],["$","link","5",{"rel":"canonical","href":"https://www.autoestim.com/cote/dacia-sandero"}],["$","meta","6",{"property":"og:title","content":"Prix occasion Dacia Sandero : cote et estimation 2026"}],["$","meta","7",{"property":"og:description","content":"Prix occasion Dacia Sandero : fourchette 1â¯800 â 21â¯500 â¬ selon la gÃ©nÃ©ration. Cote actualisÃ©e, avec conseils d'achat et de revente."}],["$","meta","8",{"property":"og:url","content":"https://www.autoestim.com/cote/dacia-sandero"}],["$","meta","9",{"property":"og:site_name","content":"AutoEstim"}],["$","meta","10",{"property":"og:locale","content":"fr_FR"}],["$","meta","11",{"property":"og:image:alt","content":"Cote AutoEstim"}],["$","meta","12",{"property":"og:image:type","content":"image/png"}],["$","meta","13",{"property":"og:image","content":"https://www.autoestim.com/cote/dacia-sandero/opengraph-image?20f3e468b6e7dac7"}],["$","meta","14",{"property":"og:image:width","content":"1200"}],["$","meta","15",{"property":"og:image:height","content":"630"}],["$","meta","16",{"property":"og:type","content":"website"}],["$","meta","17",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","18",{"name":"twitter:title","content":"Prix occasion Dacia Sandero : cote et estimation 2026"}],["$","meta","19",{"name":"twitter:description","content":"Prix occasion Dacia Sandero : fourchette 1â¯800 â 21â¯500 â¬ selon la gÃ©nÃ©ration. Cote actualisÃ©e, avec conseils d'achat et de revente."}],["$","meta","20",{"name":"twitter:image:alt","content":"Cote AutoEstim"}],["$","meta","21",{"name":"twitter:image:type","content":"image/png"}],["$","meta","22",{"name":"twitter:image","content":"https://www.autoestim.com/cote/dacia-sandero/opengraph-image?20f3e468b6e7dac7"}],["$","meta","23",{"name":"twitter:image:width","content":"1200"}],["$","meta","24",{"name":"twitter:image:height","content":"630"}],["$","link","25",{"rel":"icon","href":"/favicon.ico","sizes":"any"}],["$","link","26",{"rel":"icon","href":"/favicon-96x96.png","sizes":"96x96","type":"image/png"}],["$","link","27",{"rel":"icon","href":"/favicon.svg","type":"image/svg+xml"}],["$","link","28",{"rel":"apple-touch-icon","href":"/apple-touch-icon.png"}],["$","$L2b","29",{}]]
+2c:I[5500,["/_next/static/chunks/63c94b6a5a686dea.js","/_next/static/chunks/0c8f1173dfecaa50.js","/_next/static/chunks/d93c4165f3ffce48.js","/_next/static/chunks/22abcb73df6c28a4.js"],"Image"]
+46:I[52085,["/_next/static/chunks/63c94b6a5a686dea.js","/_next/static/chunks/0c8f1173dfecaa50.js","/_next/static/chunks/d93c4165f3ffce48.js","/_next/static/chunks/22abcb73df6c28a4.js"],"PriceChart"]
+1f:["$","div",null,{"className":"absolute top-10 right-0 w-72 h-72 bg-gradient-to-br from-teal/20 to-teal/5 dark:from-teal/10 dark:to-teal/5 rounded-full blur-3xl"}]
+20:["$","div",null,{"className":"\n        w-full mx-auto px-4 sm:px-6 lg:px-8\n        max-w-7xl\n        relative\n      ","children":[["$","nav",null,{"className":"flex items-center gap-2 text-sm mb-8 overflow-hidden","children":[["$","$L7",null,{"href":"/","className":"text-foreground-muted hover:text-coral transition-colors shrink-0","children":"Accueil"}],["$","span",null,{"className":"text-foreground-muted shrink-0","children":"/"}],["$","$L7",null,{"href":"/cote","className":"text-foreground-muted hover:text-coral transition-colors shrink-0","children":"Toutes les cotes"}],["$","span",null,{"className":"text-foreground-muted shrink-0","children":"/"}],["$","span",null,{"className":"text-foreground truncate","children":["Dacia"," ","Sandero"]}]]}],["$","div",null,{"className":"max-w-4xl","children":[["$","div",null,{"className":"w-12 h-12 mb-2","children":["$","$L2c",null,{"src":"/logos/brands/dacia.png","alt":"Dacia","width":48,"height":48,"className":"object-contain"}]}],["$","h1",null,{"className":"\n        font-[family-name:var(--font-heading)]\n        font-bold tracking-tight\n        text-foreground\n        text-4xl md:text-5xl\n        \n        mb-4\n      ","children":["Cote ","Dacia"," ","Sandero"," en ",2026]}],["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-base\n        font-normal\n        text-foreground-muted\n        mb-6 max-w-2xl\n      ","children":["La ","Dacia"," ","Sandero"," existe en ",3," gÃ©nÃ©rations depuis"," ",2008,". La gÃ©nÃ©ration actuelle (","Sandero III",") se nÃ©gocie entre"," ","10â¯500"," et"," ","21â¯500"," euros. Cette estimation est basÃ©e sur l'analyse de"," ","plus de 3800"," ","annonces."]}],["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-sm\n        font-normal\n        text-foreground-muted\n        flex items-center gap-1.5 mb-4\n      ","children":[["$","svg",null,{"className":"w-4 h-4","viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"children":["$","path",null,{"strokeLinecap":"round","strokeLinejoin":"round","d":"M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"}]}],"DonnÃ©es mises Ã  jour en ","mars 2026"]}],["$","div",null,{"className":"\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-6\n        mb-8 max-w-xl\n      ","children":[["$","div",null,{"className":"flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-2","children":[["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-sm\n        font-normal\n        text-foreground-muted\n        \n      ","children":"Prix par gÃ©nÃ©ration"}],["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-xs\n        font-normal\n        text-foreground-muted\n        flex items-center gap-1\n      ","children":[["$","svg",null,{"className":"w-3 h-3","viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"children":["$","path",null,{"strokeLinecap":"round","strokeLinejoin":"round","d":"M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"}]}],"+1000 vÃ©hicules analysÃ©s"]}]]}],["$","div",null,{"className":"space-y-3 mb-4","children":[["$","div","Sandero I",{"className":"flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 py-2 border-b border-foreground/5 last:border-b-0","children":[["$","div",null,{"className":"flex flex-col","children":[["$","span",null,{"className":"font-medium text-foreground","children":"Sandero I"}],["$","span",null,{"className":"text-xs text-foreground-muted","children":[2008," - ",2012]}]]}],["$","div",null,{"className":"flex items-center gap-2","children":["$L2d","$L2e","$L2f"]}]]}],"$L30","$L31"]}],"$L32"]}],"$L33"]}],"$L34"]}]
+21:["$","section",null,{"className":"py-12 bg-background-alt","children":["$","div",null,{"className":"\n        w-full mx-auto px-4 sm:px-6 lg:px-8\n        max-w-7xl\n        \n      ","children":[["$","h2",null,{"className":"\n        font-[family-name:var(--font-heading)]\n        font-bold tracking-tight\n        text-foreground\n        text-2xl md:text-3xl\n        \n        mb-4\n      ","children":["Prix d'une ","Dacia"," ","Sandero"," selon l'annÃ©e"]}],["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-base\n        font-normal\n        text-foreground-muted\n        mb-8\n      ","children":"Les modÃ¨les produits entre 2017 et 2019 offrent le meilleur compromis fiabilitÃ©-prix, ayant bÃ©nÃ©ficiÃ© du restylage de la phase 2 et de motorisations essence fiabilisÃ©es."}],["$","div",null,{"className":"sm:hidden -mx-4 px-4 overflow-x-auto scrollbar-hide","children":["$","div",null,{"className":"flex gap-3 pb-2","style":{"scrollSnapType":"x mandatory"},"children":[["$","div","2026",{"className":"\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center shrink-0 min-w-35\n      ","style":{"scrollSnapAlign":"start"},"children":[["$","div",null,{"className":"text-xl font-bold text-foreground font-heading mb-2","children":2026}],["$","div",null,{"className":"text-coral font-semibold whitespace-nowrap","children":[["$","span",null,{"className":"text-sm","children":"17â¯170"}],["$","span",null,{"className":"text-foreground-muted/50 mx-1","children":"â"}],["$","span",null,{"className":"text-sm","children":["23â¯230"," â¬"]}]]}]]}],["$","div","2025",{"className":"\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center shrink-0 min-w-35\n      ","style":{"scrollSnapAlign":"start"},"children":[["$","div",null,{"className":"text-xl font-bold text-foreground font-heading mb-2","children":2025}],["$","div",null,{"className":"text-coral font-semibold whitespace-nowrap","children":[["$","span",null,{"className":"text-sm","children":"16â¯065"}],["$","span",null,{"className":"text-foreground-muted/50 mx-1","children":"â"}],["$","span",null,{"className":"text-sm","children":["21â¯735"," â¬"]}]]}]]}],["$","div","2024",{"className":"\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center shrink-0 min-w-35\n      ","style":{"scrollSnapAlign":"start"},"children":[["$","div",null,{"className":"text-xl font-bold text-foreground font-heading mb-2","children":2024}],["$","div",null,{"className":"text-coral font-semibold whitespace-nowrap","children":[["$","span",null,{"className":"text-sm","children":"14â¯790"}],["$","span",null,{"className":"text-foreground-muted/50 mx-1","children":"â"}],["$","span",null,{"className":"text-sm","children":["20â¯010"," â¬"]}]]}]]}],["$","div","2023",{"className":"\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center shrink-0 min-w-35\n      ","style":{"scrollSnapAlign":"start"},"children":[["$","div",null,{"className":"text-xl font-bold text-foreground font-heading mb-2","children":2023}],["$","div",null,{"className":"text-coral font-semibold whitespace-nowrap","children":[["$","span",null,{"className":"text-sm","children":"13â¯685"}],["$","span",null,{"className":"text-foreground-muted/50 mx-1","children":"â"}],["$","span",null,{"className":"text-sm","children":["18â¯515"," â¬"]}]]}]]}],["$","div","2022",{"className":"\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center shrink-0 min-w-35\n      ","style":{"scrollSnapAlign":"start"},"children":["$L35","$L36"]}],"$L37","$L38","$L39","$L3a","$L3b","$L3c","$L3d","$L3e","$L3f","$L40","$L41","$L42","$L43","$L44"]}]}],"$L45"]}]}]
+22:["$","$L46",null,{"brandName":"Dacia","modelName":"Sandero","pricesByYear":[{"year":2026,"priceMin":17170,"priceMax":23230,"avgPrice":20200,"confidence":100},{"year":2025,"priceMin":16065,"priceMax":21735,"avgPrice":18900,"confidence":100},{"year":2024,"priceMin":14790,"priceMax":20010,"avgPrice":17400,"confidence":100},{"year":2023,"priceMin":13685,"priceMax":18515,"avgPrice":16100,"confidence":100},{"year":2022,"priceMin":12580,"priceMax":17020,"avgPrice":14800,"confidence":100},{"year":2021,"priceMin":11220,"priceMax":15180,"avgPrice":13200,"confidence":100},{"year":2020,"priceMin":9690,"priceMax":13110,"avgPrice":11400,"confidence":100},{"year":2019,"priceMin":8670,"priceMax":11730,"avgPrice":10200,"confidence":100},{"year":2018,"priceMin":7905,"priceMax":10695,"avgPrice":9300,"confidence":100},{"year":2017,"priceMin":7140,"priceMax":9660,"avgPrice":8400,"confidence":100},{"year":2016,"priceMin":6460,"priceMax":8740,"avgPrice":7600,"confidence":100},{"year":2015,"priceMin":5695,"priceMax":7705,"avgPrice":6700,"confidence":100},{"year":2014,"priceMin":5015,"priceMax":6785,"avgPrice":5900,"confidence":100},{"year":2013,"priceMin":4420,"priceMax":5980,"avgPrice":5200,"confidence":100},{"year":2012,"priceMin":3485,"priceMax":4715,"avgPrice":4100,"confidence":100},{"year":2011,"priceMin":2890,"priceMax":3910,"avgPrice":3400,"confidence":100},{"year":2010,"priceMin":2465,"priceMax":3335,"avgPrice":2900,"confidence":100},{"year":2009,"priceMin":2125,"priceMax":2875,"avgPrice":2500,"confidence":100},{"year":2008,"priceMin":1870,"priceMax":2530,"avgPrice":2200,"confidence":100}],"caption":"La Sandero affiche une dÃ©cote exceptionnellement faible de seulement 25 % aprÃ¨s trois ans d'utilisation, contre prÃ¨s de 40 % pour la moyenne du segment."}]
+23:["$","section",null,{"className":"py-12 bg-background-alt","children":["$","div",null,{"className":"\n        w-full mx-auto px-4 sm:px-6 lg:px-8\n        max-w-7xl\n        \n      ","children":[["$","h2",null,{"className":"\n        font-[family-name:var(--font-heading)]\n        font-bold tracking-tight\n        text-foreground\n        text-2xl md:text-3xl\n        \n        mb-4\n      ","children":["Motorisations de la ","Dacia"," ","Sandero"," d'occasion"]}],["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-base\n        font-normal\n        text-foreground-muted\n        mb-8\n      ","children":"L'essence domine avec 48 % de l'offre, mais la version GPL (32 %) est la plus recherchÃ©e en occasion car elle permet de circuler en Crit'Air 1 avec un coÃ»t kilomÃ©trique rÃ©duit."}],["$","div",null,{"className":"\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-6\n        \n      ","children":["$","div",null,{"className":"space-y-4","children":[["$","div","essence",{"children":[["$","div",null,{"className":"flex items-center justify-between mb-1.5","children":[["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-base\n        font-medium\n        text-foreground\n        \n      ","children":"Essence"}],["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-sm\n        font-normal\n        text-foreground\n        text-coral font-semibold\n      ","children":[48,"%"]}]]}],["$","div",null,{"className":"h-2 bg-foreground/10 rounded-full overflow-hidden","children":["$","div",null,{"className":"h-full bg-coral rounded-full transition-all duration-500","style":{"width":"48%"}}]}]]}],["$","div","gpl",{"children":[["$","div",null,{"className":"flex items-center justify-between mb-1.5","children":[["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-base\n        font-medium\n        text-foreground\n        \n      ","children":"GPL"}],["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-sm\n        font-normal\n        text-foreground\n        text-coral font-semibold\n      ","children":[32,"%"]}]]}],["$","div",null,{"className":"h-2 bg-foreground/10 rounded-full overflow-hidden","children":["$","div",null,{"className":"h-full bg-coral rounded-full transition-all duration-500","style":{"width":"32%"}}]}]]}],["$","div","diesel",{"children":[["$","div",null,{"className":"flex items-center justify-between mb-1.5","children":[["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-base\n        font-medium\n        text-foreground\n        \n      ","children":"Diesel"}],["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-sm\n        font-normal\n        text-foreground\n        text-coral font-semibold\n      ","children":[15,"%"]}]]}],["$","div",null,{"className":"h-2 bg-foreground/10 rounded-full overflow-hidden","children":["$","div",null,{"className":"h-full bg-coral rounded-full transition-all duration-500","style":{"width":"15%"}}]}]]}],["$","div","hybride",{"children":[["$","div",null,{"className":"flex items-center justify-between mb-1.5","children":[["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-base\n        font-medium\n        text-foreground\n        \n      ","children":"Hybride"}],["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-sm\n        font-normal\n        text-foreground\n        text-coral font-semibold\n      ","children":[5,"%"]}]]}],"$L47"]}]]}]}]]}]}]
+24:["$","section",null,{"className":"py-12 ","children":["$","div",null,{"className":"\n        w-full mx-auto px-4 sm:px-6 lg:px-8\n        max-w-7xl\n        \n      ","children":[["$","div",null,{"className":"mb-8","children":[["$","h2",null,{"className":"\n        font-[family-name:var(--font-heading)]\n        font-bold tracking-tight\n        text-foreground\n        text-2xl md:text-3xl\n        \n        mb-2\n      ","children":["FiabilitÃ© ","Dacia"," ","Sandero"," : avis des propriÃ©taires"]}],["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-base\n        font-normal\n        text-foreground-muted\n        \n      ","children":"Retours frÃ©quents observÃ©s sur le marchÃ© de l'occasion"}]]}],["$","div",null,{"className":"grid md:grid-cols-2 gap-6","children":[["$","div",null,{"className":"\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    border border-foreground/10\n  \n        p-6\n        \n      ","children":[["$","h3",null,{"className":"\n        font-[family-name:var(--font-heading)]\n        font-bold tracking-tight\n        text-foreground\n        text-xl md:text-2xl\n        \n        mb-4 flex items-center gap-2\n      ","children":[["$","span",null,{"className":"text-emerald-600 dark:text-emerald-400","children":"+"}],"Les + de la ","Sandero"]}],["$","ul",null,{"className":"space-y-2.5","children":[["$","li","Rapport prix/prestations imbattable sur le marchÃ© europÃ©en",{"className":"flex items-start gap-2.5","children":[["$","svg",null,{"className":"w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5","viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2.5,"children":["$","path",null,{"strokeLinecap":"round","strokeLinejoin":"round","d":"M5 13l4 4L19 7"}]}],["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-sm\n        font-normal\n        text-foreground-muted\n        \n      ","children":"Rapport prix/prestations imbattable sur le marchÃ© europÃ©en"}]]}],["$","li","CoÃ»ts d'entretien et de rÃ©paration parmi les plus bas",{"className":"flex items-start gap-2.5","children":[["$","svg",null,{"className":"w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5","viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2.5,"children":["$","path",null,{"strokeLinecap":"round","strokeLinejoin":"round","d":"M5 13l4 4L19 7"}]}],["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-sm\n        font-normal\n        text-foreground-muted\n        \n      ","children":"CoÃ»ts d'entretien et de rÃ©paration parmi les plus bas"}]]}],["$","li","Excellente valeur de revente et dÃ©cote trÃ¨s lente",{"className":"flex items-start gap-2.5","children":[["$","svg",null,{"className":"w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5","viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2.5,"children":["$","path",null,{"strokeLinecap":"round","strokeLinejoin":"round","d":"M5 13l4 4L19 7"}]}],["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-sm\n        font-normal\n        text-foreground-muted\n        \n      ","children":"Excellente valeur de revente et dÃ©cote trÃ¨s lente"}]]}],["$","li","HabitabilitÃ© gÃ©nÃ©reuse pour le segment des citadines",{"className":"flex items-start gap-2.5","children":[["$","svg",null,{"className":"w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5","viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2.5,"children":["$","path",null,{"strokeLinecap":"round","strokeLinejoin":"round","d":"M5 13l4 4L19 7"}]}],["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-sm\n        font-normal\n        text-foreground-muted\n        \n      ","children":"HabitabilitÃ© gÃ©nÃ©reuse pour le segment des citadines"}]]}],"$L48"]}]]}],"$L49"]}],"$L4a"]}]}]
+25:["$","section",null,{"className":"py-12 bg-background-alt","children":["$","div",null,{"className":"\n        w-full mx-auto px-4 sm:px-6 lg:px-8\n        max-w-7xl\n        \n      ","children":["$","div",null,{"className":"\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-6 sm:p-8\n        max-w-2xl mx-auto text-center\n      ","children":[["$","h2",null,{"className":"\n        font-[family-name:var(--font-heading)]\n        font-bold tracking-tight\n        text-foreground\n        text-2xl md:text-3xl\n        \n        mb-4\n      ","children":"Obtenez une estimation plus prÃ©cise"}],["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-base\n        font-normal\n        text-foreground-muted\n        mb-8 max-w-lg mx-auto\n      ","children":["Les cotes affichÃ©es sont basÃ©es sur des observations du marchÃ© de l'occasion. Chaque vÃ©hicule Ã©tant unique (kilomÃ©trage, Ã©tat, options), renseignez les caractÃ©ristiques de votre ","Sandero"," pour une valeur personnalisÃ©e."]}],["$","$L7",null,{"href":"/","className":"inline-flex items-center justify-center font-medium bg-coral text-white hover:bg-coral-dark transition-all duration-200 px-8 py-4 gap-2 text-lg font-semibold rounded-[var(--radius-lg)] ","children":[["$","span",null,{"children":["Estimer ma ","Dacia"," ","Sandero"]}],["$","svg",null,{"className":"w-5 h-5","fill":"none","viewBox":"0 0 24 24","stroke":"currentColor","strokeWidth":2,"children":["$","path",null,{"strokeLinecap":"round","strokeLinejoin":"round","d":"M13 7l5 5m0 0l-5 5m5-5H6"}]}]]}]]}]}]}]
+26:["$","section",null,{"className":"conseil-revente py-12","children":["$","div",null,{"className":"\n        w-full mx-auto px-4 sm:px-6 lg:px-8\n        max-w-7xl\n        \n      ","children":[["$","h2",null,{"className":"\n        font-[family-name:var(--font-heading)]\n        font-bold tracking-tight\n        text-foreground\n        text-2xl md:text-3xl\n        \n        mb-6\n      ","children":["Quand et comment revendre sa ","Dacia"," ","Sandero"," au meilleur prix ?"]}],["$","div",null,{"className":"space-y-4","children":[["$","p","0",{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-base\n        font-normal\n        text-foreground-muted\n        leading-relaxed\n      ","children":"Pour maximiser le prix de revente d'une Dacia Sandero, la pÃ©riode printaniÃ¨re, entre mars et mai, s'avÃ¨re idÃ©ale car elle correspond au pic de recherche des mÃ©nages pour un second vÃ©hicule avant les dÃ©parts estivaux. Il est stratÃ©gique de se sÃ©parer de son vÃ©hicule avant qu'il ne franchisse le seuil psychologique des 100 000 kilomÃ¨tres pour une Sandero III, ou des 150 000 kilomÃ¨tres pour une Sandero II, car au-delÃ , la dÃ©cote s'accÃ©lÃ¨re nettement malgrÃ© la rÃ©putation de robustesse de la marque. La valeur de revente reste exceptionnellement haute pour ce modÃ¨le, souvent proche du prix du neuf pour les versions Stepway rÃ©centes, ce qui en fait l'un des placements automobiles les plus sÃ»rs du marchÃ©."}],["$","p","1",{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-base\n        font-normal\n        text-foreground-muted\n        leading-relaxed\n      ","children":"Les versions Eco-G 100 et les finitions Stepway sont les plus prisÃ©es et se revendent en moins de deux semaines, tandis que les motorisations diesel 1.5 dCi subissent une dÃ©cote plus marquÃ©e de l'ordre de 15 % supplÃ©mentaire dans les zones concernÃ©es par les restrictions ZFE. Avant la mise en vente, assurez-vous de disposer du carnet d'entretien complet et, pour les modÃ¨les de plus de six ans, justifiez du remplacement du kit de distribution sur les blocs 1.2 16v ou 1.5 dCi. Un contrÃ´le technique vierge et une carrosserie sans accroc sont dÃ©terminants, car les acheteurs de Sandero sont particuliÃ¨rement attentifs au coÃ»t de possession global et aux frais immÃ©diats Ã  prÃ©voir."}]]}]]}]}]
+27:["$","section",null,{"className":"py-12 bg-background-alt","children":["$","div",null,{"className":"\n        w-full mx-auto px-4 sm:px-6 lg:px-8\n        max-w-7xl\n        \n      ","children":[["$","h2",null,{"className":"\n        font-[family-name:var(--font-heading)]\n        font-bold tracking-tight\n        text-foreground\n        text-2xl md:text-3xl\n        \n        mb-4\n      ","children":["Alternatives Ã  la ","Dacia"," ","Sandero"," sur le marchÃ© de l'occasion"]}],["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-base\n        font-normal\n        text-foreground-muted\n        mb-8 max-w-3xl\n      ","children":"VÃ©hicules du mÃªme segment Ã  considÃ©rer si vous comparez les cotes sur le marchÃ© de l'occasion."}],["$","div",null,{"className":"grid grid-cols-1 sm:grid-cols-3 gap-4","children":[["$","$L7","renault-clio",{"href":"/cote/renault-clio","children":["$","div",null,{"className":"\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-6\n        h-full hover:border-coral/50 transition-colors cursor-pointer flex flex-col items-center text-center gap-3 py-6\n      ","children":[["$","div",null,{"className":"w-10 h-10 flex items-center justify-center","children":["$","$L2c",null,{"src":"/logos/brands/renault.png","alt":"Renault","width":40,"height":40,"className":"object-contain"}]}],["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-base\n        font-semibold\n        text-foreground\n        text-foreground\n      ","children":["Renault"," ","Clio"]}],["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-sm\n        font-normal\n        text-foreground\n        text-coral font-semibold\n      ","children":["800"," â ","28â¯500"," â¬"]}],["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-sm\n        font-normal\n        text-foreground-muted\n        mt-auto\n      ","children":"Volume de coffre : 391 litres contre 328 litres pour la Sandero"}],["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-xs\n        font-normal\n        text-foreground\n        text-coral font-semibold\n      ","children":"Voir la cote â"}]]}]}],["$","$L7","toyota-yaris",{"href":"/cote/toyota-yaris","children":["$","div",null,{"className":"\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-6\n        h-full hover:border-coral/50 transition-colors cursor-pointer flex flex-col items-center text-center gap-3 py-6\n      ","children":[["$","div",null,{"className":"w-10 h-10 flex items-center justify-center","children":["$","$L2c",null,{"src":"/logos/brands/toyota.png","alt":"Toyota","width":40,"height":40,"className":"object-contain"}]}],["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-base\n        font-semibold\n        text-foreground\n        text-foreground\n      ","children":["Toyota"," ","Yaris"]}],["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-sm\n        font-normal\n        text-foreground\n        text-coral font-semibold\n      ","children":["1â¯200"," â ","32â¯000"," â¬"]}],["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-sm\n        font-normal\n        text-foreground-muted\n        mt-auto\n      ","children":"Consommation rÃ©elle en cycle urbain : 3.8L/100km"}],"$L4b"]}]}],"$L4c"]}]]}]}]
+28:["$","section",null,{"className":"py-12 ","children":["$","div",null,{"className":"\n        w-full mx-auto px-4 sm:px-6 lg:px-8\n        max-w-7xl\n        \n      ","children":[["$","h2",null,{"className":"\n        font-[family-name:var(--font-heading)]\n        font-bold tracking-tight\n        text-foreground\n        text-2xl md:text-3xl\n        \n        mb-8\n      ","children":"Questions frÃ©quentes sur la Dacia Sandero"}],["$","div",null,{"className":"space-y-3","children":[["$","details","0",{"className":"group border border-foreground/10 rounded-[var(--radius-lg)] overflow-hidden bg-surface","open":true,"children":[["$","summary",null,{"className":"w-full flex items-center justify-between p-5 text-left hover:bg-foreground/[0.02] transition-colors cursor-pointer list-none [&::-webkit-details-marker]:hidden","children":[["$","span",null,{"className":"font-[family-name:var(--font-heading)] font-semibold text-foreground pr-4","children":"Quel est le prix d'une Dacia Sandero en 2026 ?"}],["$","svg",null,{"className":"w-5 h-5 text-coral shrink-0 transition-transform duration-200 group-open:rotate-180","fill":"none","viewBox":"0 0 24 24","stroke":"currentColor","strokeWidth":2,"children":["$","path",null,{"strokeLinecap":"round","strokeLinejoin":"round","d":"M19 9l-7 7-7-7"}]}]]}],["$","div",null,{"className":"px-5 pb-5 text-foreground-muted leading-relaxed","children":"La Dacia Sandero existe en 3 gÃ©nÃ©rations. La gÃ©nÃ©ration actuelle (Sandero III) se nÃ©gocie entre 10â¯500 et 21â¯500 euros. Les gÃ©nÃ©rations prÃ©cÃ©dentes sont disponibles Ã  partir de 1â¯800 euros."}]]}],["$","details","1",{"className":"group border border-foreground/10 rounded-[var(--radius-lg)] overflow-hidden bg-surface","open":false,"children":[["$","summary",null,{"className":"w-full flex items-center justify-between p-5 text-left hover:bg-foreground/[0.02] transition-colors cursor-pointer list-none [&::-webkit-details-marker]:hidden","children":[["$","span",null,{"className":"font-[family-name:var(--font-heading)] font-semibold text-foreground pr-4","children":"Comment estimer prÃ©cisÃ©ment ma Dacia Sandero ?"}],["$","svg",null,{"className":"w-5 h-5 text-coral shrink-0 transition-transform duration-200 group-open:rotate-180","fill":"none","viewBox":"0 0 24 24","stroke":"currentColor","strokeWidth":2,"children":["$","path",null,{"strokeLinecap":"round","strokeLinejoin":"round","d":"M19 9l-7 7-7-7"}]}]]}],["$","div",null,{"className":"px-5 pb-5 text-foreground-muted leading-relaxed","children":"Pour obtenir une estimation prÃ©cise de votre Sandero, utilisez notre outil gratuit. Renseignez l'annÃ©e, le kilomÃ©trage et la motorisation pour une valeur personnalisÃ©e."}]]}],["$","details","2",{"className":"group border border-foreground/10 rounded-[var(--radius-lg)] overflow-hidden bg-surface","open":false,"children":[["$","summary",null,{"className":"w-full flex items-center justify-between p-5 text-left hover:bg-foreground/[0.02] transition-colors cursor-pointer list-none [&::-webkit-details-marker]:hidden","children":[["$","span",null,{"className":"font-[family-name:var(--font-heading)] font-semibold text-foreground pr-4","children":"La version Stepway vaut-elle le surcoÃ»t en occasion ?"}],["$","svg",null,{"className":"w-5 h-5 text-coral shrink-0 transition-transform duration-200 group-open:rotate-180","fill":"none","viewBox":"0 0 24 24","stroke":"currentColor","strokeWidth":2,"children":["$","path",null,{"strokeLinecap":"round","strokeLinejoin":"round","d":"M19 9l-7 7-7-7"}]}]]}],["$","div",null,{"className":"px-5 pb-5 text-foreground-muted leading-relaxed","children":"Oui, la Stepway reprÃ©sente 70% des ventes. Son look baroudeur et sa garde au sol Ã©levÃ©e facilitent la revente et offrent une position de conduite plus haute."}]]}],["$","details","3",{"className":"group border border-foreground/10 rounded-[var(--radius-lg)] overflow-hidden bg-surface","open":false,"children":["$L4d","$L4e"]}],"$L4f","$L50","$L51"]}]]}]}]
+29:["$","section",null,{"className":"py-12","children":["$","div",null,{"className":"\n        w-full mx-auto px-4 sm:px-6 lg:px-8\n        max-w-7xl\n        \n      ","children":[["$","h2",null,{"className":"\n        font-[family-name:var(--font-heading)]\n        font-bold tracking-tight\n        text-foreground\n        text-2xl md:text-3xl\n        \n        mb-8\n      ","children":["Autres cotes populaires chez ","Dacia"]}],["$","div",null,{"className":"grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3","children":[["$","$L7","dacia-duster",{"href":"/cote/dacia-duster","children":["$","div",null,{"className":"\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        h-full hover:border-coral/50 transition-colors cursor-pointer flex flex-col items-center text-center gap-2 py-4\n      ","children":[["$","div",null,{"className":"w-8 h-8 flex items-center justify-center","children":["$","$L2c",null,{"src":"/logos/brands/dacia.png","alt":"Dacia","width":32,"height":32,"className":"object-contain"}]}],["$","div",null,{"children":[["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-sm\n        font-semibold\n        text-foreground\n        text-foreground\n      ","children":"Duster"}],["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-xs\n        font-normal\n        text-foreground-muted\n        \n      ","children":"Voir la cote"}]]}]]}]}],["$","$L7","dacia-logan",{"href":"/cote/dacia-logan","children":["$","div",null,{"className":"\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        h-full hover:border-coral/50 transition-colors cursor-pointer flex flex-col items-center text-center gap-2 py-4\n      ","children":[["$","div",null,{"className":"w-8 h-8 flex items-center justify-center","children":["$","$L2c",null,{"src":"/logos/brands/dacia.png","alt":"Dacia","width":32,"height":32,"className":"object-contain"}]}],["$","div",null,{"children":[["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-sm\n        font-semibold\n        text-foreground\n        text-foreground\n      ","children":"Logan"}],["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-xs\n        font-normal\n        text-foreground-muted\n        \n      ","children":"Voir la cote"}]]}]]}]}],["$","$L7","dacia-spring",{"href":"/cote/dacia-spring","children":["$","div",null,{"className":"\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        h-full hover:border-coral/50 transition-colors cursor-pointer flex flex-col items-center text-center gap-2 py-4\n      ","children":[["$","div",null,{"className":"w-8 h-8 flex items-center justify-center","children":["$","$L2c",null,{"src":"/logos/brands/dacia.png","alt":"Dacia","width":32,"height":32,"className":"object-contain"}]}],["$","div",null,{"children":[["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-sm\n        font-semibold\n        text-foreground\n        text-foreground\n      ","children":"Spring"}],["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-xs\n        font-normal\n        text-foreground-muted\n        \n      ","children":"Voir la cote"}]]}]]}]}],["$","$L7","dacia-lodgy",{"href":"/cote/dacia-lodgy","children":["$","div",null,{"className":"\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        h-full hover:border-coral/50 transition-colors cursor-pointer flex flex-col items-center text-center gap-2 py-4\n      ","children":["$L52","$L53"]}]}],"$L54","$L55"]}]]}]}]
+1e:["$","$L15",null,{"children":["$","div",null,{"className":"\n        w-full mx-auto px-4 sm:px-6 lg:px-8\n        max-w-7xl\n        \n      ","children":["$","div",null,{"className":"flex items-center justify-between h-16","children":[["$","$L7",null,{"href":"/","children":["$","div",null,{"className":"flex items-center ","children":["$","span",null,{"className":"bg-clip-text text-transparent bg-gradient-to-r from-coral to-teal font-[family-name:var(--font-heading)] font-extrabold text-2xl tracking-tight","children":[["$","span",null,{"children":"Auto"}],["$","span",null,{"children":"Estim"}]]}]}]}],false,["$","div",null,{"className":"flex items-center gap-3","children":[["$","$L7",null,{"href":"/","className":"inline-flex items-center justify-center font-medium bg-coral text-white hover:bg-coral-dark transition-all duration-200 px-4 py-2 gap-1 text-sm font-medium rounded-[var(--radius-md)] ","children":[[["$","span",null,{"className":"sm:hidden","children":"Estimer"}],["$","span",null,{"className":"hidden sm:inline","children":["Estimer ma ","Dacia"," ","Sandero"]}]],["$","svg",null,{"className":"w-5 h-5","fill":"none","viewBox":"0 0 24 24","stroke":"currentColor","strokeWidth":2,"children":["$","path",null,{"strokeLinecap":"round","strokeLinejoin":"round","d":"M13 7l5 5m0 0l-5 5m5-5H6"}]}]]}],["$","$L16",null,{}]]}]]}]}]}]
+2d:["$","span",null,{"className":"text-lg font-bold text-coral font-heading","children":["1â¯800"," â¬"]}]
+2e:["$","span",null,{"className":"text-foreground-muted/50","children":"â"}]
+2f:["$","span",null,{"className":"text-lg font-bold text-coral font-heading","children":["5â¯200"," â¬"]}]
+30:["$","div","Sandero II",{"className":"flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 py-2 border-b border-foreground/5 last:border-b-0","children":[["$","div",null,{"className":"flex flex-col","children":[["$","span",null,{"className":"font-medium text-foreground","children":"Sandero II"}],["$","span",null,{"className":"text-xs text-foreground-muted","children":[2012," - ",2020]}]]}],["$","div",null,{"className":"flex items-center gap-2","children":[["$","span",null,{"className":"text-lg font-bold text-coral font-heading","children":["4â¯500"," â¬"]}],["$","span",null,{"className":"text-foreground-muted/50","children":"â"}],["$","span",null,{"className":"text-lg font-bold text-coral font-heading","children":["13â¯500"," â¬"]}]]}]]}]
+31:["$","div","Sandero III",{"className":"flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 py-2 border-b border-foreground/5 last:border-b-0","children":[["$","div",null,{"className":"flex flex-col","children":[["$","span",null,{"className":"font-medium text-foreground","children":"Sandero III"}],["$","span",null,{"className":"text-xs text-foreground-muted","children":[2021," - ","prÃ©sent"]}]]}],["$","div",null,{"className":"flex items-center gap-2","children":[["$","span",null,{"className":"text-lg font-bold text-coral font-heading","children":["10â¯500"," â¬"]}],["$","span",null,{"className":"text-foreground-muted/50","children":"â"}],["$","span",null,{"className":"text-lg font-bold text-coral font-heading","children":["21â¯500"," â¬"]}]]}]]}]
+32:["$","div",null,{"className":"flex items-center flex-wrap gap-x-4 gap-y-2 pt-4 border-t border-foreground/10","children":[["$","div",null,{"className":"flex items-center gap-1.5 text-teal","children":[["$","svg",null,{"className":"w-4 h-4","viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"children":["$","path",null,{"strokeLinecap":"round","strokeLinejoin":"round","d":"M5 12h14"}]}],["$","span",null,{"className":"text-sm font-medium","children":["Tendance 3 mois : ","stable"]}]]}],["$","div",null,{"className":"flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400","children":[["$","svg",null,{"className":"w-4 h-4","viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"children":["$","path",null,{"strokeLinecap":"round","strokeLinejoin":"round","d":"M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"}]}],["$","span",null,{"className":"text-sm font-medium","children":"DonnÃ©es fiables"}]]}]]}]
+33:["$","$L7",null,{"href":"/","className":"inline-flex items-center justify-center font-medium bg-coral text-white hover:bg-coral-dark transition-all duration-200 px-8 py-4 gap-2 text-lg font-semibold rounded-[var(--radius-lg)] ","children":[["$","span",null,{"children":["Estimer ma ","Dacia"," ","Sandero"]}],["$","svg",null,{"className":"w-5 h-5","fill":"none","viewBox":"0 0 24 24","stroke":"currentColor","strokeWidth":2,"children":["$","path",null,{"strokeLinecap":"round","strokeLinejoin":"round","d":"M13 7l5 5m0 0l-5 5m5-5H6"}]}]]}]
+34:[["$","div",null,{"className":"my-10 border-t border-foreground/10"}],["$","div",null,{"className":"space-y-4","children":[["$","p","0",{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-base\n        font-normal\n        text-foreground-muted\n        leading-relaxed\n      ","children":"La Dacia Sandero domine le segment des citadines polyvalentes en France, s'imposant face Ã  des rÃ©fÃ©rences comme la Renault Clio, la Peugeot 208 ou la Toyota Yaris. Pour un acheteur actuel, la troisiÃ¨me gÃ©nÃ©ration commercialisÃ©e depuis 2021 reprÃ©sente le meilleur compromis entre modernitÃ© et valeur rÃ©siduelle, avec des tarifs oscillant entre 10 500 â¬ et 21 500 â¬. La deuxiÃ¨me gÃ©nÃ©ration reste toutefois l'option la plus rationnelle pour les budgets serrÃ©s, offrant une robustesse Ã©prouvÃ©e pour un ticket d'entrÃ©e moyen de 6 500 â¬ sur les modÃ¨les restylÃ©s. Avec environ 3 850 annonces disponibles sur le marchÃ© de l'occasion, l'offre est abondante mais la demande reste extrÃªmement forte, stabilisant les prix Ã  des niveaux Ã©levÃ©s."}],["$","p","1",{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-base\n        font-normal\n        text-foreground-muted\n        leading-relaxed\n      ","children":"Le point de vigilance majeur concerne le moteur essence 1.2 TCe produit entre 2012 et 2016, particuliÃ¨rement sujet Ã  une surconsommation d'huile excessive pouvant mener Ã  une rupture de la chaÃ®ne de distribution ou une casse moteur totale avant le seuil des 100 000 kilomÃ¨tres. Sur les modÃ¨les plus rÃ©cents en version GPL Eco-G, il convient de vÃ©rifier le bon fonctionnement du capteur de pression de carburant, souvent dÃ©faillant sur les exemplaires de 2021 et 2022. Une attention particuliÃ¨re doit aussi Ãªtre portÃ©e Ã  l'Ã©tat de l'embrayage sur les versions SCe 75 utilisÃ©es majoritairement en milieu urbain, oÃ¹ des signes d'usure prÃ©maturÃ©e apparaissent parfois dÃ¨s 60 000 kilomÃ¨tres."}]]}]]
+35:["$","div",null,{"className":"text-xl font-bold text-foreground font-heading mb-2","children":2022}]
+36:["$","div",null,{"className":"text-coral font-semibold whitespace-nowrap","children":[["$","span",null,{"className":"text-sm","children":"12â¯580"}],["$","span",null,{"className":"text-foreground-muted/50 mx-1","children":"â"}],["$","span",null,{"className":"text-sm","children":["17â¯020"," â¬"]}]]}]
+37:["$","div","2021",{"className":"\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center shrink-0 min-w-35\n      ","style":{"scrollSnapAlign":"start"},"children":[["$","div",null,{"className":"text-xl font-bold text-foreground font-heading mb-2","children":2021}],["$","div",null,{"className":"text-coral font-semibold whitespace-nowrap","children":[["$","span",null,{"className":"text-sm","children":"11â¯220"}],["$","span",null,{"className":"text-foreground-muted/50 mx-1","children":"â"}],["$","span",null,{"className":"text-sm","children":["15â¯180"," â¬"]}]]}]]}]
+38:["$","div","2020",{"className":"\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center shrink-0 min-w-35\n      ","style":{"scrollSnapAlign":"start"},"children":[["$","div",null,{"className":"text-xl font-bold text-foreground font-heading mb-2","children":2020}],["$","div",null,{"className":"text-coral font-semibold whitespace-nowrap","children":[["$","span",null,{"className":"text-sm","children":"9â¯690"}],["$","span",null,{"className":"text-foreground-muted/50 mx-1","children":"â"}],["$","span",null,{"className":"text-sm","children":["13â¯110"," â¬"]}]]}]]}]
+39:["$","div","2019",{"className":"\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center shrink-0 min-w-35\n      ","style":{"scrollSnapAlign":"start"},"children":[["$","div",null,{"className":"text-xl font-bold text-foreground font-heading mb-2","children":2019}],["$","div",null,{"className":"text-coral font-semibold whitespace-nowrap","children":[["$","span",null,{"className":"text-sm","children":"8â¯670"}],["$","span",null,{"className":"text-foreground-muted/50 mx-1","children":"â"}],["$","span",null,{"className":"text-sm","children":["11â¯730"," â¬"]}]]}]]}]
+3a:["$","div","2018",{"className":"\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center shrink-0 min-w-35\n      ","style":{"scrollSnapAlign":"start"},"children":[["$","div",null,{"className":"text-xl font-bold text-foreground font-heading mb-2","children":2018}],["$","div",null,{"className":"text-coral font-semibold whitespace-nowrap","children":[["$","span",null,{"className":"text-sm","children":"7â¯905"}],["$","span",null,{"className":"text-foreground-muted/50 mx-1","children":"â"}],["$","span",null,{"className":"text-sm","children":["10â¯695"," â¬"]}]]}]]}]
+3b:["$","div","2017",{"className":"\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center shrink-0 min-w-35\n      ","style":{"scrollSnapAlign":"start"},"children":[["$","div",null,{"className":"text-xl font-bold text-foreground font-heading mb-2","children":2017}],["$","div",null,{"className":"text-coral font-semibold whitespace-nowrap","children":[["$","span",null,{"className":"text-sm","children":"7â¯140"}],["$","span",null,{"className":"text-foreground-muted/50 mx-1","children":"â"}],["$","span",null,{"className":"text-sm","children":["9â¯660"," â¬"]}]]}]]}]
+3c:["$","div","2016",{"className":"\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center shrink-0 min-w-35\n      ","style":{"scrollSnapAlign":"start"},"children":[["$","div",null,{"className":"text-xl font-bold text-foreground font-heading mb-2","children":2016}],["$","div",null,{"className":"text-coral font-semibold whitespace-nowrap","children":[["$","span",null,{"className":"text-sm","children":"6â¯460"}],["$","span",null,{"className":"text-foreground-muted/50 mx-1","children":"â"}],["$","span",null,{"className":"text-sm","children":["8â¯740"," â¬"]}]]}]]}]
+3d:["$","div","2015",{"className":"\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center shrink-0 min-w-35\n      ","style":{"scrollSnapAlign":"start"},"children":[["$","div",null,{"className":"text-xl font-bold text-foreground font-heading mb-2","children":2015}],["$","div",null,{"className":"text-coral font-semibold whitespace-nowrap","children":[["$","span",null,{"className":"text-sm","children":"5â¯695"}],["$","span",null,{"className":"text-foreground-muted/50 mx-1","children":"â"}],["$","span",null,{"className":"text-sm","children":["7â¯705"," â¬"]}]]}]]}]
+3e:["$","div","2014",{"className":"\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center shrink-0 min-w-35\n      ","style":{"scrollSnapAlign":"start"},"children":[["$","div",null,{"className":"text-xl font-bold text-foreground font-heading mb-2","children":2014}],["$","div",null,{"className":"text-coral font-semibold whitespace-nowrap","children":[["$","span",null,{"className":"text-sm","children":"5â¯015"}],["$","span",null,{"className":"text-foreground-muted/50 mx-1","children":"â"}],["$","span",null,{"className":"text-sm","children":["6â¯785"," â¬"]}]]}]]}]
+3f:["$","div","2013",{"className":"\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center shrink-0 min-w-35\n      ","style":{"scrollSnapAlign":"start"},"children":[["$","div",null,{"className":"text-xl font-bold text-foreground font-heading mb-2","children":2013}],["$","div",null,{"className":"text-coral font-semibold whitespace-nowrap","children":[["$","span",null,{"className":"text-sm","children":"4â¯420"}],["$","span",null,{"className":"text-foreground-muted/50 mx-1","children":"â"}],["$","span",null,{"className":"text-sm","children":["5â¯980"," â¬"]}]]}]]}]
+40:["$","div","2012",{"className":"\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center shrink-0 min-w-35\n      ","style":{"scrollSnapAlign":"start"},"children":[["$","div",null,{"className":"text-xl font-bold text-foreground font-heading mb-2","children":2012}],["$","div",null,{"className":"text-coral font-semibold whitespace-nowrap","children":[["$","span",null,{"className":"text-sm","children":"3â¯485"}],["$","span",null,{"className":"text-foreground-muted/50 mx-1","children":"â"}],["$","span",null,{"className":"text-sm","children":["4â¯715"," â¬"]}]]}]]}]
+41:["$","div","2011",{"className":"\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center shrink-0 min-w-35\n      ","style":{"scrollSnapAlign":"start"},"children":[["$","div",null,{"className":"text-xl font-bold text-foreground font-heading mb-2","children":2011}],["$","div",null,{"className":"text-coral font-semibold whitespace-nowrap","children":[["$","span",null,{"className":"text-sm","children":"2â¯890"}],["$","span",null,{"className":"text-foreground-muted/50 mx-1","children":"â"}],["$","span",null,{"className":"text-sm","children":["3â¯910"," â¬"]}]]}]]}]
+42:["$","div","2010",{"className":"\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center shrink-0 min-w-35\n      ","style":{"scrollSnapAlign":"start"},"children":[["$","div",null,{"className":"text-xl font-bold text-foreground font-heading mb-2","children":2010}],["$","div",null,{"className":"text-coral font-semibold whitespace-nowrap","children":[["$","span",null,{"className":"text-sm","children":"2â¯465"}],["$","span",null,{"className":"text-foreground-muted/50 mx-1","children":"â"}],["$","span",null,{"className":"text-sm","children":["3â¯335"," â¬"]}]]}]]}]
+43:["$","div","2009",{"className":"\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center shrink-0 min-w-35\n      ","style":{"scrollSnapAlign":"start"},"children":[["$","div",null,{"className":"text-xl font-bold text-foreground font-heading mb-2","children":2009}],["$","div",null,{"className":"text-coral font-semibold whitespace-nowrap","children":[["$","span",null,{"className":"text-sm","children":"2â¯125"}],["$","span",null,{"className":"text-foreground-muted/50 mx-1","children":"â"}],["$","span",null,{"className":"text-sm","children":["2â¯875"," â¬"]}]]}]]}]
+44:["$","div","2008",{"className":"\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center shrink-0 min-w-35\n      ","style":{"scrollSnapAlign":"start"},"children":[["$","div",null,{"className":"text-xl font-bold text-foreground font-heading mb-2","children":2008}],["$","div",null,{"className":"text-coral font-semibold whitespace-nowrap","children":[["$","span",null,{"className":"text-sm","children":"1â¯870"}],["$","span",null,{"className":"text-foreground-muted/50 mx-1","children":"â"}],["$","span",null,{"className":"text-sm","children":["2â¯530"," â¬"]}]]}]]}]
+45:["$","div",null,{"className":"hidden sm:grid sm:grid-cols-3 lg:grid-cols-5 gap-3","children":[["$","div","2026",{"className":"\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center\n      ","children":[["$","div",null,{"className":"text-xl font-bold text-foreground font-heading mb-2","children":2026}],["$","div",null,{"className":"text-sm text-coral font-semibold","children":["17â¯170"," â ","23â¯230"," â¬"]}]]}],["$","div","2025",{"className":"\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center\n      ","children":[["$","div",null,{"className":"text-xl font-bold text-foreground font-heading mb-2","children":2025}],["$","div",null,{"className":"text-sm text-coral font-semibold","children":["16â¯065"," â ","21â¯735"," â¬"]}]]}],["$","div","2024",{"className":"\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center\n      ","children":[["$","div",null,{"className":"text-xl font-bold text-foreground font-heading mb-2","children":2024}],["$","div",null,{"className":"text-sm text-coral font-semibold","children":["14â¯790"," â ","20â¯010"," â¬"]}]]}],["$","div","2023",{"className":"\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center\n      ","children":[["$","div",null,{"className":"text-xl font-bold text-foreground font-heading mb-2","children":2023}],["$","div",null,{"className":"text-sm text-coral font-semibold","children":["13â¯685"," â ","18â¯515"," â¬"]}]]}],["$","div","2022",{"className":"\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center\n      ","children":[["$","div",null,{"className":"text-xl font-bold text-foreground font-heading mb-2","children":2022}],["$","div",null,{"className":"text-sm text-coral font-semibold","children":["12â¯580"," â ","17â¯020"," â¬"]}]]}],["$","div","2021",{"className":"\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center\n      ","children":[["$","div",null,{"className":"text-xl font-bold text-foreground font-heading mb-2","children":2021}],["$","div",null,{"className":"text-sm text-coral font-semibold","children":["11â¯220"," â ","15â¯180"," â¬"]}]]}],["$","div","2020",{"className":"\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center\n      ","children":[["$","div",null,{"className":"text-xl font-bold text-foreground font-heading mb-2","children":2020}],["$","div",null,{"className":"text-sm text-coral font-semibold","children":["9â¯690"," â ","13â¯110"," â¬"]}]]}],["$","div","2019",{"className":"\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center\n      ","children":[["$","div",null,{"className":"text-xl font-bold text-foreground font-heading mb-2","children":2019}],["$","div",null,{"className":"text-sm text-coral font-semibold","children":["8â¯670"," â ","11â¯730"," â¬"]}]]}],["$","div","2018",{"className":"\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center\n      ","children":["$L56","$L57"]}],"$L58","$L59","$L5a","$L5b","$L5c","$L5d","$L5e","$L5f","$L60","$L61"]}]
+47:["$","div",null,{"className":"h-2 bg-foreground/10 rounded-full overflow-hidden","children":["$","div",null,{"className":"h-full bg-coral rounded-full transition-all duration-500","style":{"width":"5%"}}]}]
+48:["$","li","Motorisation GPL Eco-G trÃ¨s Ã©conomique Ã  l'usage",{"className":"flex items-start gap-2.5","children":[["$","svg",null,{"className":"w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5","viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2.5,"children":["$","path",null,{"strokeLinecap":"round","strokeLinejoin":"round","d":"M5 13l4 4L19 7"}]}],["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-sm\n        font-normal\n        text-foreground-muted\n        \n      ","children":"Motorisation GPL Eco-G trÃ¨s Ã©conomique Ã  l'usage"}]]}]
+49:["$","div",null,{"className":"\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    border border-foreground/10\n  \n        p-6\n        \n      ","children":[["$","h3",null,{"className":"\n        font-[family-name:var(--font-heading)]\n        font-bold tracking-tight\n        text-foreground\n        text-xl md:text-2xl\n        \n        mb-4 flex items-center gap-2\n      ","children":[["$","span",null,{"className":"text-coral","children":"-"}],"Les - de la ","Sandero"]}],["$","ul",null,{"className":"space-y-2.5","children":[["$","li","Insonorisation lÃ©gÃ¨re, surtout sur autoroute",{"className":"flex items-start gap-2.5","children":[["$","svg",null,{"className":"w-4 h-4 text-coral shrink-0 mt-0.5","viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2.5,"children":["$","path",null,{"strokeLinecap":"round","strokeLinejoin":"round","d":"M6 18L18 6M6 6l12 12"}]}],["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-sm\n        font-normal\n        text-foreground-muted\n        \n      ","children":"Insonorisation lÃ©gÃ¨re, surtout sur autoroute"}]]}],["$","li","QualitÃ© des plastiques intÃ©rieurs basique et rigide",{"className":"flex items-start gap-2.5","children":[["$","svg",null,{"className":"w-4 h-4 text-coral shrink-0 mt-0.5","viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2.5,"children":["$","path",null,{"strokeLinecap":"round","strokeLinejoin":"round","d":"M6 18L18 6M6 6l12 12"}]}],["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-sm\n        font-normal\n        text-foreground-muted\n        \n      ","children":"QualitÃ© des plastiques intÃ©rieurs basique et rigide"}]]}],["$","li","Ãquipements de sÃ©curitÃ© active limitÃ©s sur les finitions d'entrÃ©e",{"className":"flex items-start gap-2.5","children":[["$","svg",null,{"className":"w-4 h-4 text-coral shrink-0 mt-0.5","viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2.5,"children":["$","path",null,{"strokeLinecap":"round","strokeLinejoin":"round","d":"M6 18L18 6M6 6l12 12"}]}],["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-sm\n        font-normal\n        text-foreground-muted\n        \n      ","children":"Ãquipements de sÃ©curitÃ© active limitÃ©s sur les finitions d'entrÃ©e"}]]}],["$","li","Confort de suspension ferme sur les versions Stepway",{"className":"flex items-start gap-2.5","children":[["$","svg",null,{"className":"w-4 h-4 text-coral shrink-0 mt-0.5","viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2.5,"children":["$","path",null,{"strokeLinecap":"round","strokeLinejoin":"round","d":"M6 18L18 6M6 6l12 12"}]}],["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-sm\n        font-normal\n        text-foreground-muted\n        \n      ","children":"Confort de suspension ferme sur les versions Stepway"}]]}],["$","li","Moteur SCe 65 trop juste pour un usage polyvalent",{"className":"flex items-start gap-2.5","children":[["$","svg",null,{"className":"w-4 h-4 text-coral shrink-0 mt-0.5","viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2.5,"children":["$","path",null,{"strokeLinecap":"round","strokeLinejoin":"round","d":"M6 18L18 6M6 6l12 12"}]}],["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-sm\n        font-normal\n        text-foreground-muted\n        \n      ","children":"Moteur SCe 65 trop juste pour un usage polyvalent"}]]}]]}]]}]
+4a:["$","div",null,{"className":"mt-8","children":["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-base\n        font-normal\n        text-foreground-muted\n        leading-relaxed\n      ","children":"Les propriÃ©taires de la Dacia Sandero louent quasi unanimement son rapport prix-prestations imbattable et sa simplicitÃ© d'usage au quotidien. La fiabilitÃ© mÃ©canique globale, notamment sur les blocs atmosphÃ©riques SCe et le rÃ©cent Eco-G, est rÃ©guliÃ¨rement citÃ©e comme un atout majeur, tout comme l'habitabilitÃ© gÃ©nÃ©reuse pour le segment. Cependant, le reproche rÃ©current concerne l'insonorisation, jugÃ©e insuffisante sur autoroute avec des bruits d'air prononcÃ©s dÃ¨s 110 km/h, ainsi qu'une finition intÃ©rieure faisant la part belle aux plastiques durs sensibles aux rayures. La boÃ®te de vitesses manuelle est parfois critiquÃ©e pour son guidage accrocheur sur les premiers rapports. C'est un choix pragmatique dont la polyvalence compense largement un confort acoustique en retrait."}]}]
+4b:["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-xs\n        font-normal\n        text-foreground\n        text-coral font-semibold\n      ","children":"Voir la cote â"}]
+4c:["$","$L7","peugeot-208",{"href":"/cote/peugeot-208","children":["$","div",null,{"className":"\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-6\n        h-full hover:border-coral/50 transition-colors cursor-pointer flex flex-col items-center text-center gap-3 py-6\n      ","children":[["$","div",null,{"className":"w-10 h-10 flex items-center justify-center","children":["$","$L2c",null,{"src":"/logos/brands/peugeot.png","alt":"Peugeot","width":40,"height":40,"className":"object-contain"}]}],["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-base\n        font-semibold\n        text-foreground\n        text-foreground\n      ","children":["Peugeot"," ","208"]}],["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-sm\n        font-normal\n        text-foreground\n        text-coral font-semibold\n      ","children":["3â¯500"," â ","33â¯000"," â¬"]}],["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-sm\n        font-normal\n        text-foreground-muted\n        mt-auto\n      ","children":"DÃ©cote moyenne aprÃ¨s 3 ans : 42% contre 28% pour la Sandero"}],["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-xs\n        font-normal\n        text-foreground\n        text-coral font-semibold\n      ","children":"Voir la cote â"}]]}]}]
+4d:["$","summary",null,{"className":"w-full flex items-center justify-between p-5 text-left hover:bg-foreground/[0.02] transition-colors cursor-pointer list-none [&::-webkit-details-marker]:hidden","children":[["$","span",null,{"className":"font-[family-name:var(--font-heading)] font-semibold text-foreground pr-4","children":"Le moteur GPL (Eco-G 100) est-il fiable ?"}],["$","svg",null,{"className":"w-5 h-5 text-coral shrink-0 transition-transform duration-200 group-open:rotate-180","fill":"none","viewBox":"0 0 24 24","stroke":"currentColor","strokeWidth":2,"children":["$","path",null,{"strokeLinecap":"round","strokeLinejoin":"round","d":"M19 9l-7 7-7-7"}]}]]}]
+4e:["$","div",null,{"className":"px-5 pb-5 text-foreground-muted leading-relaxed","children":"TrÃ¨s fiable. C'est une installation d'usine parfaitement intÃ©grÃ©e. Il permet de rÃ©duire le budget carburant de 30 Ã  40% par rapport Ã  l'essence."}]
+4f:["$","details","4",{"className":"group border border-foreground/10 rounded-[var(--radius-lg)] overflow-hidden bg-surface","open":false,"children":[["$","summary",null,{"className":"w-full flex items-center justify-between p-5 text-left hover:bg-foreground/[0.02] transition-colors cursor-pointer list-none [&::-webkit-details-marker]:hidden","children":[["$","span",null,{"className":"font-[family-name:var(--font-heading)] font-semibold text-foreground pr-4","children":"Quelle gÃ©nÃ©ration choisir pour un budget de 8 000 â¬ ?"}],["$","svg",null,{"className":"w-5 h-5 text-coral shrink-0 transition-transform duration-200 group-open:rotate-180","fill":"none","viewBox":"0 0 24 24","stroke":"currentColor","strokeWidth":2,"children":["$","path",null,{"strokeLinecap":"round","strokeLinejoin":"round","d":"M19 9l-7 7-7-7"}]}]]}],["$","div",null,{"className":"px-5 pb-5 text-foreground-muted leading-relaxed","children":"Ã ce prix, privilÃ©giez une Sandero II restylÃ©e (aprÃ¨s 2016) en finition Stepway avec le moteur TCe 90, offrant un bon compromis modernitÃ©/prix."}]]}]
+50:["$","details","5",{"className":"group border border-foreground/10 rounded-[var(--radius-lg)] overflow-hidden bg-surface","open":false,"children":[["$","summary",null,{"className":"w-full flex items-center justify-between p-5 text-left hover:bg-foreground/[0.02] transition-colors cursor-pointer list-none [&::-webkit-details-marker]:hidden","children":[["$","span",null,{"className":"font-[family-name:var(--font-heading)] font-semibold text-foreground pr-4","children":"Pourquoi la Sandero III n'a-t-elle que 2 Ã©toiles au crash-test Euro NCAP ?"}],["$","svg",null,{"className":"w-5 h-5 text-coral shrink-0 transition-transform duration-200 group-open:rotate-180","fill":"none","viewBox":"0 0 24 24","stroke":"currentColor","strokeWidth":2,"children":["$","path",null,{"strokeLinecap":"round","strokeLinejoin":"round","d":"M19 9l-7 7-7-7"}]}]]}],["$","div",null,{"className":"px-5 pb-5 text-foreground-muted leading-relaxed","children":"Ce score s'explique par l'absence de certains Ã©quipements de sÃ©curitÃ© Ã©lectronique sophistiquÃ©s, mais la protection structurelle des occupants reste de bon niveau."}]]}]
+51:["$","details","6",{"className":"group border border-foreground/10 rounded-[var(--radius-lg)] overflow-hidden bg-surface","open":false,"children":[["$","summary",null,{"className":"w-full flex items-center justify-between p-5 text-left hover:bg-foreground/[0.02] transition-colors cursor-pointer list-none [&::-webkit-details-marker]:hidden","children":[["$","span",null,{"className":"font-[family-name:var(--font-heading)] font-semibold text-foreground pr-4","children":"Le moteur essence SCe 65 est-il suffisant ?"}],["$","svg",null,{"className":"w-5 h-5 text-coral shrink-0 transition-transform duration-200 group-open:rotate-180","fill":"none","viewBox":"0 0 24 24","stroke":"currentColor","strokeWidth":2,"children":["$","path",null,{"strokeLinecap":"round","strokeLinejoin":"round","d":"M19 9l-7 7-7-7"}]}]]}],["$","div",null,{"className":"px-5 pb-5 text-foreground-muted leading-relaxed","children":"Ce moteur atmosphÃ©rique est rÃ©servÃ© Ã  un usage strictement urbain. Pour de la route ou de l'autoroute, le TCe 90 ou l'Eco-G 100 sont vivement recommandÃ©s."}]]}]
+52:["$","div",null,{"className":"w-8 h-8 flex items-center justify-center","children":["$","$L2c",null,{"src":"/logos/brands/dacia.png","alt":"Dacia","width":32,"height":32,"className":"object-contain"}]}]
+53:["$","div",null,{"children":[["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-sm\n        font-semibold\n        text-foreground\n        text-foreground\n      ","children":"Lodgy"}],["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-xs\n        font-normal\n        text-foreground-muted\n        \n      ","children":"Voir la cote"}]]}]
+54:["$","$L7","dacia-jogger",{"href":"/cote/dacia-jogger","children":["$","div",null,{"className":"\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        h-full hover:border-coral/50 transition-colors cursor-pointer flex flex-col items-center text-center gap-2 py-4\n      ","children":[["$","div",null,{"className":"w-8 h-8 flex items-center justify-center","children":["$","$L2c",null,{"src":"/logos/brands/dacia.png","alt":"Dacia","width":32,"height":32,"className":"object-contain"}]}],["$","div",null,{"children":[["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-sm\n        font-semibold\n        text-foreground\n        text-foreground\n      ","children":"Jogger"}],["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-xs\n        font-normal\n        text-foreground-muted\n        \n      ","children":"Voir la cote"}]]}]]}]}]
+55:["$","$L7","dacia-bigster",{"href":"/cote/dacia-bigster","children":["$","div",null,{"className":"\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        h-full hover:border-coral/50 transition-colors cursor-pointer flex flex-col items-center text-center gap-2 py-4\n      ","children":[["$","div",null,{"className":"w-8 h-8 flex items-center justify-center","children":["$","$L2c",null,{"src":"/logos/brands/dacia.png","alt":"Dacia","width":32,"height":32,"className":"object-contain"}]}],["$","div",null,{"children":[["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-sm\n        font-semibold\n        text-foreground\n        text-foreground\n      ","children":"Bigster"}],["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-xs\n        font-normal\n        text-foreground-muted\n        \n      ","children":"Voir la cote"}]]}]]}]}]
+2a:["$","footer",null,{"className":"py-12 bg-background-alt border-t border-foreground/5","children":["$","div",null,{"className":"\n        w-full mx-auto px-4 sm:px-6 lg:px-8\n        max-w-7xl\n        \n      ","children":[["$","div",null,{"className":"grid grid-cols-1 md:grid-cols-4 gap-8 mb-8","children":[["$","div",null,{"children":[["$","div",null,{"className":"flex items-center mb-3","children":["$","span",null,{"className":"bg-clip-text text-transparent bg-gradient-to-r from-coral to-teal font-[family-name:var(--font-heading)] font-extrabold text-xl tracking-tight","children":[["$","span",null,{"children":"Auto"}],["$","span",null,{"children":"Estim"}]]}]}],["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-sm\n        font-normal\n        text-foreground-muted\n        \n      ","children":"Estimation gratuite et instantanÃ©e de la valeur de votre voiture d'occasion en France."}]]}],["$","div",null,{"children":[["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-sm\n        font-semibold\n        text-foreground\n        mb-3\n      ","children":"Service"}],["$","nav",null,{"aria-label":"Service","className":"flex flex-col gap-2","children":[["$","$L7",null,{"href":"/","className":"text-sm text-foreground-muted hover:text-foreground transition-colors","children":"Estimation gratuite"}],["$","$L7",null,{"href":"/cote","className":"text-sm text-foreground-muted hover:text-foreground transition-colors","children":"Toutes les cotes"}],["$","$L7",null,{"href":"/guides","className":"text-sm text-foreground-muted hover:text-foreground transition-colors","children":"Guides"}],["$","$L7",null,{"href":"/contact","className":"text-sm text-foreground-muted hover:text-foreground transition-colors","children":"Contact"}]]}]]}],["$","div",null,{"children":[["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-sm\n        font-semibold\n        text-foreground\n        mb-3\n      ","children":"Marques populaires"}],["$","nav",null,{"aria-label":"Marques populaires","className":"flex flex-col gap-2","children":[["$","$L7","renault",{"href":"/estimation/renault","className":"text-sm text-foreground-muted hover:text-foreground transition-colors","children":"Renault"}],["$","$L7","peugeot",{"href":"/estimation/peugeot","className":"text-sm text-foreground-muted hover:text-foreground transition-colors","children":"Peugeot"}],["$","$L7","citroen",{"href":"/estimation/citroen","className":"text-sm text-foreground-muted hover:text-foreground transition-colors","children":"CitroÃ«n"}],["$","$L7","volkswagen",{"href":"/estimation/volkswagen","className":"text-sm text-foreground-muted hover:text-foreground transition-colors","children":"Volkswagen"}],["$","$L7","bmw",{"href":"/estimation/bmw","className":"text-sm text-foreground-muted hover:text-foreground transition-colors","children":"BMW"}],["$","$L7","mercedes-benz",{"href":"/estimation/mercedes-benz","className":"text-sm text-foreground-muted hover:text-foreground transition-colors","children":"Mercedes-Benz"}]]}]]}],["$","div",null,{"children":[["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-sm\n        font-semibold\n        text-foreground\n        mb-3\n      ","children":"Informations"}],["$","nav",null,{"aria-label":"Informations","className":"flex flex-col gap-2","children":[["$","$L7",null,{"href":"/mentions-legales","className":"text-sm text-foreground-muted hover:text-foreground transition-colors","children":"Mentions lÃ©gales"}],["$","$L7",null,{"href":"/politique-de-confidentialite","className":"text-sm text-foreground-muted hover:text-foreground transition-colors","children":"Politique de confidentialitÃ©"}],["$","$L7",null,{"href":"/conditions-generales","className":"text-sm text-foreground-muted hover:text-foreground transition-colors","children":"CGU"}]]}]]}]]}],"$L62"]}]}]
+56:["$","div",null,{"className":"text-xl font-bold text-foreground font-heading mb-2","children":2018}]
+57:["$","div",null,{"className":"text-sm text-coral font-semibold","children":["7â¯905"," â ","10â¯695"," â¬"]}]
+58:["$","div","2017",{"className":"\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center\n      ","children":[["$","div",null,{"className":"text-xl font-bold text-foreground font-heading mb-2","children":2017}],["$","div",null,{"className":"text-sm text-coral font-semibold","children":["7â¯140"," â ","9â¯660"," â¬"]}]]}]
+59:["$","div","2016",{"className":"\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center\n      ","children":[["$","div",null,{"className":"text-xl font-bold text-foreground font-heading mb-2","children":2016}],["$","div",null,{"className":"text-sm text-coral font-semibold","children":["6â¯460"," â ","8â¯740"," â¬"]}]]}]
+5a:["$","div","2015",{"className":"\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center\n      ","children":[["$","div",null,{"className":"text-xl font-bold text-foreground font-heading mb-2","children":2015}],["$","div",null,{"className":"text-sm text-coral font-semibold","children":["5â¯695"," â ","7â¯705"," â¬"]}]]}]
+5b:["$","div","2014",{"className":"\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center\n      ","children":[["$","div",null,{"className":"text-xl font-bold text-foreground font-heading mb-2","children":2014}],["$","div",null,{"className":"text-sm text-coral font-semibold","children":["5â¯015"," â ","6â¯785"," â¬"]}]]}]
+5c:["$","div","2013",{"className":"\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center\n      ","children":[["$","div",null,{"className":"text-xl font-bold text-foreground font-heading mb-2","children":2013}],["$","div",null,{"className":"text-sm text-coral font-semibold","children":["4â¯420"," â ","5â¯980"," â¬"]}]]}]
+5d:["$","div","2012",{"className":"\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center\n      ","children":[["$","div",null,{"className":"text-xl font-bold text-foreground font-heading mb-2","children":2012}],["$","div",null,{"className":"text-sm text-coral font-semibold","children":["3â¯485"," â ","4â¯715"," â¬"]}]]}]
+5e:["$","div","2011",{"className":"\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center\n      ","children":[["$","div",null,{"className":"text-xl font-bold text-foreground font-heading mb-2","children":2011}],["$","div",null,{"className":"text-sm text-coral font-semibold","children":["2â¯890"," â ","3â¯910"," â¬"]}]]}]
+5f:["$","div","2010",{"className":"\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center\n      ","children":[["$","div",null,{"className":"text-xl font-bold text-foreground font-heading mb-2","children":2010}],["$","div",null,{"className":"text-sm text-coral font-semibold","children":["2â¯465"," â ","3â¯335"," â¬"]}]]}]
+60:["$","div","2009",{"className":"\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center\n      ","children":[["$","div",null,{"className":"text-xl font-bold text-foreground font-heading mb-2","children":2009}],["$","div",null,{"className":"text-sm text-coral font-semibold","children":["2â¯125"," â ","2â¯875"," â¬"]}]]}]
+61:["$","div","2008",{"className":"\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center\n      ","children":[["$","div",null,{"className":"text-xl font-bold text-foreground font-heading mb-2","children":2008}],["$","div",null,{"className":"text-sm text-coral font-semibold","children":["1â¯870"," â ","2â¯530"," â¬"]}]]}]
+62:["$","div",null,{"className":"border-t border-foreground/5 pt-6 flex items-center justify-between","children":[["$","p",null,{"className":"\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-sm\n        font-normal\n        text-foreground-muted\n        \n      ","children":"Â© 2026 AutoEstim. Tous droits rÃ©servÃ©s."}],["$","a",null,{"href":"https://www.facebook.com/profile.php?id=61587632453064","target":"_blank","rel":"noopener noreferrer","aria-label":"Facebook","className":"text-foreground-muted hover:text-foreground transition-colors","children":["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","width":"20","height":"20","viewBox":"0 0 24 24","fill":"currentColor","children":["$","path",null,{"d":"M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"}]}]}]]}]
+
+
+
+=== CHUNKS JSON PURS ===
+
+Chunk 0:
+{
+  "P": null,
+  "b": "i6p67BUkpGt2oK8lTUFZe",
+  "c": [
+    "",
+    "cote",
+    "dacia-sandero"
+  ],
+  "q": "",
+  "i": false,
+  "f": [
+    [
+      [
+        "",
+        {
+          "children": [
+            "cote",
+            {
+              "children": [
+                [
+                  "slug",
+                  "dacia-sandero",
+                  "d"
+                ],
+                {
+                  "children": [
+                    "__PAGE__",
+                    {}
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "$undefined",
+        "$undefined",
+        true
+      ],
+      [
+        [
+          "$",
+          "$1",
+          "c",
+          {
+            "children": [
+              [
+                [
+                  "$",
+                  "link",
+                  "0",
+                  {
+                    "rel": "stylesheet",
+                    "href": "/_next/static/chunks/705497ceae18ad2f.css",
+
+---
+Chunk 8:
+[
+  "$",
+  "$L7",
+  null,
+  {
+    "href": "/guides",
+    "className": "inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-[var(--radius-md)] border border-foreground/10 text-foreground hover:bg-surface transition-all duration-200",
+    "children": "Consulter nos guides"
+  }
+]
+---
+Chunk a:
+[
+  "$",
+  "$1",
+  "c",
+  {
+    "children": [
+      "$Ld",
+      [
+        [
+          "$",
+          "script",
+          "script-0",
+          {
+            "src": "/_next/static/chunks/d93c4165f3ffce48.js",
+            "async": true,
+            "nonce": "$undefined"
+          }
+        ],
+        [
+          "$",
+          "script",
+          "script-1",
+          {
+            "src": "/_next/static/chunks/22abcb73df6c28a4.js",
+            "async": true,
+            "nonce": "$undefined"
+          }
+        ]
+      ],
+      [
+        "$",
+        "$Le",
+        null,
+        {
+          "children": [
+            "$",
+            "$f",
+            null,
+            {
+              "name": "Next.MetadataOutlet",
+              "children": "$@10"
+            }
+          ]
+        }
+      ]
+    ]
+  }
+]
+---
+Chunk b:
+[
+  "$",
+  "$1",
+  "h",
+  {
+    "children": [
+      null,
+      [
+        "$",
+        "$L11",
+        null,
+        {
+          "children": "$L12"
+        }
+      ],
+      [
+        "$",
+        "div",
+        null,
+        {
+          "hidden": true,
+          "children": [
+            "$",
+            "$L13",
+            null,
+            {
+              "children": [
+                "$",
+                "$f",
+                null,
+                {
+                  "name": "Next.Metadata",
+                  "children": "$L14"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      [
+        "$",
+        "meta",
+        null,
+        {
+          "name": "next-size-adjust",
+          "content": ""
+        }
+      ]
+    ]
+  }
+]
+---
+Chunk 6:
+[
+  "$",
+  "$L15",
+  null,
+  {
+    "children": [
+      "$",
+      "div",
+      null,
+      {
+        "className": "\n        w-full mx-auto px-4 sm:px-6 lg:px-8\n        max-w-7xl\n        \n      ",
+        "children": [
+          "$",
+          "div",
+          null,
+          {
+            "className": "flex items-center justify-between h-16",
+            "children": [
+              [
+                "$",
+                "$L7",
+                null,
+                {
+                  "href": "/",
+                  "children": [
+                    "$",
+                    "div",
+                    null,
+                    {
+                      "className": "flex items-center ",
+                      "children": [
+                        "$",
+                        "span",
+                        null,
+                        {
+                          "className": "bg-clip-text text-transparent bg-gradient-to-r from-coral to-teal font-[family-name:var(--font-heading)] font-ex
+---
+Chunk 9:
+[
+  "$",
+  "footer",
+  null,
+  {
+    "className": "py-12 bg-background-alt border-t border-foreground/5",
+    "children": [
+      "$",
+      "div",
+      null,
+      {
+        "className": "\n        w-full mx-auto px-4 sm:px-6 lg:px-8\n        max-w-7xl\n        \n      ",
+        "children": [
+          [
+            "$",
+            "div",
+            null,
+            {
+              "className": "grid grid-cols-1 md:grid-cols-4 gap-8 mb-8",
+              "children": [
+                [
+                  "$",
+                  "div",
+                  null,
+                  {
+                    "children": [
+                      [
+                        "$",
+                        "div",
+                        null,
+                        {
+                          "className": "flex items-center mb-3",
+                          "children": [
+                            "$",
+                            "span",
+                            null,
+                            {
+
+---
+Chunk 2:
+[
+  "$",
+  "$L18",
+  null,
+  {
+    "formats": "$undefined",
+    "locale": "fr",
+    "messages": {
+      "metadata": {
+        "title": "AutoEstim - Estimations instantanÃ©es de votre vÃ©hicule",
+        "description": "Obtenez des estimations prÃ©cises et instantanÃ©es de la valeur de votre voiture. Que vous achetiez, vendiez ou soyez simplement curieux, AutoEstim vous aide Ã  prendre des dÃ©cisions Ã©clairÃ©es.",
+        "ogImageAlt": "AutoEstim - Service d'estimation automobile en France",
+        "reportTitle": "Estimation {brand} {model} {year}",
+        "reportDescription": "Estimation de la valeur d'une {brand} {model} {year} avec {mileage} km. Prix recommandÃ© : {minPrice} â¬ - {maxPrice} â¬."
+      },
+      "common": {
+        "getStarted": "Commencer",
+        "getFreeEstimate": "Estimation gratuite",
+        "getMyEstimate": "Obtenir mon estimation",
+        "newEstimate": "Nouvelle estimation",
+        "createNewEstimate": "CrÃ©er une nouvelle estimation",
+        "copyrig
+---
+Chunk 1a:
+[
+  "$",
+  "$L1c",
+  null,
+  {}
+]
+---
+Chunk 12:
+[
+  [
+    "$",
+    "meta",
+    "0",
+    {
+      "charSet": "utf-8"
+    }
+  ],
+  [
+    "$",
+    "meta",
+    "1",
+    {
+      "name": "viewport",
+      "content": "width=device-width, initial-scale=1"
+    }
+  ]
+]
+---
+Chunk 14:
+[
+  [
+    "$",
+    "title",
+    "0",
+    {
+      "children": "Prix occasion Dacia Sandero : cote et estimation 2026"
+    }
+  ],
+  [
+    "$",
+    "meta",
+    "1",
+    {
+      "name": "description",
+      "content": "Prix occasion Dacia Sandero : fourchette 1â¯800 â 21â¯500 â¬ selon la gÃ©nÃ©ration. Cote actualisÃ©e, avec conseils d'achat et de revente."
+    }
+  ],
+  [
+    "$",
+    "link",
+    "2",
+    {
+      "rel": "manifest",
+      "href": "/site.webmanifest",
+      "crossOrigin": "$undefined"
+    }
+  ],
+  [
+    "$",
+    "meta",
+    "3",
+    {
+      "name": "robots",
+      "content": "index, follow"
+    }
+  ],
+  [
+    "$",
+    "meta",
+    "4",
+    {
+      "name": "googlebot",
+      "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+    }
+  ],
+  [
+    "$",
+    "link",
+    "5",
+    {
+      "rel": "canonical",
+      "href": "https://www.autoestim.com/cote/dacia-sandero"
+    }
+  ],
+  [
+    "$",
+    "meta",
+    "6",
+    {
+      "property": "og:ti
+---
+Chunk 1f:
+[
+  "$",
+  "div",
+  null,
+  {
+    "className": "absolute top-10 right-0 w-72 h-72 bg-gradient-to-br from-teal/20 to-teal/5 dark:from-teal/10 dark:to-teal/5 rounded-full blur-3xl"
+  }
+]
+---
+Chunk 20:
+[
+  "$",
+  "div",
+  null,
+  {
+    "className": "\n        w-full mx-auto px-4 sm:px-6 lg:px-8\n        max-w-7xl\n        relative\n      ",
+    "children": [
+      [
+        "$",
+        "nav",
+        null,
+        {
+          "className": "flex items-center gap-2 text-sm mb-8 overflow-hidden",
+          "children": [
+            [
+              "$",
+              "$L7",
+              null,
+              {
+                "href": "/",
+                "className": "text-foreground-muted hover:text-coral transition-colors shrink-0",
+                "children": "Accueil"
+              }
+            ],
+            [
+              "$",
+              "span",
+              null,
+              {
+                "className": "text-foreground-muted shrink-0",
+                "children": "/"
+              }
+            ],
+            [
+              "$",
+              "$L7",
+              null,
+              {
+                "href": "/cote",
+                "className": "text-foreground-muted
+---
+Chunk 21:
+[
+  "$",
+  "section",
+  null,
+  {
+    "className": "py-12 bg-background-alt",
+    "children": [
+      "$",
+      "div",
+      null,
+      {
+        "className": "\n        w-full mx-auto px-4 sm:px-6 lg:px-8\n        max-w-7xl\n        \n      ",
+        "children": [
+          [
+            "$",
+            "h2",
+            null,
+            {
+              "className": "\n        font-[family-name:var(--font-heading)]\n        font-bold tracking-tight\n        text-foreground\n        text-2xl md:text-3xl\n        \n        mb-4\n      ",
+              "children": [
+                "Prix d'une ",
+                "Dacia",
+                " ",
+                "Sandero",
+                " selon l'annÃ©e"
+              ]
+            }
+          ],
+          [
+            "$",
+            "p",
+            null,
+            {
+              "className": "\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-base\n        font-normal\n        text-foreground-m
+---
+Chunk 22:
+[
+  "$",
+  "$L46",
+  null,
+  {
+    "brandName": "Dacia",
+    "modelName": "Sandero",
+    "pricesByYear": [
+      {
+        "year": 2026,
+        "priceMin": 17170,
+        "priceMax": 23230,
+        "avgPrice": 20200,
+        "confidence": 100
+      },
+      {
+        "year": 2025,
+        "priceMin": 16065,
+        "priceMax": 21735,
+        "avgPrice": 18900,
+        "confidence": 100
+      },
+      {
+        "year": 2024,
+        "priceMin": 14790,
+        "priceMax": 20010,
+        "avgPrice": 17400,
+        "confidence": 100
+      },
+      {
+        "year": 2023,
+        "priceMin": 13685,
+        "priceMax": 18515,
+        "avgPrice": 16100,
+        "confidence": 100
+      },
+      {
+        "year": 2022,
+        "priceMin": 12580,
+        "priceMax": 17020,
+        "avgPrice": 14800,
+        "confidence": 100
+      },
+      {
+        "year": 2021,
+        "priceMin": 11220,
+        "priceMax": 15180,
+        "avgPrice": 13200,
+        "confidence": 100
+      },
+      {
+        "
+---
+Chunk 23:
+[
+  "$",
+  "section",
+  null,
+  {
+    "className": "py-12 bg-background-alt",
+    "children": [
+      "$",
+      "div",
+      null,
+      {
+        "className": "\n        w-full mx-auto px-4 sm:px-6 lg:px-8\n        max-w-7xl\n        \n      ",
+        "children": [
+          [
+            "$",
+            "h2",
+            null,
+            {
+              "className": "\n        font-[family-name:var(--font-heading)]\n        font-bold tracking-tight\n        text-foreground\n        text-2xl md:text-3xl\n        \n        mb-4\n      ",
+              "children": [
+                "Motorisations de la ",
+                "Dacia",
+                " ",
+                "Sandero",
+                " d'occasion"
+              ]
+            }
+          ],
+          [
+            "$",
+            "p",
+            null,
+            {
+              "className": "\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-base\n        font-normal\n        text-foregro
+---
+Chunk 24:
+[
+  "$",
+  "section",
+  null,
+  {
+    "className": "py-12 ",
+    "children": [
+      "$",
+      "div",
+      null,
+      {
+        "className": "\n        w-full mx-auto px-4 sm:px-6 lg:px-8\n        max-w-7xl\n        \n      ",
+        "children": [
+          [
+            "$",
+            "div",
+            null,
+            {
+              "className": "mb-8",
+              "children": [
+                [
+                  "$",
+                  "h2",
+                  null,
+                  {
+                    "className": "\n        font-[family-name:var(--font-heading)]\n        font-bold tracking-tight\n        text-foreground\n        text-2xl md:text-3xl\n        \n        mb-2\n      ",
+                    "children": [
+                      "FiabilitÃ© ",
+                      "Dacia",
+                      " ",
+                      "Sandero",
+                      " : avis des propriÃ©taires"
+                    ]
+                  }
+                ],
+
+---
+Chunk 25:
+[
+  "$",
+  "section",
+  null,
+  {
+    "className": "py-12 bg-background-alt",
+    "children": [
+      "$",
+      "div",
+      null,
+      {
+        "className": "\n        w-full mx-auto px-4 sm:px-6 lg:px-8\n        max-w-7xl\n        \n      ",
+        "children": [
+          "$",
+          "div",
+          null,
+          {
+            "className": "\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-6 sm:p-8\n        max-w-2xl mx-auto text-center\n      ",
+            "children": [
+              [
+                "$",
+                "h2",
+                null,
+                {
+                  "className": "\n        font-[family-name:var(--font-heading)]\n        font-bold tracking-tight\n        text-foreground\n        text-2xl md:text-3xl\n        \n        mb-4\n      ",
+                  "children": "Obtenez une estimation plus prÃ©cise"
+
+---
+Chunk 26:
+[
+  "$",
+  "section",
+  null,
+  {
+    "className": "conseil-revente py-12",
+    "children": [
+      "$",
+      "div",
+      null,
+      {
+        "className": "\n        w-full mx-auto px-4 sm:px-6 lg:px-8\n        max-w-7xl\n        \n      ",
+        "children": [
+          [
+            "$",
+            "h2",
+            null,
+            {
+              "className": "\n        font-[family-name:var(--font-heading)]\n        font-bold tracking-tight\n        text-foreground\n        text-2xl md:text-3xl\n        \n        mb-6\n      ",
+              "children": [
+                "Quand et comment revendre sa ",
+                "Dacia",
+                " ",
+                "Sandero",
+                " au meilleur prix ?"
+              ]
+            }
+          ],
+          [
+            "$",
+            "div",
+            null,
+            {
+              "className": "space-y-4",
+              "children": [
+                [
+                  "$",
+                  "p",
+
+---
+Chunk 27:
+[
+  "$",
+  "section",
+  null,
+  {
+    "className": "py-12 bg-background-alt",
+    "children": [
+      "$",
+      "div",
+      null,
+      {
+        "className": "\n        w-full mx-auto px-4 sm:px-6 lg:px-8\n        max-w-7xl\n        \n      ",
+        "children": [
+          [
+            "$",
+            "h2",
+            null,
+            {
+              "className": "\n        font-[family-name:var(--font-heading)]\n        font-bold tracking-tight\n        text-foreground\n        text-2xl md:text-3xl\n        \n        mb-4\n      ",
+              "children": [
+                "Alternatives Ã  la ",
+                "Dacia",
+                " ",
+                "Sandero",
+                " sur le marchÃ© de l'occasion"
+              ]
+            }
+          ],
+          [
+            "$",
+            "p",
+            null,
+            {
+              "className": "\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-base\n        font-normal\n
+---
+Chunk 28:
+[
+  "$",
+  "section",
+  null,
+  {
+    "className": "py-12 ",
+    "children": [
+      "$",
+      "div",
+      null,
+      {
+        "className": "\n        w-full mx-auto px-4 sm:px-6 lg:px-8\n        max-w-7xl\n        \n      ",
+        "children": [
+          [
+            "$",
+            "h2",
+            null,
+            {
+              "className": "\n        font-[family-name:var(--font-heading)]\n        font-bold tracking-tight\n        text-foreground\n        text-2xl md:text-3xl\n        \n        mb-8\n      ",
+              "children": "Questions frÃ©quentes sur la Dacia Sandero"
+            }
+          ],
+          [
+            "$",
+            "div",
+            null,
+            {
+              "className": "space-y-3",
+              "children": [
+                [
+                  "$",
+                  "details",
+                  "0",
+                  {
+                    "className": "group border border-foreground/10 rounded-[var(--radius-lg)] overflow-hidden
+---
+Chunk 29:
+[
+  "$",
+  "section",
+  null,
+  {
+    "className": "py-12",
+    "children": [
+      "$",
+      "div",
+      null,
+      {
+        "className": "\n        w-full mx-auto px-4 sm:px-6 lg:px-8\n        max-w-7xl\n        \n      ",
+        "children": [
+          [
+            "$",
+            "h2",
+            null,
+            {
+              "className": "\n        font-[family-name:var(--font-heading)]\n        font-bold tracking-tight\n        text-foreground\n        text-2xl md:text-3xl\n        \n        mb-8\n      ",
+              "children": [
+                "Autres cotes populaires chez ",
+                "Dacia"
+              ]
+            }
+          ],
+          [
+            "$",
+            "div",
+            null,
+            {
+              "className": "grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3",
+              "children": [
+                [
+                  "$",
+                  "$L7",
+                  "dacia-duster",
+                  {
+
+---
+Chunk 1e:
+[
+  "$",
+  "$L15",
+  null,
+  {
+    "children": [
+      "$",
+      "div",
+      null,
+      {
+        "className": "\n        w-full mx-auto px-4 sm:px-6 lg:px-8\n        max-w-7xl\n        \n      ",
+        "children": [
+          "$",
+          "div",
+          null,
+          {
+            "className": "flex items-center justify-between h-16",
+            "children": [
+              [
+                "$",
+                "$L7",
+                null,
+                {
+                  "href": "/",
+                  "children": [
+                    "$",
+                    "div",
+                    null,
+                    {
+                      "className": "flex items-center ",
+                      "children": [
+                        "$",
+                        "span",
+                        null,
+                        {
+                          "className": "bg-clip-text text-transparent bg-gradient-to-r from-coral to-teal font-[family-name:var(--font-heading)] font-ex
+---
+Chunk 2d:
+[
+  "$",
+  "span",
+  null,
+  {
+    "className": "text-lg font-bold text-coral font-heading",
+    "children": [
+      "1â¯800",
+      " â¬"
+    ]
+  }
+]
+---
+Chunk 2e:
+[
+  "$",
+  "span",
+  null,
+  {
+    "className": "text-foreground-muted/50",
+    "children": "â"
+  }
+]
+---
+Chunk 2f:
+[
+  "$",
+  "span",
+  null,
+  {
+    "className": "text-lg font-bold text-coral font-heading",
+    "children": [
+      "5â¯200",
+      " â¬"
+    ]
+  }
+]
+---
+Chunk 34:
+[
+  [
+    "$",
+    "div",
+    null,
+    {
+      "className": "my-10 border-t border-foreground/10"
+    }
+  ],
+  [
+    "$",
+    "div",
+    null,
+    {
+      "className": "space-y-4",
+      "children": [
+        [
+          "$",
+          "p",
+          "0",
+          {
+            "className": "\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-base\n        font-normal\n        text-foreground-muted\n        leading-relaxed\n      ",
+            "children": "La Dacia Sandero domine le segment des citadines polyvalentes en France, s'imposant face Ã  des rÃ©fÃ©rences comme la Renault Clio, la Peugeot 208 ou la Toyota Yaris. Pour un acheteur actuel, la troisiÃ¨me gÃ©nÃ©ration commercialisÃ©e depuis 2021 reprÃ©sente le meilleur compromis entre modernitÃ© et valeur rÃ©siduelle, avec des tarifs oscillant entre 10 500 â¬ et 21 500 â¬. La deuxiÃ¨me gÃ©nÃ©ration reste toutefois l'option la plus rationnelle pour les budgets serrÃ©s, offrant une robustesse Ã©pr
+---
+Chunk 35:
+[
+  "$",
+  "div",
+  null,
+  {
+    "className": "text-xl font-bold text-foreground font-heading mb-2",
+    "children": 2022
+  }
+]
+---
+Chunk 36:
+[
+  "$",
+  "div",
+  null,
+  {
+    "className": "text-coral font-semibold whitespace-nowrap",
+    "children": [
+      [
+        "$",
+        "span",
+        null,
+        {
+          "className": "text-sm",
+          "children": "12â¯580"
+        }
+      ],
+      [
+        "$",
+        "span",
+        null,
+        {
+          "className": "text-foreground-muted/50 mx-1",
+          "children": "â"
+        }
+      ],
+      [
+        "$",
+        "span",
+        null,
+        {
+          "className": "text-sm",
+          "children": [
+            "17â¯020",
+            " â¬"
+          ]
+        }
+      ]
+    ]
+  }
+]
+---
+Chunk 37:
+[
+  "$",
+  "div",
+  "2021",
+  {
+    "className": "\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center shrink-0 min-w-35\n      ",
+    "style": {
+      "scrollSnapAlign": "start"
+    },
+    "children": [
+      [
+        "$",
+        "div",
+        null,
+        {
+          "className": "text-xl font-bold text-foreground font-heading mb-2",
+          "children": 2021
+        }
+      ],
+      [
+        "$",
+        "div",
+        null,
+        {
+          "className": "text-coral font-semibold whitespace-nowrap",
+          "children": [
+            [
+              "$",
+              "span",
+              null,
+              {
+                "className": "text-sm",
+                "children": "11â¯220"
+              }
+            ],
+            [
+              "$",
+              "span",
+              null,
+              {
+                "cla
+---
+Chunk 38:
+[
+  "$",
+  "div",
+  "2020",
+  {
+    "className": "\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center shrink-0 min-w-35\n      ",
+    "style": {
+      "scrollSnapAlign": "start"
+    },
+    "children": [
+      [
+        "$",
+        "div",
+        null,
+        {
+          "className": "text-xl font-bold text-foreground font-heading mb-2",
+          "children": 2020
+        }
+      ],
+      [
+        "$",
+        "div",
+        null,
+        {
+          "className": "text-coral font-semibold whitespace-nowrap",
+          "children": [
+            [
+              "$",
+              "span",
+              null,
+              {
+                "className": "text-sm",
+                "children": "9â¯690"
+              }
+            ],
+            [
+              "$",
+              "span",
+              null,
+              {
+                "clas
+---
+Chunk 39:
+[
+  "$",
+  "div",
+  "2019",
+  {
+    "className": "\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center shrink-0 min-w-35\n      ",
+    "style": {
+      "scrollSnapAlign": "start"
+    },
+    "children": [
+      [
+        "$",
+        "div",
+        null,
+        {
+          "className": "text-xl font-bold text-foreground font-heading mb-2",
+          "children": 2019
+        }
+      ],
+      [
+        "$",
+        "div",
+        null,
+        {
+          "className": "text-coral font-semibold whitespace-nowrap",
+          "children": [
+            [
+              "$",
+              "span",
+              null,
+              {
+                "className": "text-sm",
+                "children": "8â¯670"
+              }
+            ],
+            [
+              "$",
+              "span",
+              null,
+              {
+                "clas
+---
+Chunk 3a:
+[
+  "$",
+  "div",
+  "2018",
+  {
+    "className": "\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center shrink-0 min-w-35\n      ",
+    "style": {
+      "scrollSnapAlign": "start"
+    },
+    "children": [
+      [
+        "$",
+        "div",
+        null,
+        {
+          "className": "text-xl font-bold text-foreground font-heading mb-2",
+          "children": 2018
+        }
+      ],
+      [
+        "$",
+        "div",
+        null,
+        {
+          "className": "text-coral font-semibold whitespace-nowrap",
+          "children": [
+            [
+              "$",
+              "span",
+              null,
+              {
+                "className": "text-sm",
+                "children": "7â¯905"
+              }
+            ],
+            [
+              "$",
+              "span",
+              null,
+              {
+                "clas
+---
+Chunk 3b:
+[
+  "$",
+  "div",
+  "2017",
+  {
+    "className": "\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center shrink-0 min-w-35\n      ",
+    "style": {
+      "scrollSnapAlign": "start"
+    },
+    "children": [
+      [
+        "$",
+        "div",
+        null,
+        {
+          "className": "text-xl font-bold text-foreground font-heading mb-2",
+          "children": 2017
+        }
+      ],
+      [
+        "$",
+        "div",
+        null,
+        {
+          "className": "text-coral font-semibold whitespace-nowrap",
+          "children": [
+            [
+              "$",
+              "span",
+              null,
+              {
+                "className": "text-sm",
+                "children": "7â¯140"
+              }
+            ],
+            [
+              "$",
+              "span",
+              null,
+              {
+                "clas
+---
+Chunk 3c:
+[
+  "$",
+  "div",
+  "2016",
+  {
+    "className": "\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center shrink-0 min-w-35\n      ",
+    "style": {
+      "scrollSnapAlign": "start"
+    },
+    "children": [
+      [
+        "$",
+        "div",
+        null,
+        {
+          "className": "text-xl font-bold text-foreground font-heading mb-2",
+          "children": 2016
+        }
+      ],
+      [
+        "$",
+        "div",
+        null,
+        {
+          "className": "text-coral font-semibold whitespace-nowrap",
+          "children": [
+            [
+              "$",
+              "span",
+              null,
+              {
+                "className": "text-sm",
+                "children": "6â¯460"
+              }
+            ],
+            [
+              "$",
+              "span",
+              null,
+              {
+                "clas
+---
+Chunk 3d:
+[
+  "$",
+  "div",
+  "2015",
+  {
+    "className": "\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center shrink-0 min-w-35\n      ",
+    "style": {
+      "scrollSnapAlign": "start"
+    },
+    "children": [
+      [
+        "$",
+        "div",
+        null,
+        {
+          "className": "text-xl font-bold text-foreground font-heading mb-2",
+          "children": 2015
+        }
+      ],
+      [
+        "$",
+        "div",
+        null,
+        {
+          "className": "text-coral font-semibold whitespace-nowrap",
+          "children": [
+            [
+              "$",
+              "span",
+              null,
+              {
+                "className": "text-sm",
+                "children": "5â¯695"
+              }
+            ],
+            [
+              "$",
+              "span",
+              null,
+              {
+                "clas
+---
+Chunk 3e:
+[
+  "$",
+  "div",
+  "2014",
+  {
+    "className": "\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center shrink-0 min-w-35\n      ",
+    "style": {
+      "scrollSnapAlign": "start"
+    },
+    "children": [
+      [
+        "$",
+        "div",
+        null,
+        {
+          "className": "text-xl font-bold text-foreground font-heading mb-2",
+          "children": 2014
+        }
+      ],
+      [
+        "$",
+        "div",
+        null,
+        {
+          "className": "text-coral font-semibold whitespace-nowrap",
+          "children": [
+            [
+              "$",
+              "span",
+              null,
+              {
+                "className": "text-sm",
+                "children": "5â¯015"
+              }
+            ],
+            [
+              "$",
+              "span",
+              null,
+              {
+                "clas
+---
+Chunk 3f:
+[
+  "$",
+  "div",
+  "2013",
+  {
+    "className": "\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center shrink-0 min-w-35\n      ",
+    "style": {
+      "scrollSnapAlign": "start"
+    },
+    "children": [
+      [
+        "$",
+        "div",
+        null,
+        {
+          "className": "text-xl font-bold text-foreground font-heading mb-2",
+          "children": 2013
+        }
+      ],
+      [
+        "$",
+        "div",
+        null,
+        {
+          "className": "text-coral font-semibold whitespace-nowrap",
+          "children": [
+            [
+              "$",
+              "span",
+              null,
+              {
+                "className": "text-sm",
+                "children": "4â¯420"
+              }
+            ],
+            [
+              "$",
+              "span",
+              null,
+              {
+                "clas
+---
+Chunk 40:
+[
+  "$",
+  "div",
+  "2012",
+  {
+    "className": "\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center shrink-0 min-w-35\n      ",
+    "style": {
+      "scrollSnapAlign": "start"
+    },
+    "children": [
+      [
+        "$",
+        "div",
+        null,
+        {
+          "className": "text-xl font-bold text-foreground font-heading mb-2",
+          "children": 2012
+        }
+      ],
+      [
+        "$",
+        "div",
+        null,
+        {
+          "className": "text-coral font-semibold whitespace-nowrap",
+          "children": [
+            [
+              "$",
+              "span",
+              null,
+              {
+                "className": "text-sm",
+                "children": "3â¯485"
+              }
+            ],
+            [
+              "$",
+              "span",
+              null,
+              {
+                "clas
+---
+Chunk 41:
+[
+  "$",
+  "div",
+  "2011",
+  {
+    "className": "\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center shrink-0 min-w-35\n      ",
+    "style": {
+      "scrollSnapAlign": "start"
+    },
+    "children": [
+      [
+        "$",
+        "div",
+        null,
+        {
+          "className": "text-xl font-bold text-foreground font-heading mb-2",
+          "children": 2011
+        }
+      ],
+      [
+        "$",
+        "div",
+        null,
+        {
+          "className": "text-coral font-semibold whitespace-nowrap",
+          "children": [
+            [
+              "$",
+              "span",
+              null,
+              {
+                "className": "text-sm",
+                "children": "2â¯890"
+              }
+            ],
+            [
+              "$",
+              "span",
+              null,
+              {
+                "clas
+---
+Chunk 42:
+[
+  "$",
+  "div",
+  "2010",
+  {
+    "className": "\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center shrink-0 min-w-35\n      ",
+    "style": {
+      "scrollSnapAlign": "start"
+    },
+    "children": [
+      [
+        "$",
+        "div",
+        null,
+        {
+          "className": "text-xl font-bold text-foreground font-heading mb-2",
+          "children": 2010
+        }
+      ],
+      [
+        "$",
+        "div",
+        null,
+        {
+          "className": "text-coral font-semibold whitespace-nowrap",
+          "children": [
+            [
+              "$",
+              "span",
+              null,
+              {
+                "className": "text-sm",
+                "children": "2â¯465"
+              }
+            ],
+            [
+              "$",
+              "span",
+              null,
+              {
+                "clas
+---
+Chunk 43:
+[
+  "$",
+  "div",
+  "2009",
+  {
+    "className": "\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center shrink-0 min-w-35\n      ",
+    "style": {
+      "scrollSnapAlign": "start"
+    },
+    "children": [
+      [
+        "$",
+        "div",
+        null,
+        {
+          "className": "text-xl font-bold text-foreground font-heading mb-2",
+          "children": 2009
+        }
+      ],
+      [
+        "$",
+        "div",
+        null,
+        {
+          "className": "text-coral font-semibold whitespace-nowrap",
+          "children": [
+            [
+              "$",
+              "span",
+              null,
+              {
+                "className": "text-sm",
+                "children": "2â¯125"
+              }
+            ],
+            [
+              "$",
+              "span",
+              null,
+              {
+                "clas
+---
+Chunk 44:
+[
+  "$",
+  "div",
+  "2008",
+  {
+    "className": "\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center shrink-0 min-w-35\n      ",
+    "style": {
+      "scrollSnapAlign": "start"
+    },
+    "children": [
+      [
+        "$",
+        "div",
+        null,
+        {
+          "className": "text-xl font-bold text-foreground font-heading mb-2",
+          "children": 2008
+        }
+      ],
+      [
+        "$",
+        "div",
+        null,
+        {
+          "className": "text-coral font-semibold whitespace-nowrap",
+          "children": [
+            [
+              "$",
+              "span",
+              null,
+              {
+                "className": "text-sm",
+                "children": "1â¯870"
+              }
+            ],
+            [
+              "$",
+              "span",
+              null,
+              {
+                "clas
+---
+Chunk 47:
+[
+  "$",
+  "div",
+  null,
+  {
+    "className": "h-2 bg-foreground/10 rounded-full overflow-hidden",
+    "children": [
+      "$",
+      "div",
+      null,
+      {
+        "className": "h-full bg-coral rounded-full transition-all duration-500",
+        "style": {
+          "width": "5%"
+        }
+      }
+    ]
+  }
+]
+---
+Chunk 49:
+[
+  "$",
+  "div",
+  null,
+  {
+    "className": "\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    border border-foreground/10\n  \n        p-6\n        \n      ",
+    "children": [
+      [
+        "$",
+        "h3",
+        null,
+        {
+          "className": "\n        font-[family-name:var(--font-heading)]\n        font-bold tracking-tight\n        text-foreground\n        text-xl md:text-2xl\n        \n        mb-4 flex items-center gap-2\n      ",
+          "children": [
+            [
+              "$",
+              "span",
+              null,
+              {
+                "className": "text-coral",
+                "children": "-"
+              }
+            ],
+            "Les - de la ",
+            "Sandero"
+          ]
+        }
+      ],
+      [
+        "$",
+        "ul",
+        null,
+        {
+          "className": "space-y-2.5",
+          "children": [
+            [
+              "$",
+              "li",
+              "Insonorisation lÃ©gÃ¨re, surtout
+---
+Chunk 4a:
+[
+  "$",
+  "div",
+  null,
+  {
+    "className": "mt-8",
+    "children": [
+      "$",
+      "p",
+      null,
+      {
+        "className": "\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-base\n        font-normal\n        text-foreground-muted\n        leading-relaxed\n      ",
+        "children": "Les propriÃ©taires de la Dacia Sandero louent quasi unanimement son rapport prix-prestations imbattable et sa simplicitÃ© d'usage au quotidien. La fiabilitÃ© mÃ©canique globale, notamment sur les blocs atmosphÃ©riques SCe et le rÃ©cent Eco-G, est rÃ©guliÃ¨rement citÃ©e comme un atout majeur, tout comme l'habitabilitÃ© gÃ©nÃ©reuse pour le segment. Cependant, le reproche rÃ©current concerne l'insonorisation, jugÃ©e insuffisante sur autoroute avec des bruits d'air prononcÃ©s dÃ¨s 110 km/h, ainsi qu'une finition intÃ©rieure faisant la part belle aux plastiques durs sensibles aux rayures. La boÃ®te de vitesses manuelle est parfois critiquÃ©e pour son guidage acc
+---
+Chunk 4b:
+[
+  "$",
+  "p",
+  null,
+  {
+    "className": "\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-xs\n        font-normal\n        text-foreground\n        text-coral font-semibold\n      ",
+    "children": "Voir la cote â"
+  }
+]
+---
+Chunk 4e:
+[
+  "$",
+  "div",
+  null,
+  {
+    "className": "px-5 pb-5 text-foreground-muted leading-relaxed",
+    "children": "TrÃ¨s fiable. C'est une installation d'usine parfaitement intÃ©grÃ©e. Il permet de rÃ©duire le budget carburant de 30 Ã  40% par rapport Ã  l'essence."
+  }
+]
+---
+Chunk 4f:
+[
+  "$",
+  "details",
+  "4",
+  {
+    "className": "group border border-foreground/10 rounded-[var(--radius-lg)] overflow-hidden bg-surface",
+    "open": false,
+    "children": [
+      [
+        "$",
+        "summary",
+        null,
+        {
+          "className": "w-full flex items-center justify-between p-5 text-left hover:bg-foreground/[0.02] transition-colors cursor-pointer list-none [&::-webkit-details-marker]:hidden",
+          "children": [
+            [
+              "$",
+              "span",
+              null,
+              {
+                "className": "font-[family-name:var(--font-heading)] font-semibold text-foreground pr-4",
+                "children": "Quelle gÃ©nÃ©ration choisir pour un budget de 8 000 â¬ ?"
+              }
+            ],
+            [
+              "$",
+              "svg",
+              null,
+              {
+                "className": "w-5 h-5 text-coral shrink-0 transition-transform duration-200 group-open:rotate-180",
+                "fill": "n
+---
+Chunk 52:
+[
+  "$",
+  "div",
+  null,
+  {
+    "className": "w-8 h-8 flex items-center justify-center",
+    "children": [
+      "$",
+      "$L2c",
+      null,
+      {
+        "src": "/logos/brands/dacia.png",
+        "alt": "Dacia",
+        "width": 32,
+        "height": 32,
+        "className": "object-contain"
+      }
+    ]
+  }
+]
+---
+Chunk 53:
+[
+  "$",
+  "div",
+  null,
+  {
+    "children": [
+      [
+        "$",
+        "p",
+        null,
+        {
+          "className": "\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-sm\n        font-semibold\n        text-foreground\n        text-foreground\n      ",
+          "children": "Lodgy"
+        }
+      ],
+      [
+        "$",
+        "p",
+        null,
+        {
+          "className": "\n        font-[family-name:var(--font-sans)]\n        leading-relaxed\n        text-xs\n        font-normal\n        text-foreground-muted\n        \n      ",
+          "children": "Voir la cote"
+        }
+      ]
+    ]
+  }
+]
+---
+Chunk 2a:
+[
+  "$",
+  "footer",
+  null,
+  {
+    "className": "py-12 bg-background-alt border-t border-foreground/5",
+    "children": [
+      "$",
+      "div",
+      null,
+      {
+        "className": "\n        w-full mx-auto px-4 sm:px-6 lg:px-8\n        max-w-7xl\n        \n      ",
+        "children": [
+          [
+            "$",
+            "div",
+            null,
+            {
+              "className": "grid grid-cols-1 md:grid-cols-4 gap-8 mb-8",
+              "children": [
+                [
+                  "$",
+                  "div",
+                  null,
+                  {
+                    "children": [
+                      [
+                        "$",
+                        "div",
+                        null,
+                        {
+                          "className": "flex items-center mb-3",
+                          "children": [
+                            "$",
+                            "span",
+                            null,
+                            {
+
+---
+Chunk 56:
+[
+  "$",
+  "div",
+  null,
+  {
+    "className": "text-xl font-bold text-foreground font-heading mb-2",
+    "children": 2018
+  }
+]
+---
+Chunk 57:
+[
+  "$",
+  "div",
+  null,
+  {
+    "className": "text-sm text-coral font-semibold",
+    "children": [
+      "7â¯905",
+      " â ",
+      "10â¯695",
+      " â¬"
+    ]
+  }
+]
+---
+Chunk 58:
+[
+  "$",
+  "div",
+  "2017",
+  {
+    "className": "\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center\n      ",
+    "children": [
+      [
+        "$",
+        "div",
+        null,
+        {
+          "className": "text-xl font-bold text-foreground font-heading mb-2",
+          "children": 2017
+        }
+      ],
+      [
+        "$",
+        "div",
+        null,
+        {
+          "className": "text-sm text-coral font-semibold",
+          "children": [
+            "7â¯140",
+            " â ",
+            "9â¯660",
+            " â¬"
+          ]
+        }
+      ]
+    ]
+  }
+]
+---
+Chunk 59:
+[
+  "$",
+  "div",
+  "2016",
+  {
+    "className": "\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center\n      ",
+    "children": [
+      [
+        "$",
+        "div",
+        null,
+        {
+          "className": "text-xl font-bold text-foreground font-heading mb-2",
+          "children": 2016
+        }
+      ],
+      [
+        "$",
+        "div",
+        null,
+        {
+          "className": "text-sm text-coral font-semibold",
+          "children": [
+            "6â¯460",
+            " â ",
+            "8â¯740",
+            " â¬"
+          ]
+        }
+      ]
+    ]
+  }
+]
+---
+Chunk 5a:
+[
+  "$",
+  "div",
+  "2015",
+  {
+    "className": "\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center\n      ",
+    "children": [
+      [
+        "$",
+        "div",
+        null,
+        {
+          "className": "text-xl font-bold text-foreground font-heading mb-2",
+          "children": 2015
+        }
+      ],
+      [
+        "$",
+        "div",
+        null,
+        {
+          "className": "text-sm text-coral font-semibold",
+          "children": [
+            "5â¯695",
+            " â ",
+            "7â¯705",
+            " â¬"
+          ]
+        }
+      ]
+    ]
+  }
+]
+---
+Chunk 5b:
+[
+  "$",
+  "div",
+  "2014",
+  {
+    "className": "\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center\n      ",
+    "children": [
+      [
+        "$",
+        "div",
+        null,
+        {
+          "className": "text-xl font-bold text-foreground font-heading mb-2",
+          "children": 2014
+        }
+      ],
+      [
+        "$",
+        "div",
+        null,
+        {
+          "className": "text-sm text-coral font-semibold",
+          "children": [
+            "5â¯015",
+            " â ",
+            "6â¯785",
+            " â¬"
+          ]
+        }
+      ]
+    ]
+  }
+]
+---
+Chunk 5c:
+[
+  "$",
+  "div",
+  "2013",
+  {
+    "className": "\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center\n      ",
+    "children": [
+      [
+        "$",
+        "div",
+        null,
+        {
+          "className": "text-xl font-bold text-foreground font-heading mb-2",
+          "children": 2013
+        }
+      ],
+      [
+        "$",
+        "div",
+        null,
+        {
+          "className": "text-sm text-coral font-semibold",
+          "children": [
+            "4â¯420",
+            " â ",
+            "5â¯980",
+            " â¬"
+          ]
+        }
+      ]
+    ]
+  }
+]
+---
+Chunk 5d:
+[
+  "$",
+  "div",
+  "2012",
+  {
+    "className": "\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center\n      ",
+    "children": [
+      [
+        "$",
+        "div",
+        null,
+        {
+          "className": "text-xl font-bold text-foreground font-heading mb-2",
+          "children": 2012
+        }
+      ],
+      [
+        "$",
+        "div",
+        null,
+        {
+          "className": "text-sm text-coral font-semibold",
+          "children": [
+            "3â¯485",
+            " â ",
+            "4â¯715",
+            " â¬"
+          ]
+        }
+      ]
+    ]
+  }
+]
+---
+Chunk 5e:
+[
+  "$",
+  "div",
+  "2011",
+  {
+    "className": "\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center\n      ",
+    "children": [
+      [
+        "$",
+        "div",
+        null,
+        {
+          "className": "text-xl font-bold text-foreground font-heading mb-2",
+          "children": 2011
+        }
+      ],
+      [
+        "$",
+        "div",
+        null,
+        {
+          "className": "text-sm text-coral font-semibold",
+          "children": [
+            "2â¯890",
+            " â ",
+            "3â¯910",
+            " â¬"
+          ]
+        }
+      ]
+    ]
+  }
+]
+---
+Chunk 5f:
+[
+  "$",
+  "div",
+  "2010",
+  {
+    "className": "\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center\n      ",
+    "children": [
+      [
+        "$",
+        "div",
+        null,
+        {
+          "className": "text-xl font-bold text-foreground font-heading mb-2",
+          "children": 2010
+        }
+      ],
+      [
+        "$",
+        "div",
+        null,
+        {
+          "className": "text-sm text-coral font-semibold",
+          "children": [
+            "2â¯465",
+            " â ",
+            "3â¯335",
+            " â¬"
+          ]
+        }
+      ]
+    ]
+  }
+]
+---
+Chunk 60:
+[
+  "$",
+  "div",
+  "2009",
+  {
+    "className": "\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center\n      ",
+    "children": [
+      [
+        "$",
+        "div",
+        null,
+        {
+          "className": "text-xl font-bold text-foreground font-heading mb-2",
+          "children": 2009
+        }
+      ],
+      [
+        "$",
+        "div",
+        null,
+        {
+          "className": "text-sm text-coral font-semibold",
+          "children": [
+            "2â¯125",
+            " â ",
+            "2â¯875",
+            " â¬"
+          ]
+        }
+      ]
+    ]
+  }
+]
+---
+Chunk 61:
+[
+  "$",
+  "div",
+  "2008",
+  {
+    "className": "\n        rounded-[var(--radius-lg)]\n        \n    bg-surface\n    shadow-lg hover:shadow-xl\n    border border-foreground/5\n    transition-shadow duration-300\n  \n        p-4\n        text-center\n      ",
+    "children": [
+      [
+        "$",
+        "div",
+        null,
+        {
+          "className": "text-xl font-bold text-foreground font-heading mb-2",
+          "children": 2008
+        }
+      ],
+      [
+        "$",
+        "div",
+        null,
+        {
+          "className": "text-sm text-coral font-semibold",
+          "children": [
+            "1â¯870",
+            " â ",
+            "2â¯530",
+            " â¬"
+          ]
+        }
+      ]
+    ]
+  }
+]
+---
