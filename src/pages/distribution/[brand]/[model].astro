@@ -1,6 +1,6 @@
 ---
 import Base from '../../../layouts/Base.astro';
-import { getDB, getBrand, getModel, getEnginesByModel } from '../../../lib/db';
+import { getDB, getBrand, getModel } from '../../../lib/db';
 
 const { brand: brandSlug, model: modelSlug } = Astro.params;
 const db = getDB();
@@ -11,70 +11,250 @@ if (!brand) return Astro.redirect('/distribution');
 const model = await getModel(db, (brand as any).id, modelSlug!);
 if (!model) return Astro.redirect(`/distribution/${brandSlug}`);
 
-const engines = await getEnginesByModel(db, (model as any).id);
-const hasChaine = engines.some((e: any) => e.distribution === 'CHAÎNE');
-const hasCourroie = engines.some((e: any) => e.distribution?.includes('COURROIE'));
+const fiche = (model as any).fiche_json ? JSON.parse((model as any).fiche_json) : null;
+if (!fiche) return Astro.redirect(`/distribution/${brandSlug}`);
+
+const dims = fiche.dims || {};
+const pneus = fiche.pneus || [];
+const moteurs = fiche.moteurs || [];
+
+// --- Logique technique ---
+function getPuiss(m: any) {
+  const match = (m["Puiss."] || "").match(/^(\d+)ch/i);
+  return match ? parseInt(match[1]) : 0;
+}
+
+function deduceFuel(name: string) {
+    const n = name.toLowerCase();
+    const diesels = ['dci', 'hdi', 'tdi', 'cdti', 'jtd', 'multijet', 'crdi', 'did', 'tdci', 'd-4d', 'bluehdi', 'dcat'];
+    if (diesels.some(d => n.includes(d))) return 'DIESEL';
+    if (/batterie|electr|électr|BEV/i.test(n)) return 'ÉLECTRIQUE';
+    return 'ESSENCE';
+}
+
+function getBoite(nom: string) {
+  const auto = nom.match(/Boîte(\d+)\s*\(Auto\)/i);
+  if (auto) return `Auto ${auto[1]}`;
+  const man = nom.match(/Boîte(\d+)/i);
+  if (man) return `Man. ${man[1]}`;
+  return '—';
+}
+
+function cleanNom(nom: string) {
+  return nom.split(/Boîte|Batterie|\(/i)[0].trim();
+}
+
+const processedRows = moteurs.map((m: any) => ({
+    ...m,
+    fuel: deduceFuel(m.Moteur),
+    puissance: getPuiss(m),
+    nomPropre: cleanNom(m.Moteur),
+    boite: getBoite(m.Moteur)
+}));
+
+const fuelOrder = { 'DIESEL': 0, 'ESSENCE': 1, 'ÉLECTRIQUE': 2 };
+const rows = processedRows.sort((a, b) => {
+    if (a.fuel !== b.fuel) return fuelOrder[a.fuel] - fuelOrder[b.fuel];
+    return a.puissance - b.puissance;
+});
+
+const hasChaine = rows.some((r: any) => r.distribution === 'CHAÎNE');
+const hasCourroie = rows.some((r: any) => r.distribution?.includes('COURROIE'));
+
+const getFuelStyle = (fuel: string) => {
+    if (fuel === 'DIESEL') return 'background:#fef9c3; color:#854d0e; border:1px solid #fde047;';
+    if (fuel === 'ESSENCE') return 'background:#dcfce7; color:#166534; border:1px solid #86efac;';
+    return 'background:#e0f2fe; color:#0369a1; border:1px solid #7dd3fc;';
+};
 ---
 <Base
-  title={`${(brand as any).name} ${(model as any).name} — chaîne ou courroie ?`}
-  description={`Chaîne ou courroie pour ${(brand as any).name} ${(model as any).name} ? Toutes les motorisations et intervalles d'entretien.`}
+  title={`${(brand as any).name} ${(model as any).name} — Chaîne ou Courroie ?`}
+  description={`Guide technique complet : distribution, pneus et dimensions pour ${(brand as any).name} ${(model as any).name}.`}
 >
-  <nav style="margin-bottom:1.5rem; font-size:0.9rem; color:#666;">
-    <a href="/" style="color:#2563eb;">Accueil</a> ›
-    <a href="/distribution" style="color:#2563eb;">Marques</a> ›
-    <a href={`/distribution/${brandSlug}`} style="color:#2563eb;">{(brand as any).name}</a> ›
-    {(model as any).name}
+  <style>
+    .page-container {
+        display: grid;
+        grid-template-columns: 1fr 340px;
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+    .hero {
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        color: white;
+        padding: 2.5rem 2rem;
+        border-radius: 20px;
+        margin-bottom: 2rem;
+    }
+    .hero h1 { font-size: 2.5rem; font-weight: 900; margin: 0.5rem 0; line-height: 1.1; }
+    
+    .card {
+        background: white;
+        border-radius: 16px;
+        border: 1px solid #e2e8f0;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+        overflow: hidden;
+    }
+    .card-title { font-size: 1.25rem; font-weight: 800; margin-bottom: 1.5rem; color: #0f172a; }
+
+    /* TABLE DESIGN DEDIÉ MOBILE */
+    .table-wrapper {
+        overflow-x: auto;
+        margin: 0 -1.5rem; /* On sort un peu de la carte pour le scroll bord à bord sur mobile */
+        padding: 0 1.5rem;
+        -webkit-overflow-scrolling: touch;
+    }
+    .engine-table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        min-width: 650px; /* Force le scroll horizontal sur petit écran */
+    }
+    .engine-table th {
+        background: #f8fafc;
+        padding: 0.75rem 1rem;
+        text-align: center;
+        font-size: 0.7rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        color: #64748b;
+        border-bottom: 2px solid #f1f5f9;
+        position: sticky;
+        top: 0;
+    }
+    .engine-table td {
+        padding: 1rem;
+        border-bottom: 1px solid #f1f5f9;
+        font-size: 0.9rem;
+    }
+
+    /* La première colonne reste visible au scroll horizontal */
+    .sticky-col {
+        position: sticky;
+        left: 0;
+        background: white;
+        z-index: 5;
+        font-weight: 800;
+        color: #0f172a;
+        box-shadow: 4px 0 8px -4px rgba(0,0,0,0.1);
+        text-align: left !important;
+    }
+    tr:nth-child(even) .sticky-col { background: #fafbfc; }
+    tr:hover td { background: #f1f5f9 !important; }
+
+    .dist-tag {
+        padding: 0.35rem 0.75rem;
+        border-radius: 6px;
+        font-size: 0.75rem;
+        font-weight: 800;
+        white-space: nowrap;
+        display: inline-block;
+    }
+
+    @media (max-width: 900px) {
+        .page-container { grid-template-columns: 1fr; }
+        .hero { padding: 2rem 1.5rem; border-radius: 0; margin: -1rem -1rem 2rem -1rem; }
+        .hero h1 { font-size: 2rem; }
+        .table-wrapper { margin: 0 -1rem; padding: 0 1rem; }
+    }
+  </style>
+
+  <nav style="margin: 1rem 0 1.5rem 0; font-size:0.85rem; color:#94a3b8; padding: 0 1rem;">
+    <a href="/" style="color:#2563eb; text-decoration:none; font-weight:600;">Accueil</a>
+    <span style="margin:0 0.5rem;">/</span>
+    <a href="/distribution" style="color:#2563eb; text-decoration:none; font-weight:600;">Marques</a>
+    <span style="margin:0 0.5rem;">/</span>
+    <a href={`/distribution/${brandSlug}`} style="color:#2563eb; text-decoration:none; font-weight:600;">{(brand as any).name}</a>
   </nav>
-  <h1 style="font-size:1.8rem; margin-bottom:0.5rem;">
-    {(brand as any).name} {(model as any).name} — chaîne ou courroie ?
-  </h1>
-  <div style="display:flex; gap:0.75rem; margin-bottom:2rem; flex-wrap:wrap;">
-    {hasChaine && (
-      <span style="background:#dcfce7; color:#166534; padding:0.4rem 1rem; border-radius:999px; font-weight:600; font-size:0.9rem;">
-        ⛓ Certaines versions : CHAÎNE
-      </span>
-    )}
-    {hasCourroie && (
-      <span style="background:#fef9c3; color:#854d0e; padding:0.4rem 1rem; border-radius:999px; font-weight:600; font-size:0.9rem;">
-        🔧 Certaines versions : COURROIE
-      </span>
-    )}
-  </div>
-  <div style="overflow-x:auto;">
-    <table style="width:100%; border-collapse:collapse; background:white; border-radius:8px; overflow:hidden; box-shadow:0 1px 3px rgba(0,0,0,0.1);">
-      <thead>
-        <tr style="background:#1a1a2e; color:white;">
-          <th style="padding:0.85rem 1rem; text-align:left;">Période</th>
-          <th style="padding:0.85rem 1rem; text-align:left;">Moteur</th>
-          <th style="padding:0.85rem 1rem; text-align:center;">Distribution</th>
-          <th style="padding:0.85rem 1rem; text-align:center;">Puissance</th>
-          <th style="padding:0.85rem 1rem; text-align:center;">Entretien km</th>
-          <th style="padding:0.85rem 1rem; text-align:center;">Entretien ans</th>
-        </tr>
-      </thead>
-      <tbody>
-        {engines.map((e: any, i: number) => {
-          const isChaine = e.distribution === 'CHAÎNE';
-          const isHumide = e.distribution === 'COURROIE HUMIDE';
-          const bg = i % 2 === 0 ? '#fff' : '#f9f9f9';
-          const distColor = isChaine ? '#166534' : '#854d0e';
-          const distBg = isChaine ? '#dcfce7' : isHumide ? '#e0f2fe' : '#fef9c3';
-          return (
-            <tr style={`background:${bg};`}>
-              <td style="padding:0.75rem 1rem; font-size:0.9rem;">{e.periode}</td>
-              <td style="padding:0.75rem 1rem; font-weight:500;">{e.moteur}</td>
-              <td style="padding:0.75rem 1rem; text-align:center;">
-                <span style={`background:${distBg}; color:${distColor}; padding:0.25rem 0.6rem; border-radius:4px; font-size:0.85rem; font-weight:600;`}>
-                  {e.distribution}
-                </span>
-              </td>
-              <td style="padding:0.75rem 1rem; text-align:center;">{e.puissance_ch} ch</td>
-              <td style="padding:0.75rem 1rem; text-align:center; font-size:0.85rem;">{e.entretien_km}</td>
-              <td style="padding:0.75rem 1rem; text-align:center; font-size:0.85rem;">{e.entretien_ans}</td>
-            </tr>
-          );
-        })}
-      </tbody>
-    </table>
+
+  <div class="page-container">
+    <main>
+        <header class="hero">
+            <span style="text-transform:uppercase; letter-spacing:0.1em; font-size:0.8rem; font-weight:700; opacity:0.7;">Expertise Technique</span>
+            <h1>{(brand as any).name} {(model as any).name}</h1>
+            <p style="opacity:0.8; margin-bottom:1.5rem; font-size:1.1rem; font-weight:500;">{fiche.titre}</p>
+
+            <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
+                {hasChaine && <div style="background:#10b981; color:white; padding:0.5rem 1rem; border-radius:8px; font-weight:800; font-size:0.85rem;">⛓ CHAÎNE</div>}
+                {hasCourroie && <div style="background:#f59e0b; color:white; padding:0.5rem 1rem; border-radius:8px; font-weight:800; font-size:0.85rem;">🔧 COURROIE</div>}
+            </div>
+        </header>
+
+        <section class="card">
+            <h2 class="card-title">⚙️ Moteurs & Distribution</h2>
+            <div class="table-wrapper">
+                <table class="engine-table">
+                    <thead>
+                        <tr>
+                            <th class="sticky-col">Moteur</th>
+                            <th>Puissance</th>
+                            <th>Distribution</th>
+                            <th>0-100</th>
+                            <th>Carburant</th>
+                            <th>Boîte</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {rows.map((r, i) => (
+                            <tr style={i % 2 === 0 ? '' : 'background:#fafbfc;'}>
+                                <td class="sticky-col">{r.nomPropre}</td>
+                                <td style="text-align:center;"><strong>{r.puissance > 0 ? `${r.puissance} ch` : r["Puiss."] || '—'}</strong></td>
+                                <td style="text-align:center;">
+                                    <span class="dist-tag" style={`background:${r.distribution === 'CHAÎNE' ? '#dcfce7' : r.distribution?.includes('COURROIE') ? '#fef9c3' : '#f1f5f9'}; color:${r.distribution === 'CHAÎNE' ? '#166534' : r.distribution?.includes('COURROIE') ? '#854d0e' : '#64748b'}; border:1px solid rgba(0,0,0,0.05);`}>
+                                        {r.fuel === 'ÉLECTRIQUE' ? 'N/A' : (r.distribution || '—')}
+                                    </span>
+                                </td>
+                                <td style="text-align:center; color:#64748b;">{r["0-100 km/h"] || '—'}</td>
+                                <td style="text-align:center;">
+                                    <span style={`font-size:0.65rem; padding:0.2rem 0.5rem; border-radius:4px; font-weight:800; ${getFuelStyle(r.fuel)}`}>
+                                        {r.fuel}
+                                    </span>
+                                </td>
+                                <td style="text-align:center; color:#64748b; font-size:0.8rem;">{r.boite}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="card" style="background:#fffbeb; border:1px dashed #fcd34d; text-align:center;">
+            <h3 style="color:#92400e; margin-top:0; font-size:1.1rem;">📖 Guide d'entretien</h3>
+            <p style="color:#b45309; font-size:0.95rem; font-style:italic; margin-bottom:0;">Contenu expert en cours de préparation pour ce modèle.</p>
+        </section>
+    </main>
+
+    <aside>
+        <div class="card">
+            <h2 class="card-title">📐 Dimensions</h2>
+            <div style="display:grid; gap:0.6rem;">
+                {Object.entries(dims)
+                    .filter(([k]: any) => !k.includes('Boîte') && !k.includes('Transmission') && !k.includes('Restylage'))
+                    .map(([k, v]: any) => (
+                    <div style="display:flex; justify-content:space-between; align-items:flex-end; border-bottom:1px solid #f1f5f9; padding-bottom:0.3rem; font-size:0.9rem;">
+                        <span style="color:#94a3b8; font-size:0.8rem;">{k}</span>
+                        <span style="font-weight:700; color:#1e293b;">{v}</span>
+                    </div>
+                ))}
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 class="card-title">🔵 Pneus</h2>
+            <div style="display:grid; gap:0.75rem;">
+                {pneus.map((p: any) => (
+                    <div style="background:#f8fafc; padding:0.75rem; border-radius:10px; border:1px solid #f1f5f9;">
+                        <div style="font-weight:800; margin-bottom:0.3rem; color:#0f172a; font-size:0.95rem;">{p.taille}</div>
+                        <div style="display:flex; gap:1rem; font-size:0.75rem;">
+                            <span style="color:#2563eb;">Confort: <strong>{p.confort}</strong></span>
+                            <span style="color:#059669;">Efficacité: <strong>{p.efficacite}</strong></span>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </aside>
   </div>
 </Base>
