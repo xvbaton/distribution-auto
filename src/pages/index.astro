@@ -71,27 +71,25 @@ const structuredData = {
       <p>Sélectionnez une marque pour explorer ses fiches techniques détaillées.</p>
     </div>
     
-    <div class="brands-inner">
-      <div class="premium-grid">
-        {brands.map((brand: any) => (
-          <a href={`/${brand.slug}`} class="brand-card square-card">
-            <div class="brand-logo-circle">
-               <img
-                src={`/logos/optimized/${brand.slug}.png`}
-                alt={`Logo ${brand.name}`}
-                loading="lazy"
-                decoding="async"
-                width="50"
-                height="50"
-                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-              />
-              <span class="brand-letter-fallback" style="display:none">{brand.name.charAt(0)}</span>
-            </div>
-            <span class="brand-name">{brand.name}</span>
-            <div class="card-hover-fx"></div>
-          </a>
-        ))}
-      </div>
+    <div class="premium-grid">
+      {brands.map((brand: any) => (
+        <a href={`/${brand.slug}`} class="brand-card square-card">
+          <div class="brand-logo-circle">
+             <img
+              src={`/logos/optimized/${brand.slug}.png`}
+              alt={`Logo ${brand.name}`}
+              loading="lazy"
+              decoding="async"
+              width="50"
+              height="50"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            />
+            <span class="brand-letter-fallback" style="display:none">{brand.name.charAt(0)}</span>
+          </div>
+          <span class="brand-name">{brand.name}</span>
+          <div class="card-hover-fx"></div>
+        </a>
+      ))}
     </div>
   </section>
 
@@ -243,12 +241,11 @@ const structuredData = {
   .stat-item strong { color: #fff; font-weight: 800; font-size: 1.1rem; margin-right: 0.25rem; }
   .stat-divider { width: 4px; height: 4px; border-radius: 50%; background: rgba(255,255,255,0.2); }
 
-  /* Square Grid Layout — 80% width, centered */
+  /* Square Grid Layout — full width */
   .brands-section { margin-top: 4rem; margin-bottom: 2rem; }
   .section-header { text-align: center; margin-bottom: 3rem; }
   .section-header h2 { font-size: clamp(2rem, 5vw, 2.75rem); font-weight: 900; margin-bottom: 1rem; color: var(--c-primary); letter-spacing: -0.02em; }
   .section-header p { color: var(--c-text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
-  .brands-inner { max-width: 80%; margin: 0 auto; }
   .premium-grid {
     display: grid; grid-template-columns: repeat(auto-fill, minmax(155px, 1fr)); gap: 1.25rem;
   }
