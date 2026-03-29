@@ -100,70 +100,63 @@ const structuredData = {
 
 </Base>
 
-<script is:inline>
-  function initSearch() {
-    const searchInput = document.getElementById('main-search');
-    const resultsDiv = document.getElementById('search-results');
-    let debounceTimer;
+<script>
+  const searchInput = document.getElementById('main-search');
+  const resultsDiv = document.getElementById('search-results');
+  let debounceTimer: any;
 
-    // Shortcut Cmd+K / Ctrl+K
-    const handleKeydown = (e) => {
-      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
-        e.preventDefault();
-        searchInput?.focus();
-      }
-    };
-    document.removeEventListener('keydown', handleKeydown);
-    document.addEventListener('keydown', handleKeydown);
-
-    if (searchInput && resultsDiv) {
-      searchInput.addEventListener('input', (e) => {
-        clearTimeout(debounceTimer);
-        const q = e.target.value.trim();
-
-        if (q.length < 2) {
-          resultsDiv.innerHTML = '';
-          resultsDiv.classList.add('hidden');
-          return;
-        }
-
-        debounceTimer = setTimeout(async () => {
-          try {
-            const res = await fetch(`/api/search?q=${encodeURIComponent(q)}`);
-            const data = await res.json();
-
-            if (data && data.length > 0) {
-              resultsDiv.innerHTML = data.map((item) => `
-                <a href="/${item.brand_slug}/${item.model_slug}" class="search-item">
-                  <div class="search-item-info">
-                    <span class="brand-tag">${item.brand_name}</span>
-                    <span class="model-name">${item.model_name}</span>
-                  </div>
-                  <span class="search-arrow">→</span>
-                </a>
-              `).join('');
-              resultsDiv.classList.remove('hidden');
-            } else {
-              resultsDiv.innerHTML = '<div class="no-results">Aucun résultat trouvé pour cette recherche.</div>';
-              resultsDiv.classList.remove('hidden');
-            }
-          } catch (err) {
-            console.error('Search error:', err);
-          }
-        }, 250);
-      });
-
-      document.addEventListener('click', (e) => {
-        if (!searchInput.contains(e.target) && !resultsDiv.contains(e.target)) {
-          resultsDiv.classList.add('hidden');
-        }
-      });
+  // Shortcut Cmd+K / Ctrl+K
+  document.addEventListener('keydown', (e) => {
+    if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+      e.preventDefault();
+      searchInput?.focus();
     }
-  }
+  });
 
-  // Initialize immediately and on ViewTransitions astro:page-load
-  initSearch();
-  document.addEventListener('astro:page-load', initSearch);
+  if (searchInput && resultsDiv) {
+    searchInput.addEventListener('input', (e) => {
+      clearTimeout(debounceTimer);
+      const target = e.target as HTMLInputElement;
+      const q = target.value.trim();
+
+      if (q.length < 2) {
+        resultsDiv.innerHTML = '';
+        resultsDiv.classList.add('hidden');
+        return;
+      }
+
+      debounceTimer = setTimeout(async () => {
+        try {
+          const res = await fetch(`/api/search?q=${encodeURIComponent(q)}`);
+          const data = await res.json();
+
+          if (data && data.length > 0) {
+            resultsDiv.innerHTML = data.map((item: any) => `
+              <a href="/${item.brand_slug}/${item.model_slug}" class="search-item">
+                <div class="search-item-info">
+                  <span class="brand-tag">${item.brand_name}</span>
+                  <span class="model-name">${item.model_name}</span>
+                </div>
+                <span class="search-arrow">→</span>
+              </a>
+            `).join('');
+            resultsDiv.classList.remove('hidden');
+          } else {
+            resultsDiv.innerHTML = '<div class="no-results">Aucun résultat trouvé pour cette recherche.</div>';
+            resultsDiv.classList.remove('hidden');
+          }
+        } catch (err) {
+          console.error('Search error:', err);
+        }
+      }, 250);
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!searchInput.contains(e.target as Node) && !resultsDiv.contains(e.target as Node)) {
+        resultsDiv.classList.add('hidden');
+      }
+    });
+  }
 </script>
 
 <style is:global>

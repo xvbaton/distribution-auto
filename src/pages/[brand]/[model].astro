@@ -117,8 +117,8 @@ const rows = moteurs
       : a.puissance - b.puissance,
   );
 
-const hasChaine = rows.some((r: any) => r.distribution === "CHAÎNE");
-const hasCourroie = rows.some((r: any) => r.distribution?.includes("COURROIE"));
+const countChaine = rows.filter((r: any) => r.distribution === "CHAÎNE").length;
+const countCourroie = rows.filter((r: any) => r.distribution?.includes("COURROIE")).length;
 
 const fuelsUniq = (Array.from(new Set(rows.map((r: any) => r.fuel))) as string[]).sort(
   (a: string, b: string) => fuelOrder[a] - fuelOrder[b]
@@ -189,16 +189,16 @@ const pageDesc = `Fiche technique complète de la ${brandName} ${modelName}. Typ
 
         <div class="hero-pills">
           {
-            hasChaine && (
+            countChaine > 0 && (
               <div class="dist-badge chain">
-                <span class="icon">⛓️</span> Distribution par chaîne
+                <span class="icon">⛓️</span> {countChaine} moteur{countChaine > 1 ? 's' : ''} à chaîne
               </div>
             )
           }
           {
-            hasCourroie && (
+            countCourroie > 0 && (
               <div class="dist-badge belt">
-                <span class="icon">🔧</span> Distribution par courroie
+                <span class="icon">🔧</span> {countCourroie} moteur{countCourroie > 1 ? 's' : ''} à courroie
               </div>
             )
           }
