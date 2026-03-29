@@ -71,25 +71,27 @@ const structuredData = {
       <p>Sélectionnez une marque pour explorer ses fiches techniques détaillées.</p>
     </div>
     
-    <div class="premium-grid">
-      {brands.map((brand: any) => (
-        <a href={`/${brand.slug}`} class="brand-card square-card">
-          <div class="brand-logo-circle">
-             <img
-              src={`/logos/car-logos-dataset/logos/optimized/${brand.slug}.png`}
-              alt={`Logo ${brand.name}`}
-              loading="lazy"
-              decoding="async"
-              width="50"
-              height="50"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-            />
-            <span class="brand-letter-fallback" style="display:none">{brand.name.charAt(0)}</span>
-          </div>
-          <span class="brand-name">{brand.name}</span>
-          <div class="card-hover-fx"></div>
-        </a>
-      ))}
+    <div class="brands-inner">
+      <div class="premium-grid">
+        {brands.map((brand: any) => (
+          <a href={`/${brand.slug}`} class="brand-card square-card">
+            <div class="brand-logo-circle">
+               <img
+                src={`/logos/car-logos-dataset/logos/optimized/${brand.slug}.png`}
+                alt={`Logo ${brand.name}`}
+                loading="lazy"
+                decoding="async"
+                width="50"
+                height="50"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              />
+              <span class="brand-letter-fallback" style="display:none">{brand.name.charAt(0)}</span>
+            </div>
+            <span class="brand-name">{brand.name}</span>
+            <div class="card-hover-fx"></div>
+          </a>
+        ))}
+      </div>
     </div>
   </section>
 
@@ -160,29 +162,6 @@ const structuredData = {
 </script>
 
 <style is:global>
-  :root {
-    --c-bg: #f8fafc;
-    --c-card: #ffffff;
-    --c-primary: #0f172a;
-    --c-primary-dark: #020617;
-    --c-accent: #3b82f6;
-    --c-accent-hover: #2563eb;
-    --c-text: #334155;
-    --c-text-muted: #64748b;
-    --c-border: #e2e8f0;
-    --c-border-light: #f1f5f9;
-    --r-pill: 9999px;
-    --r-base: 16px;
-    --r-sm: 12px;
-    --sh-glass: 0 12px 40px -8px rgba(0, 0, 0, 0.2);
-    --sh-card: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -2px rgba(0,0,0,0.05);
-    --sh-card-hover: 0 20px 25px -5px rgba(0,0,0,0.05), 0 8px 10px -6px rgba(0,0,0,0.05);
-    --transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  body { background-color: var(--c-bg); color: var(--c-text); font-family: 'Inter', sans-serif; }
-  .wrap { max-width: 1240px; margin: 0 auto; padding: 0 1.5rem; }
-  .sr-only { position: absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0; }
   .ad-banner-bottom { margin: 4rem auto 6rem; }
 </style>
 
@@ -256,40 +235,6 @@ const structuredData = {
     letter-spacing: 0.05em;
   }
 
-  /* DROPDOWN */
-  .search-results {
-    position: absolute; top: calc(100% + 1rem); left: 0; right: 0;
-    max-height: 400px; overflow-y: auto; z-index: 100; text-align: left;
-  }
-  .search-results.hidden { display: none; opacity: 0; pointer-events: none; }
-  .glass-panel-dropdown {
-    background: #ffffff;
-    border: 1px solid var(--c-border);
-    border-radius: var(--r-base);
-    box-shadow: var(--sh-glass);
-    animation: dropIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  @keyframes dropIn { from { opacity: 0; transform: translateY(-10px) scale(0.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
-  
-  .search-item {
-    display: flex !important; justify-content: space-between; align-items: center !important; 
-    padding: 1.2rem 1.75rem !important; border-bottom: 1px solid var(--c-border-light) !important;
-    text-decoration: none !important; color: var(--c-text) !important;
-    transition: all var(--transition) !important;
-  }
-  .search-item:last-child { border-bottom: none !important; }
-  .search-item-info { display: flex; align-items: center; gap: 1.2rem; }
-  .search-item:hover { background: #f8fafc !important; }
-  .search-item:hover .search-arrow { transform: translateX(5px); color: var(--c-accent); opacity: 1; }
-  .brand-tag {
-    font-size: 0.75rem; font-weight: 700; color: var(--c-accent-hover); 
-    background: #eff6ff; padding: 0.3rem 0.8rem; border-radius: var(--r-pill); 
-    text-transform: uppercase; letter-spacing: 0.05em; min-width: 90px; text-align: center;
-  }
-  .model-name { font-weight: 700; color: var(--c-primary); font-size: 1.1rem; }
-  .search-arrow { opacity: 0; transition: all var(--transition); color: var(--c-text-muted); font-weight: 700; }
-  .no-results { padding: 2rem; text-align: center; color: var(--c-text-muted); font-weight: 500; }
-
   /* STATS */
   .stats-row {
     display: flex; align-items: center; gap: 1.5rem; justify-content: center;
@@ -298,15 +243,14 @@ const structuredData = {
   .stat-item strong { color: #fff; font-weight: 800; font-size: 1.1rem; margin-right: 0.25rem; }
   .stat-divider { width: 4px; height: 4px; border-radius: 50%; background: rgba(255,255,255,0.2); }
 
-  /* BRANDS SECTION - SQUARE GRID */
+  /* Square Grid Layout — 80% width, centered */
   .brands-section { margin-top: 4rem; margin-bottom: 2rem; }
-  .section-header { text-align: center; margin-bottom: 4rem; }
+  .section-header { text-align: center; margin-bottom: 3rem; }
   .section-header h2 { font-size: clamp(2rem, 5vw, 2.75rem); font-weight: 900; margin-bottom: 1rem; color: var(--c-primary); letter-spacing: -0.02em; }
-  .section-header p { color: var(--c-text-muted); font-size: 1.15rem; max-width: 600px; margin: 0 auto; }
-
-  /* Square Grid Layout */
+  .section-header p { color: var(--c-text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+  .brands-inner { max-width: 80%; margin: 0 auto; }
   .premium-grid {
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1.5rem;
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(155px, 1fr)); gap: 1.25rem;
   }
   
   .square-card {
