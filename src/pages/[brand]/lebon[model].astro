@@ -1,0 +1,1035 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { getDB, getBrand, getModel } from '../../../lib/db';
+
+const { brand: brandSlug, model: modelSlug } = Astro.params;
+const db = getDB();
+
+const brand = await getBrand(db, brandSlug!);
+if (!brand) return Astro.redirect('/distribution');
+
+const model = await getModel(db, (brand as any).id, modelSlug!);
+if (!model) return Astro.redirect(`/distribution/${brandSlug}`);
+
+const fiche = (model as any).fiche_json ? JSON.parse((model as any).fiche_json) : null;
+if (!fiche) return Astro.redirect(`/distribution/${brandSlug}`);
+
+const dims    = fiche.dims        || {};
+const pneus   = fiche.pneus       || [];
+const moteurs = fiche.moteurs     || [];
+const faqs    = fiche.faq         || [];
+const descSeo = fiche.description || null;
+
+// ─── Helpers ──────────────────────────────────────────────────────────────
+
+function getPuiss(m: any) {
+  const match = (m["Puiss."] || "").match(/^(\d+)ch/i);
+  return match ? parseInt(match[1]) : 0;
+}
+
+function deduceFuel(name: string) {
+  const n = name.toLowerCase();
+  // 1. Liste de marqueurs Diesel standards
+  const diesels = ['dci','hdi','tdi','cdti','jtd','multijet','crdi','did','tdci','d-4d','bluehdi','dcat','ctdi','tid','sd4','td4'];
+  if (diesels.some(d => n.includes(d))) return 'DIESEL';
+  
+  // 2. Cas spécifique BMW / Allemandes : chiffre suivi d'un 'd' (ex: 118d, 330d, 35d)
+  // On cherche un chiffre suivi de 'd' à la fin du mot ou avant une parenthèse/espace
+  if (/\b\d+d\b|\d+d\s|\d+d\(/.test(n)) return 'DIESEL';
+
+  // 3. Électrique / Hybride
+  if (/batterie|electr|électr|BEV|phev|hybride|hbev/i.test(n)) {
+    if (/hybrid/i.test(n) && !/batterie/i.test(n)) return 'ESSENCE'; // Simplification si hybride non-rechargeable
+    return 'ÉLECTRIQUE';
+  }
+
+  return 'ESSENCE';
+}
+
+function getBoite(nom: string) {
+  const auto = nom.match(/Boîte(\d+)\s*\(Auto\)/i);
+  if (auto) return `Auto ${auto[1]}`;
+  const man = nom.match(/Boîte(\d+)/i);
+  if (man) return `Man. ${man[1]}`;
+  return '—';
+}
+
+function cleanNom(nom: string) {
+  return nom.split(/Boîte|Batterie|\(/i)[0].trim();
+}
+
+function formatSpecValue(raw: any): string {
+  return String(raw)
+    .replace(/(\d)(litres?|places?|kg|mm|cm|nm|ch\b|km\/h)/gi, '$1\u202F$2')
+    .replace(/(\d)à(\d)/g, '$1\u202Fà\u202F$2')
+    .replace(/à(\d)/g, 'à\u202F$1')
+    .trim();
+}
+
+// ─── Données moteurs ──────────────────────────────────────────────────────
+
+const fuelOrder: Record<string, number> = { 'DIESEL': 0, 'ESSENCE': 1, 'ÉLECTRIQUE': 2 };
+
+const rows = moteurs
+  .map((m: any) => ({
+    ...m,
+    fuel:      deduceFuel(m.Moteur),
+    puissance: getPuiss(m),
+    nomPropre: cleanNom(m.Moteur),
+    boite:     getBoite(m.Moteur),
+  }))
+  .sort((a: any, b: any) =>
+    a.fuel !== b.fuel ? fuelOrder[a.fuel] - fuelOrder[b.fuel] : a.puissance - b.puissance
+  );
+
+const hasChaine   = rows.some((r: any) => r.distribution === 'CHAÎNE');
+const hasCourroie = rows.some((r: any) => r.distribution?.includes('COURROIE'));
+
+// Regroupement par carburant pour les séparateurs visuels
+const fuelGroups: string[] = [];
+const rowsWithGroup = rows.map((r: any) => {
+  const isFirst = !fuelGroups.includes(r.fuel);
+  if (isFirst) fuelGroups.push(r.fuel);
+  return { ...r, isFirstOfGroup: isFirst };
+});
+
+// Stats rapides pour le hero
+const puissMin = Math.min(...rows.filter((r:any) => r.puissance > 0).map((r:any) => r.puissance));
+const puissMax = Math.max(...rows.filter((r:any) => r.puissance > 0).map((r:any) => r.puissance));
+const puissRange = puissMin === puissMax ? `${puissMin} ch` : `${puissMin}–${puissMax} ch`;
+const fuelsUniq = [...new Set(rows.map((r:any) => r.fuel))];
+
+// ─── JSON-LD ──────────────────────────────────────────────────────────────
+
+const brandName = (brand as any).name;
+const modelName = (model as any).name;
+const pageTitle = `${brandName} ${modelName} — Chaîne ou Courroie ?`;
+const pageDesc  = `Fiche technique complète ${brandName} ${modelName} : type de distribution (chaîne ou courroie), moteurs, pneus homologués, dimensions. Guide expert mis à jour.`;
+
+const enginesLd = rows.map((r: any) => ({
+  "@type": "EngineSpecification",
+  "name": r.nomPropre,
+  ...(r.puissance > 0 ? { "enginePower": { "@type": "QuantitativeValue", "value": r.puissance, "unitCode": "BHP" } } : {}),
+  "fuelType": r.fuel === 'DIESEL' ? 'Diesel' : r.fuel === 'ÉLECTRIQUE' ? 'Electric' : 'Gasoline',
+}));
+
+const placesEntry = Object.entries(dims).find(([k]) => k.toLowerCase().includes('place'));
+const seatingCapacity = placesEntry ? String(placesEntry[1]).match(/\d+/)?.[0] : null;
+
+const vehicleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Car",
+  "name": `${brandName} ${modelName}`,
+  "brand": { "@type": "Brand", "name": brandName },
+  "model": modelName,
+  "description": descSeo || pageDesc,
+  ...(seatingCapacity ? { "seatingCapacity": parseInt(seatingCapacity) } : {}),
+  "vehicleEngine": enginesLd.length === 1 ? enginesLd[0] : enginesLd,
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://chaine-ou-courroie.fr/" },
+    { "@type": "ListItem", "position": 2, "name": "Marques", "item": "https://chaine-ou-courroie.fr/distribution" },
+    { "@type": "ListItem", "position": 3, "name": brandName, "item": `https://chaine-ou-courroie.fr/distribution/${brandSlug}` },
+    { "@type": "ListItem", "position": 4, "name": `${brandName} ${modelName}` },
+  ],
+};
+
+const faqSchema = faqs.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f: any) => ({
+    "@type": "Question",
+    "name": f.question,
+    "acceptedAnswer": { "@type": "Answer", "text": f.reponse },
+  })),
+} : null;
+---
+<Base title={pageTitle} description={pageDesc}>
+
+  <script type="application/ld+json" set:html={JSON.stringify(vehicleSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  {faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
+
+  <style is:global>
+    html, body { overflow-x: hidden; width: 100%; }
+  </style>
+
+  <!-- ══════════════════════════════════════════════
+       BREADCRUMB
+  ══════════════════════════════════════════════ -->
+  <nav class="bc" aria-label="Fil d'ariane">
+    <div class="bc-inner">
+      <a href="/">Accueil</a>
+      <span aria-hidden="true">›</span>
+      <a href="/distribution">Marques</a>
+      <span aria-hidden="true">›</span>
+      <a href={`/distribution/${brandSlug}`}>{brandName}</a>
+      <span aria-hidden="true">›</span>
+      <span aria-current="page">{modelName}</span>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════════════════
+       HERO
+  ══════════════════════════════════════════════ -->
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-top">
+        <div class="hero-text">
+          <p class="hero-eyebrow">Fiche technique & distribution</p>
+          <h1 class="hero-title">{brandName} <span class="hero-model">{modelName}</span></h1>
+          <p class="hero-desc">{fiche.titre}</p>
+        </div>
+
+        <!-- Verdict distribution — info principale -->
+        <div class="hero-verdict">
+          {hasChaine && (
+            <div class="verdict-card verdict-chain">
+              <span class="verdict-icon">⛓</span>
+              <div>
+                <div class="verdict-label">Distribution</div>
+                <div class="verdict-value">Chaîne</div>
+              </div>
+            </div>
+          )}
+          {hasCourroie && (
+            <div class="verdict-card verdict-belt">
+              <span class="verdict-icon">🔧</span>
+              <div>
+                <div class="verdict-label">Distribution</div>
+                <div class="verdict-value">Courroie</div>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+
+      <!-- Stats rapides -->
+      <div class="hero-stats" role="list">
+        <div class="hero-stat" role="listitem">
+          <span class="stat-val">{rows.length}</span>
+          <span class="stat-lbl">version{rows.length > 1 ? 's' : ''}</span>
+        </div>
+        <div class="stat-sep" aria-hidden="true"></div>
+        <div class="hero-stat" role="listitem">
+          <span class="stat-val">{puissRange}</span>
+          <span class="stat-lbl">puissance</span>
+        </div>
+        <div class="stat-sep" aria-hidden="true"></div>
+        <div class="hero-stat" role="listitem">
+          <span class="stat-val">{fuelsUniq.join(' · ')}</span>
+          <span class="stat-lbl">motorisation{fuelsUniq.length > 1 ? 's' : ''}</span>
+        </div>
+        {pneus.length > 0 && <>
+          <div class="stat-sep" aria-hidden="true"></div>
+          <div class="hero-stat" role="listitem">
+            <span class="stat-val">{pneus.length}</span>
+            <span class="stat-lbl">monte{pneus.length > 1 ? 's' : ''} pneus</span>
+          </div>
+        </>}
+      </div>
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════════════════
+       CORPS DE PAGE
+  ══════════════════════════════════════════════ -->
+  <div class="layout">
+
+    <!-- ── MAIN ──────────────────────────────── -->
+    <main class="main">
+
+      <!-- Tableau moteurs -->
+      <section class="panel" aria-labelledby="title-moteurs">
+        <div class="panel-hd">
+          <h2 class="panel-title" id="title-moteurs">Moteurs &amp; Distribution</h2>
+          <p class="panel-sub">{rows.length} version{rows.length > 1 ? 's' : ''} disponible{rows.length > 1 ? 's' : ''}</p>
+        </div>
+        <div class="tbl-wrap">
+          <table class="tbl" aria-label={`Tableau des moteurs ${brandName} ${modelName}`}>
+            <thead>
+              <tr>
+                <th class="col-moteur" scope="col">Moteur</th>
+                <th scope="col">Puissance</th>
+                <th scope="col">Distribution</th>
+                <th scope="col">0–100&nbsp;km/h</th>
+                <th scope="col">Carburant</th>
+                <th scope="col">Boîte</th>
+              </tr>
+            </thead>
+            <tbody>
+              {rowsWithGroup.map((r: any) => (
+                <>
+                  {r.isFirstOfGroup && (
+                    <tr class="group-sep" aria-hidden="true">
+                      <td colspan="6">
+                        <span class={`group-label ${r.fuel === 'DIESEL' ? 'gl-diesel' : r.fuel === 'ESSENCE' ? 'gl-essence' : 'gl-elec'}`}>
+                          {r.fuel}
+                        </span>
+                      </td>
+                    </tr>
+                  )}
+                  <tr>
+                    <td class="col-moteur"><span class="moteur-nom">{r.nomPropre}</span></td>
+                    <td class="tc"><strong class="puiss-val">{r.puissance > 0 ? `${r.puissance} ch` : '—'}</strong></td>
+                    <td class="tc">
+                      <span class={`chip ${r.fuel === 'ÉLECTRIQUE' ? 'chip-na' : r.distribution === 'CHAÎNE' ? 'chip-chain' : r.distribution?.includes('COURROIE') ? 'chip-belt' : 'chip-na'}`}>
+                        {r.fuel === 'ÉLECTRIQUE' ? 'N/A' : (r.distribution || '—')}
+                      </span>
+                    </td>
+                    <td class="tc tnum muted">{r["0-100 km/h"] || '—'}</td>
+                    <td class="tc">
+                      <span class={`chip-sm ${r.fuel === 'DIESEL' ? 'cs-diesel' : r.fuel === 'ESSENCE' ? 'cs-essence' : 'cs-elec'}`}>
+                        {r.fuel}
+                      </span>
+                    </td>
+                    <td class="tc tnum muted small">{r.boite}</td>
+                  </tr>
+                </>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ── SIDEBAR ────────────────────────────── -->
+    <aside class="sidebar" aria-label="Informations techniques">
+
+      <!-- Pneus (en premier) -->
+      {pneus.length > 0 && (
+        <section class="panel" aria-labelledby="title-pneus">
+          <div class="panel-hd">
+            <h2 class="panel-title" id="title-pneus">Pneus homologués</h2>
+            <p class="panel-sub">{pneus.length} monte{pneus.length > 1 ? 's' : ''}</p>
+          </div>
+          <div class="panel-bd">
+            <ul class="pneu-list" role="list">
+              {pneus.map((p: any) => (
+                <li class="pneu-row">
+                  <code class="pneu-size">{p.taille}</code>
+                  <div class="pneu-scores">
+                    {p.confort && (
+                      <span class="score-item score-cnf">
+                        <span class="score-ico" aria-hidden="true">◎</span>
+                        <span class="score-lbl">Confort</span>
+                        <strong class="score-val">{p.confort}</strong>
+                      </span>
+                    )}
+                    {p.efficacite && (
+                      <span class="score-item score-eff">
+                        <span class="score-ico" aria-hidden="true">◈</span>
+                        <span class="score-lbl">Efficacité</span>
+                        <strong class="score-val">{p.efficacite}</strong>
+                      </span>
+                    )}
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
+      <!-- Dimensions -->
+      {Object.keys(dims).length > 0 && (
+        <section class="panel" aria-labelledby="title-dims">
+          <div class="panel-hd">
+            <h2 class="panel-title" id="title-dims">Dimensions &amp; capacités</h2>
+          </div>
+          <div class="panel-bd">
+            <dl class="dims-list">
+              {Object.entries(dims)
+                .filter(([k]: any) => !k.includes('Boîte') && !k.includes('Transmission') && !k.includes('Restylage'))
+                .map(([k, v]: any) => (
+                  <div class="dim-row">
+                    <dt class="dim-key">{k}</dt>
+                    <dd class="dim-val">{formatSpecValue(v)}</dd>
+                  </div>
+              ))}
+            </dl>
+          </div>
+        </section>
+      )}
+
+    </aside>
+  </div><!-- /.layout -->
+
+  <!-- ══════════════════════════════════════════════
+       DESCRIPTION SEO
+  ══════════════════════════════════════════════ -->
+  {descSeo && (
+    <section class="prose-section" aria-labelledby="title-apropos">
+      <div class="prose-inner">
+        <div class="prose-meta">
+          <p class="eyebrow-label">Guide complet</p>
+          <h2 class="prose-title" id="title-apropos">À propos du {brandName}&nbsp;{modelName}</h2>
+        </div>
+        <div class="prose-body" set:html={descSeo} />
+      </div>
+    </section>
+  )}
+
+  <!-- ══════════════════════════════════════════════
+       FAQ
+  ══════════════════════════════════════════════ -->
+  {faqs.length > 0 && (
+    <section class="faq-section" aria-labelledby="title-faq">
+      <div class="faq-inner">
+        <p class="eyebrow-label">Questions fréquentes</p>
+        <h2 class="prose-title" id="title-faq">Ce que vous demandez sur le {modelName}</h2>
+        <div class="faq-grid" role="list">
+          {faqs.map((f: any, i: number) => (
+            <details class="faq-item" open={i === 0} role="listitem">
+              <summary class="faq-q">{f.question}</summary>
+              <div class="faq-a" set:html={f.reponse} />
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+</Base>
+
+<style>
+/* ═══════════════════════════════════════════════════════════
+   TOKENS
+═══════════════════════════════════════════════════════════ */
+:root {
+  /* couleurs */
+  --c-ink:       #0d1117;
+  --c-ink-2:     #1e293b;
+  --c-ink-3:     #475569;
+  --c-ink-4:     #94a3b8;
+  --c-surface:   #ffffff;
+  --c-surface-2: #f8fafc;
+  --c-surface-3: #f1f5f9;
+  --c-border:    #e2e8f0;
+  --c-border-2:  #cbd5e1;
+  --c-blue:      #1d4ed8;
+  --c-blue-dim:  #dbeafe;
+  --c-blue-mid:  #3b82f6;
+
+  /* espacements */
+  --gutter:    2rem;
+  --gutter-sm: 1.25rem;
+  --max-w:     1200px;
+
+  /* arrondi */
+  --r-sm: 6px;
+  --r:    12px;
+  --r-lg: 16px;
+
+  /* ombre */
+  --shadow-card: 0 1px 2px rgba(0,0,0,0.04), 0 4px 16px rgba(0,0,0,0.05);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   BREADCRUMB
+═══════════════════════════════════════════════════════════ */
+.bc {
+  border-bottom: 1px solid var(--c-border);
+  background: var(--c-surface);
+}
+.bc-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0.7rem var(--gutter);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  color: var(--c-ink-4);
+  flex-wrap: wrap;
+}
+.bc-inner a {
+  color: var(--c-blue);
+  text-decoration: none;
+  font-weight: 500;
+}
+.bc-inner a:hover { text-decoration: underline; }
+.bc-inner span[aria-current] { color: var(--c-ink-2); font-weight: 600; }
+.bc-inner [aria-hidden] { color: var(--c-border-2); }
+
+/* ═══════════════════════════════════════════════════════════
+   HERO
+═══════════════════════════════════════════════════════════ */
+.hero {
+  background:
+    linear-gradient(160deg, #0d1117 0%, #0f2460 55%, #1a1a2e 100%);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+/* grille subtile */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+}
+.hero-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 3rem var(--gutter) 0;
+  position: relative;
+  z-index: 1;
+}
+.hero-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.hero-text { flex: 1; min-width: 0; }
+.hero-eyebrow {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--c-blue-mid);
+  margin: 0 0 0.6rem;
+}
+.hero-title {
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  font-weight: 900;
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  margin: 0 0 0.75rem;
+  overflow-wrap: break-word;
+}
+.hero-model { color: #93c5fd; }
+.hero-desc {
+  font-size: 1rem;
+  color: #94a3b8;
+  margin: 0;
+  line-height: 1.55;
+  max-width: 52ch;
+}
+
+/* Verdict cards */
+.hero-verdict {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+.verdict-card {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.9rem 1.2rem;
+  border-radius: var(--r);
+  border: 1px solid transparent;
+  backdrop-filter: blur(8px);
+  min-width: 160px;
+}
+.verdict-chain {
+  background: rgba(16, 185, 129, 0.15);
+  border-color: rgba(52, 211, 153, 0.35);
+}
+.verdict-belt {
+  background: rgba(245, 158, 11, 0.15);
+  border-color: rgba(251, 191, 36, 0.35);
+}
+.verdict-icon { font-size: 1.4rem; flex-shrink: 0; }
+.verdict-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+.verdict-value {
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+
+/* Stats rapides — bande bas du hero */
+.hero-stats {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-top: 2.5rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  flex-wrap: wrap;
+}
+.hero-stat {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1.5rem 1rem 0;
+  gap: 0.2rem;
+}
+.stat-sep {
+  width: 1px;
+  height: 2rem;
+  background: rgba(255,255,255,0.1);
+  margin: 0 1.5rem 0 0;
+  flex-shrink: 0;
+}
+.stat-val {
+  font-size: 1.05rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+.stat-lbl {
+  font-size: 0.68rem;
+  color: #64748b;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   LAYOUT PRINCIPAL
+═══════════════════════════════════════════════════════════ */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 1.75rem;
+  max-width: var(--max-w);
+  margin: 2rem auto;
+  padding: 0 var(--gutter);
+  box-sizing: border-box;
+  align-items: start;
+}
+.main, .sidebar { min-width: 0; }
+
+/* ═══════════════════════════════════════════════════════════
+   PANELS (= cards)
+═══════════════════════════════════════════════════════════ */
+.panel {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  margin-bottom: 1.5rem;
+}
+.panel:last-child { margin-bottom: 0; }
+
+.panel-hd {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem var(--gutter-sm);
+  border-bottom: 1px solid var(--c-border);
+  background: var(--c-surface-2);
+}
+.panel-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--c-ink-2);
+  margin: 0;
+}
+.panel-sub {
+  font-size: 0.72rem;
+  color: var(--c-ink-4);
+  margin: 0;
+  white-space: nowrap;
+}
+.panel-bd {
+  padding: var(--gutter-sm);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   TABLEAU MOTEURS
+═══════════════════════════════════════════════════════════ */
+.tbl-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.tbl {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 500px;
+  font-size: 0.875rem;
+}
+.tbl thead tr {
+  background: var(--c-surface-2);
+  border-bottom: 2px solid var(--c-border);
+}
+.tbl th {
+  padding: 0.7rem 1rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--c-ink-4);
+  text-align: center;
+  white-space: nowrap;
+}
+.tbl th.col-moteur { text-align: left; }
+
+/* Séparateur de groupe carburant */
+.group-sep td {
+  padding: 0.45rem 1rem;
+  background: var(--c-surface-3);
+  border-top: 1px solid var(--c-border);
+  border-bottom: 1px solid var(--c-border);
+}
+.group-label {
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  border-width: 1px;
+  border-style: solid;
+}
+.gl-diesel  { background:#fef9c3; color:#713f12; border-color:#fde047; }
+.gl-essence { background:#dcfce7; color:#14532d; border-color:#86efac; }
+.gl-elec    { background:#dbeafe; color:#1e3a8a; border-color:#93c5fd; }
+
+/* Lignes */
+.tbl tbody tr {
+  border-bottom: 1px solid var(--c-border);
+  transition: background 0.1s;
+}
+.tbl tbody tr:last-child { border-bottom: none; }
+.tbl tbody tr:not(.group-sep):hover { background: #f8fafc; }
+.tbl td {
+  padding: 0.875rem 1rem;
+  vertical-align: middle;
+}
+
+/* Colonne Moteur sticky */
+.col-moteur {
+  position: sticky;
+  left: 0;
+  background: var(--c-surface);
+  z-index: 4;
+  text-align: left;
+  font-size: 0.85rem;
+  min-width: 130px;
+  /* ombre de séparation propre */
+  box-shadow: inset -1px 0 0 var(--c-border);
+}
+.tbl tbody tr:hover .col-moteur { background: #f8fafc; }
+.moteur-nom { font-weight: 600; color: var(--c-ink-2); }
+
+/* Utilitaires cellules */
+.tc    { text-align: center; }
+.tnum  { font-variant-numeric: tabular-nums; font-feature-settings: "tnum"; }
+.muted { color: var(--c-ink-3); }
+.small { font-size: 0.78rem; }
+.puiss-val { font-weight: 700; color: var(--c-ink-2); }
+
+/* Chips distribution */
+.chip {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--r-sm);
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  border: 1px solid transparent;
+}
+.chip-chain { background: #dcfce7; color: #14532d; border-color: #86efac; }
+.chip-belt  { background: #fef3c7; color: #78350f; border-color: #fcd34d; }
+.chip-na    { background: var(--c-surface-3); color: var(--c-ink-4); border-color: var(--c-border-2); }
+
+/* Chips carburant */
+.chip-sm {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  border: 1px solid transparent;
+}
+.cs-diesel  { background: #fef9c3; color: #713f12; border-color: #fde047; }
+.cs-essence { background: #dcfce7; color: #14532d; border-color: #86efac; }
+.cs-elec    { background: #dbeafe; color: #1e3a8a; border-color: #93c5fd; }
+
+/* ═══════════════════════════════════════════════════════════
+   SIDEBAR — PNEUS
+═══════════════════════════════════════════════════════════ */
+.pneu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.pneu-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--c-border);
+  flex-wrap: wrap;
+}
+.pneu-row:last-child { border-bottom: none; }
+
+.pneu-size {
+  font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+  font-size: 0.83rem;
+  font-weight: 600;
+  color: var(--c-ink-2);
+  background: var(--c-surface-3);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-sm);
+  padding: 0.2rem 0.55rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.pneu-scores {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  flex: 1;
+}
+.score-item {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.73rem;
+}
+.score-ico { font-size: 0.6rem; opacity: 0.5; }
+.score-lbl { color: var(--c-ink-4); flex: 1; }
+.score-val { font-weight: 700; }
+.score-cnf .score-val { color: var(--c-blue); }
+.score-eff .score-val { color: #059669; }
+
+/* ═══════════════════════════════════════════════════════════
+   SIDEBAR — DIMENSIONS
+═══════════════════════════════════════════════════════════ */
+.dims-list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.dim-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--c-border);
+}
+.dim-row:last-child { border-bottom: none; }
+.dim-key {
+  font-size: 0.78rem;
+  color: var(--c-ink-4);
+  font-weight: 500;
+  flex-shrink: 0;
+  max-width: 52%;
+}
+.dim-val {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--c-ink-2);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   DESCRIPTION SEO
+═══════════════════════════════════════════════════════════ */
+.prose-section {
+  background: var(--c-surface-2);
+  border-top: 1px solid var(--c-border);
+  border-bottom: 1px solid var(--c-border);
+  padding: 3.5rem var(--gutter);
+}
+.prose-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+.eyebrow-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--c-blue);
+  margin: 0 0 0.5rem;
+}
+.prose-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--c-ink);
+  margin: 0;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+.prose-body {
+  color: var(--c-ink-3);
+  font-size: 0.93rem;
+  line-height: 1.82;
+}
+.prose-body p   { margin: 0 0 1em; }
+.prose-body p:last-child { margin: 0; }
+.prose-body h3  { font-size: 1rem; font-weight: 700; color: var(--c-ink-2); margin: 1.75em 0 0.6em; }
+.prose-body ul  { padding-left: 1.25rem; margin: 0 0 1em; }
+.prose-body li  { margin-bottom: 0.3em; }
+
+/* ═══════════════════════════════════════════════════════════
+   FAQ
+═══════════════════════════════════════════════════════════ */
+.faq-section {
+  padding: 3.5rem var(--gutter);
+}
+.faq-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+.faq-inner .prose-title { margin-bottom: 2rem; }
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  align-items: start;
+}
+
+.faq-item {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r);
+  overflow: hidden;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.faq-item[open] {
+  border-color: var(--c-blue);
+  box-shadow: 0 0 0 3px var(--c-blue-dim);
+}
+
+.faq-q {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--c-ink-2);
+  line-height: 1.4;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+.faq-q::-webkit-details-marker { display: none; }
+.faq-q::after {
+  content: '';
+  width: 1.1rem;
+  height: 1.1rem;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 1.5px solid var(--c-border-2);
+  background: var(--c-surface-2)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Cpath d='M4 1v6M1 4h6' stroke='%2394a3b8' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E")
+    center/8px no-repeat;
+}
+details[open] .faq-q::after {
+  background-color: var(--c-blue-dim);
+  border-color: var(--c-blue);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Cpath d='M1 4h6' stroke='%231d4ed8' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+
+.faq-a {
+  padding: 0.75rem 1.1rem 1.1rem;
+  border-top: 1px solid var(--c-border);
+  font-size: 0.875rem;
+  color: var(--c-ink-3);
+  line-height: 1.72;
+}
+.faq-a p            { margin: 0.6rem 0 0; }
+.faq-a p:first-child { margin-top: 0; }
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE — Tablette ≤ 1100px
+═══════════════════════════════════════════════════════════ */
+@media (max-width: 1100px) {
+  .layout           { grid-template-columns: 1fr; padding: 0 var(--gutter-sm); margin-top: 1.5rem; }
+  .hero-inner       { padding: 2.5rem var(--gutter-sm) 0; }
+  .bc-inner         { padding: 0.65rem var(--gutter-sm); }
+
+  .sidebar          { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; align-items: start; }
+  .sidebar .panel   { margin-bottom: 0; }
+
+  .prose-section    { padding: 2.5rem var(--gutter-sm); }
+  .prose-inner      { grid-template-columns: 1fr; gap: 1rem; }
+  .faq-section      { padding: 2.5rem var(--gutter-sm); }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE — Mobile ≤ 640px
+═══════════════════════════════════════════════════════════ */
+@media (max-width: 640px) {
+  :root { --gutter: 1rem; --gutter-sm: 1rem; }
+
+  .hero-inner       { padding: 2rem 1rem 0; }
+  .hero-title       { font-size: 1.9rem; }
+  .hero-desc        { font-size: 0.88rem; }
+  .hero-top         { flex-direction: column; gap: 1.25rem; }
+  .hero-verdict     { flex-direction: row; flex-wrap: wrap; }
+  .verdict-card     { flex: 1; min-width: 130px; }
+  .hero-stats       { gap: 0; }
+  .hero-stat        { padding: 0.8rem 1rem 0.8rem 0; }
+  .stat-sep         { margin: 0 1rem 0 0; }
+
+  .layout           { margin-top: 1.25rem; padding: 0; gap: 0; }
+
+  .panel            { border-radius: 0; border-left: none; border-right: none; margin-bottom: 0.5rem; box-shadow: none; }
+  .panel-hd         { padding: 0.8rem 1rem; }
+  .panel-bd         { padding: 0.875rem 1rem; }
+
+  .sidebar          { grid-template-columns: 1fr; }
+
+  /* Table compacte */
+  .col-moteur       { min-width: 100px; font-size: 0.78rem; }
+  .tbl td           { padding: 0.7rem 0.6rem; font-size: 0.8rem; }
+  .tbl th           { padding: 0.6rem 0.6rem; }
+
+  /* FAQ : 1 colonne */
+  .faq-grid         { grid-template-columns: 1fr; }
+
+  .prose-section,
+  .faq-section      { padding: 2rem 1rem; }
+  .prose-title      { font-size: 1.25rem; }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE — Très petit ≤ 380px
+═══════════════════════════════════════════════════════════ */
+@media (max-width: 380px) {
+  .hero-title { font-size: 1.6rem; }
+  .verdict-card { min-width: 110px; padding: 0.7rem 0.9rem; }
+  .hero-stat { padding: 0.7rem 0.75rem 0.7rem 0; }
+  .stat-sep  { margin: 0 0.75rem 0 0; }
+}
+</style>

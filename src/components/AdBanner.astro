@@ -1,0 +1,28 @@
+---
+interface Props {
+  type?: 'horizontal' | 'square' | 'in-feed';
+  label?: string;
+  class?: string;
+}
+
+const { type = 'horizontal', label = 'Publicité', class: className = '' } = Astro.props;
+---
+<div class={`ad-wrapper ${className}`}>
+  <div class={`ad-placeholder ${type}`}>
+    <span class="ad-label">{label}</span>
+  </div>
+</div>
+
+<style>
+  .ad-wrapper { width: 100%; }
+  .ad-placeholder {
+    display: flex; align-items: center; justify-content: center;
+    background: Repeating-linear-gradient(45deg, #f1f5f9, #f1f5f9 10px, #f8fafc 10px, #f8fafc 20px);
+    border: 1px dashed #94a3b8; border-radius: 8px;
+    color: #94a3b8; font-weight: 500; font-size: 0.85rem;
+    letter-spacing: 0.05em; text-transform: uppercase;
+  }
+  .ad-placeholder.horizontal { width: 100%; height: 90px; }
+  .ad-placeholder.square { width: 100%; height: 250px; }
+  .ad-placeholder.in-feed { width: 100%; height: 120px; }
+</style>

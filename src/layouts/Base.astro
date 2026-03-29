@@ -1,43 +1,80 @@
 ---
-const { title, description } = Astro.props;
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+}
+
+const { title, description, image = "/default-og-image.jpg" } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://distribution-auto.com");
 ---
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
   <title>{title}</title>
   <meta name="description" content={description} />
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: system-ui, sans-serif; color: #1a1a1a; background: #f8f8f8; }
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 1rem; }
-    header { background: #1a1a2e; color: white; padding: 1rem 0; }
-    header a { color: white; text-decoration: none; font-weight: bold; font-size: 1.3rem; }
-    nav { display: flex; gap: 1.5rem; margin-top: 0.5rem; }
-    nav a { color: #ccc; text-decoration: none; font-size: 0.9rem; }
-    nav a:hover { color: white; }
-    main { padding: 2rem 0; }
-    footer { background: #1a1a2e; color: #aaa; padding: 2rem 0; text-align: center; font-size: 0.85rem; margin-top: 4rem; }
-  </style>
+  <link rel="canonical" href={canonicalURL} />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={new URL(image, Astro.url)} />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content={canonicalURL} />
+  <meta property="twitter:title" content={title} />
+  <meta property="twitter:description" content={description} />
+  <meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+  <!-- Font Google Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="min-h-screen flex flex-col">
   <header>
-    <div class="container">
-      <a href="/">🔧 Distribution Auto</a>
-      <nav>
-        <a href="/distribution">Toutes les marques</a>
-        <a href="/guides">Guides</a>
+    <div class="container main-header-container">
+      <a href="/" class="logo" aria-label="Retour à l'accueil Distribution Auto">
+        <span aria-hidden="true">🔧</span>
+        <span>Distribution Auto</span>
+      </a>
+      <nav aria-label="Menu principal">
+        <a href="/">Toutes les marques</a>
+        <a href="/guides">Guides techniques</a>
       </nav>
     </div>
   </header>
-  <main class="container">
+
+  <!-- Changed to dynamically allow full bleed components like Heroes -->
+  <main id="main-content">
     <slot />
   </main>
+
   <footer>
     <div class="container">
-      © 2026 Distribution Auto — Chaîne ou courroie pour tous les véhicules
+      <p>© 2026 Distribution Auto — Base de données technique automobile</p>
+      <p style="margin-top: 0.5rem; font-size: 0.8rem;">Chaîne ou courroie pour tous les véhicules.</p>
     </div>
   </footer>
 </body>
 </html>
+
+<style>
+  .main-header-container {
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  #main-content {
+    min-height: calc(100vh - 150px);
+    display: flex;
+    flex-direction: column;
+  }
+</style>

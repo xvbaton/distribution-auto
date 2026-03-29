@@ -1,0 +1,96 @@
+:root {
+  --primary: #020617;
+  --primary-light: #1e293b;
+  --accent: #2563eb;
+  --accent-glow: rgba(37, 99, 235, 0.1);
+  --bg: #f8fafc; /* Back to Light for better readability as requested */
+  --card-bg: #ffffff;
+  --text: #0f172a;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --success: #10b981;
+  --success-bg: #dcfce7;
+  --success-text: #065f46;
+  --warning: #f59e0b;
+  --warning-bg: #fef9c3;
+  --warning-text: #854d0e;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { 
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+a { color: inherit; text-decoration: none; transition: all 0.2s ease; }
+
+.container { 
+  max-width: 1100px; 
+  margin: 0 auto; 
+  padding: 0 1.5rem; 
+}
+
+header { 
+  background: var(--primary); 
+  color: white; 
+  padding: 1rem 0;
+  z-index: 100;
+}
+
+header .logo { color: white; display: flex; align-items: center; gap: 0.5rem; font-weight: 800; font-size: 1.3rem; }
+header nav { display: flex; gap: 1.5rem; }
+header nav a { color: #94a3b8; font-weight: 500; font-size: 0.9rem; }
+header nav a:hover { color: white; }
+
+main { padding: 1.5rem 0 5rem; } /* Réduit de 3rem à 1.5rem */
+
+/* Grids */
+.grid-brands {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.card-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+  color: var(--text);
+}
+
+.card-link:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+
+/* Badges & Text colors */
+.text-success { color: #059669; font-weight: 700; }
+.text-warning { color: #d97706; font-weight: 700; }
+
+.breadcrumb {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem; /* Réduit de 2rem */
+  font-weight: 600;
+}
+.breadcrumb a { color: var(--accent); }
+.breadcrumb a:hover { text-decoration: underline; }

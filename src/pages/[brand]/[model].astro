@@ -1,0 +1,1132 @@
+---
+import Base from "../../layouts/Base.astro";
+import { getDB, getBrand, getModel } from "../../lib/db";
+import AdBanner from "../../components/AdBanner.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
+import HeroOverlay from "../../components/HeroOverlay.astro";
+
+const { brand: brandSlug, model: modelSlug } = Astro.params;
+const db = getDB();
+
+const brand = await getBrand(db, brandSlug!);
+if (!brand) return Astro.redirect("/");
+
+const model = await getModel(db, (brand as any).id, modelSlug!);
+if (!model) return Astro.redirect(`/${brandSlug}`);
+
+const fiche = (model as any).fiche_json
+  ? JSON.parse((model as any).fiche_json)
+  : null;
+if (!fiche) return Astro.redirect(`/${brandSlug}`);
+
+const dims = fiche.dims || {};
+const pneus = fiche.pneus || [];
+const moteurs = fiche.moteurs || [];
+const faqs = fiche.faq || [];
+const descSeo = fiche.description || null;
+
+// ─── Helpers ──────────────────────────────────────────────────────────────
+
+function getPuiss(m: any) {
+  const match = (m["Puiss."] || "").match(/^(\d+)ch/i);
+  return match ? parseInt(match[1]) : 0;
+}
+
+function deduceFuel(name: string) {
+  const cleaned = name.split(/Boîte|Batterie|\(/i)[0].trim();
+  const n = " " + cleaned.toLowerCase() + " ";
+  const diesels = [
+    "dci",
+    "hdi",
+    "tdi",
+    "cdti",
+    "jtd",
+    "multijet",
+    "crdi",
+    "did",
+    "tdci",
+    "d-4d",
+    "bluehdi",
+    "dcat",
+    "ctdi",
+    "tid",
+    "sd4",
+    "td4",
+    "diesel",
+  ];
+  if (diesels.some((d) => n.includes(d))) return "DIESEL";
+  if (/[0-9]d([^a-z]|$)/.test(n)) return "DIESEL";
+  if (
+    n.includes("batterie") ||
+    n.includes("electr") ||
+    n.includes("électr") ||
+    n.includes("bev") ||
+    n.includes("phev")
+  ) {
+    if (
+      n.includes("hybrid") &&
+      !n.includes("rechargeable") &&
+      !n.includes("phev") &&
+      !n.includes("batterie")
+    )
+      return "ESSENCE";
+    return "ÉLECTRIQUE";
+  }
+  return "ESSENCE";
+}
+
+function getBoite(nom: string) {
+  const auto = nom.match(/Boîte(\d+)\s*\(Auto\)/i);
+  if (auto) return `Auto ${auto[1]}`;
+  const man = nom.match(/Boîte(\d+)/i);
+  if (man) return `Man. ${man[1]}`;
+  return "—";
+}
+
+function cleanNom(nom: string) {
+  return nom.split(/Boîte|Batterie|\(/i)[0].trim();
+}
+
+function formatSpecValue(raw: any): string {
+  return String(raw)
+    .replace(/(\d)(litres?|places?|kg|mm|cm|nm|ch\b|km\/h)/gi, "$1\u202F$2")
+    .replace(/(\d)à(\d)/g, "$1\u202Fà\u202F$2")
+    .replace(/à(\d)/g, "à\u202F$1")
+    .trim();
+}
+
+// ─── Données moteurs ──────────────────────────────────────────────────────
+
+const fuelOrder: Record<string, number> = {
+  DIESEL: 0,
+  ESSENCE: 1,
+  ÉLECTRIQUE: 2,
+};
+
+const rows = moteurs
+  .map((m: any) => ({
+    ...m,
+    fuel: deduceFuel(m.Moteur),
+    puissance: getPuiss(m),
+    nomPropre: cleanNom(m.Moteur),
+    boite: getBoite(m.Moteur),
+  }))
+  .sort((a: any, b: any) =>
+    a.fuel !== b.fuel
+      ? fuelOrder[a.fuel] - fuelOrder[b.fuel]
+      : a.puissance - b.puissance,
+  );
+
+const hasChaine = rows.some((r: any) => r.distribution === "CHAÎNE");
+const hasCourroie = rows.some((r: any) => r.distribution?.includes("COURROIE"));
+
+const fuelsUniq = (Array.from(new Set(rows.map((r: any) => r.fuel))) as string[]).sort(
+  (a: string, b: string) => fuelOrder[a] - fuelOrder[b]
+);
+
+const enginesByFuel = fuelsUniq.map((f: string) => ({
+  fuel: f,
+  rows: rows.filter((r: any) => r.fuel === f),
+}));
+
+const validPuiss = rows
+  .filter((r: any) => r.puissance > 0)
+  .map((r: any) => r.puissance);
+const puissMin = Math.min(...validPuiss);
+const puissMax = Math.max(...validPuiss);
+const puissRange =
+  validPuiss.length === 0
+    ? "—"
+    : puissMin === puissMax
+      ? `${puissMin} ch`
+      : `${puissMin}–${puissMax} ch`;
+
+const brandName = (brand as any).name;
+const modelName = (model as any).name;
+const pageTitle = `${brandName} ${modelName} : Distribution, Pneus & Fiche Technique`;
+const pageDesc = `Fiche technique complète de la ${brandName} ${modelName}. Type de distribution (chaîne ou courroie), moteurs, dimensions et pneus homologués.`;
+---
+
+<Base title={pageTitle} description={pageDesc}>
+  <Breadcrumb links={[
+    { label: "Toutes les marques", url: "/" },
+    { label: brandName, url: `/${brandSlug}` },
+    { label: modelName }
+  ]} />
+
+  <header class="hero-auto">
+    <HeroOverlay />
+    <div class="wrap hero-grid">
+      <div class="hero-main">
+        <div class="model-brand-header">
+          <div class="brand-avatar-container">
+            <img
+              src={`/logos/car-logos-dataset/logos/optimized/${brandSlug}.png`}
+              alt={`Logo ${brandName}`}
+              class="brand-logo"
+              loading="lazy"
+              decoding="async"
+              width="60"
+              height="60"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            />
+            <div class="brand-avatar-fallback" style="display: none;">
+              {brandName.charAt(0)}
+            </div>
+          </div>
+          <span class="eyebrow">Fiche Technique</span>
+        </div>
+        <h1 class="title">
+          {brandName}
+          <span class="model-accent">{modelName}</span>
+        </h1>
+        <p class="subtitle">
+          {
+            fiche.titre ||
+              `Fiche technique complète pour la ${brandName} ${modelName}.`
+          }
+        </p>
+
+        <div class="hero-pills">
+          {
+            hasChaine && (
+              <div class="dist-badge chain">
+                <span class="icon">⛓️</span> Distribution par chaîne
+              </div>
+            )
+          }
+          {
+            hasCourroie && (
+              <div class="dist-badge belt">
+                <span class="icon">🔧</span> Distribution par courroie
+              </div>
+            )
+          }
+        </div>
+      </div>
+
+      <div class="hero-summary">
+        <div class="sum-card glass-panel">
+          <div class="sum-item">
+            <span class="sum-val">{rows.length}</span>
+            <span class="sum-lbl">Moteurs</span>
+          </div>
+          <div class="sum-sep"></div>
+          <div class="sum-item">
+            <span class="sum-val">{puissRange}</span>
+            <span class="sum-lbl">Puissance</span>
+          </div>
+          <div class="sum-sep"></div>
+          <div class="sum-item">
+            <span class="sum-val">{fuelsUniq.join(" / ")}</span>
+            <span class="sum-lbl">Énergies</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Section Publicité Haut -->
+  <div class="wrap ad-banner-top" style="margin: 3rem auto -1rem;">
+    <AdBanner type="horizontal" />
+  </div>
+
+  <div class="wrap main-layout">
+    <main class="content-area">
+      <section class="data-panel" id="moteurs">
+        <div class="panel-header">
+          <h2 class="panel-title">Moteurs & Spécifications</h2>
+          <span class="panel-count badge-primary">{rows.length} versions</span>
+        </div>
+
+        <div class="engine-sections">
+          {
+            enginesByFuel.map((group) => (
+              <details class="fuel-accordion group" open>
+                <summary class="fuel-header">
+                  <span class={`group-pill ${group.fuel.toLowerCase()}`}>
+                    {group.fuel}
+                  </span>
+                  <span class="fuel-info">{group.rows.length} moteurs</span>
+                  <div class="chevron-wrapper">
+                    <span class="chevron" />
+                  </div>
+                </summary>
+
+                <div class="table-overflow animate-slide-down">
+                  <table class="tech-table">
+                    <thead>
+                      <tr>
+                        <th class="sticky">Motorisation</th>
+                        <th class="tc">Puiss.</th>
+                        <th class="tc">Dist.</th>
+                        <th class="tc">0–100</th>
+                        <th class="tc">Boîte</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {group.rows.map((r: any) => (
+                        <tr class="engine-row">
+                          <td class="sticky" data-label="Motorisation">
+                            <strong class="motor-name">{r.nomPropre}</strong>
+                          </td>
+                          <td class="tc puiss-col" data-label="Puissance">
+                            {r.puissance > 0 ? (
+                              <div class="power-bar-container">
+                                <span class="power-val">{r.puissance} ch</span>
+                                <div class="power-bar-bg">
+                                  <div
+                                    class="power-bar-fill"
+                                    style={`width: ${Math.min((r.puissance / puissMax) * 100, 100)}%`}
+                                  />
+                                </div>
+                              </div>
+                            ) : (
+                              "—"
+                            )}
+                          </td>
+                          <td class="tc" data-label="Distribution">
+                            <span
+                              class={`dist-tag ${r.distribution === "CHAÎNE" ? "tag-chain" : r.distribution?.includes("COURROIE") ? "tag-belt" : "tag-na"}`}
+                            >
+                              {r.fuel === "ÉLECTRIQUE"
+                                ? "N/A"
+                                : r.distribution === "CHAÎNE"
+                                  ? "⛓ Chaîne"
+                                  : r.distribution?.includes("COURROIE")
+                                    ? "🔧 Courroie"
+                                    : "—"}
+                            </span>
+                          </td>
+                          <td class="tc muted tnum" data-label="0–100 km/h">
+                            {r["0-100 km/h"] || "—"}
+                          </td>
+                          <td class="tc muted small" data-label="Boîte">
+                            {r.boite}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </details>
+            ))
+          }
+        </div>
+      </section>
+
+      <!-- Section Publicité InFeed -->
+      <div style="margin-top: 2rem;">
+        <AdBanner type="in-feed" class="in-feed" />
+      </div>
+    </main>
+
+    <aside class="sidebar-area">
+      <!-- Section Publicité Sidebar -->
+      <section class="side-panel ad-panel-sidebar">
+        <AdBanner type="square" />
+      </section>
+
+      {
+        pneus.length > 0 && (
+          <section class="side-panel">
+            <h2 class="side-title">
+              <span class="icon">🛞</span> Pneus Homologués
+            </h2>
+            <div class="pneus-stack">
+              {pneus.map((p: any) => (
+                <div class="pneu-card">
+                  <code class="pneu-size">{p.taille}</code>
+                  <div class="pneu-metrics">
+                    {p.confort && (
+                      <span class="metric">
+                        Confort: <strong>{p.confort}</strong>
+                      </span>
+                    )}
+                    {p.efficacite && (
+                      <span class="metric">
+                        Efficacité: <strong>{p.efficacite}</strong>
+                      </span>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )
+      }
+
+      {
+        Object.keys(dims).length > 0 && (
+          <section class="side-panel">
+            <h2 class="side-title">
+              <span class="icon">📏</span> Dimensions & Capacités
+            </h2>
+            <dl class="specs-grid">
+              {Object.entries(dims)
+                .filter(
+                  ([k]: any) =>
+                    !k.includes("Boîte") &&
+                    !k.includes("Transmission") &&
+                    !k.includes("Restylage"),
+                )
+                .map(([k, v]: any) => (
+                  <div class="spec-entry">
+                    <dt>{k}</dt>
+                    <dd>{formatSpecValue(v)}</dd>
+                  </div>
+                ))}
+            </dl>
+          </section>
+        )
+      }
+    </aside>
+  </div>
+
+  {
+    descSeo && (
+      <article class="seo-wrapper">
+        <div class="wrap seo-content">
+          <header class="seo-header">
+            <span class="eyebrow">Guide & Conseils</span>
+            <h2>
+              Tout savoir sur la {brandName} {modelName}
+            </h2>
+          </header>
+          <div class="prose" set:html={descSeo} />
+        </div>
+      </article>
+    )
+  }
+</Base>
+
+<style>
+  /* ═══════════════════════════════════════════════════════════
+   TOKENS & BASICS
+═══════════════════════════════════════════════════════════ */
+  :root {
+    --c-primary: #0f172a;
+    --c-primary-dark: #020617;
+    --c-accent: #3b82f6;
+    --c-accent-hover: #2563eb;
+    --c-text: #334155;
+    --c-text-light: #64748b;
+    --c-text-muted: #94a3b8;
+    --c-bg: #f8fafc;
+    --c-bg-alt: #f1f5f9;
+    --c-border: #e2e8f0;
+    --c-border-light: #f1f5f9;
+    --c-card: #ffffff;
+    --r-base: 16px;
+    --r-sm: 8px;
+    --r-pill: 9999px;
+    --sh-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+    --sh-base:
+      0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    --sh-hover:
+      0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+    --sh-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.15);
+    --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .wrap {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* ═══════════════════════════════════════════════════════════
+   ADS PLACEHOLDERS
+═══════════════════════════════════════════════════════════ */
+
+
+  /* ═══════════════════════════════════════════════════════════
+   HERO PREMIUM (GLASSMORPHISM & GRADIENTS)
+═══════════════════════════════════════════════════════════ */
+  .hero-auto {
+    background: radial-gradient(circle at top right, #1e293b, #020617 80%);
+    color: #fff;
+    padding: 3rem 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 3rem;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+  .model-brand-header {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  .brand-avatar-container {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 15px rgba(59, 130, 246, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .brand-logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+  }
+  .brand-avatar-fallback {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 900;
+    color: #fff;
+  }
+  .eyebrow {
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: #60a5fa;
+    margin-bottom: 0;
+    padding: 0.25rem 0.75rem;
+    background: rgba(96, 165, 250, 0.1);
+    border-radius: var(--r-pill);
+    border: 1px solid rgba(96, 165, 250, 0.2);
+  }
+  .title {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 900;
+    line-height: 1.1;
+    margin: 0 0 1rem;
+    letter-spacing: -0.02em;
+  }
+  .model-accent {
+    color: #93c5fd;
+  }
+  .subtitle {
+    font-size: 1.1rem;
+    color: #94a3b8;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 0 1.5rem;
+  }
+
+  .hero-pills {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+  }
+  .dist-badge {
+    padding: 0.5rem 1rem;
+    border-radius: var(--r-pill);
+    font-weight: 700;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: transform var(--transition-fast);
+  }
+  .dist-badge:hover {
+    transform: translateY(-2px);
+  }
+  .dist-badge .icon {
+    font-size: 1rem;
+  }
+  .dist-badge.chain {
+    background: linear-gradient(
+      135deg,
+      rgba(16, 185, 129, 0.15),
+      rgba(5, 150, 105, 0.05)
+    );
+    border: 1px solid rgba(52, 211, 153, 0.3);
+    color: #34d399;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.1);
+  }
+  .dist-badge.belt {
+    background: linear-gradient(
+      135deg,
+      rgba(245, 158, 11, 0.15),
+      rgba(217, 119, 6, 0.05)
+    );
+    border: 1px solid rgba(251, 191, 36, 0.3);
+    color: #fbbf24;
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.1);
+  }
+
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 1.5rem;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    box-shadow: var(--sh-glass);
+  }
+  .sum-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+  }
+  .sum-val {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+  .sum-lbl {
+    font-size: 0.7rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+    font-weight: 700;
+    white-space: nowrap;
+    letter-spacing: 0.05em;
+  }
+  .sum-sep {
+    width: 1px;
+    height: 2.5rem;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  /* ═══════════════════════════════════════════════════════════
+   LAYOUT
+═══════════════════════════════════════════════════════════ */
+  .main-layout {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 3rem;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+  }
+
+  /* ═══════════════════════════════════════════════════════════
+   DATA PANELS & ACCORDIONS (INTERACTIVE)
+═══════════════════════════════════════════════════════════ */
+  .data-panel {
+    background: var(--c-card);
+    border: 1px solid var(--c-border);
+    border-radius: var(--r-base);
+    box-shadow: var(--sh-base);
+    overflow: hidden;
+  }
+  .panel-header {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--c-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--c-card);
+  }
+  .panel-title {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--c-primary);
+    margin: 0;
+  }
+  .badge-primary {
+    background: var(--c-bg-alt);
+    color: var(--c-text);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.3rem 0.75rem;
+    border-radius: var(--r-pill);
+  }
+
+  .engine-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--c-border-light);
+  }
+  .fuel-accordion {
+    background: var(--c-card);
+    transition: background var(--transition-base);
+  }
+  .fuel-accordion:hover {
+    background: #fafafa;
+  }
+
+  .fuel-header {
+    list-style: none;
+    cursor: pointer;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: transparent;
+    user-select: none;
+  }
+  .fuel-header::-webkit-details-marker {
+    display: none;
+  }
+  .fuel-info {
+    font-size: 0.85rem;
+    color: var(--c-text-light);
+    font-weight: 600;
+    flex: 1;
+  }
+
+  .chevron-wrapper {
+    background: var(--c-bg-alt);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-base);
+  }
+  .chevron {
+    width: 6px;
+    height: 6px;
+    border-right: 2px solid var(--c-text);
+    border-bottom: 2px solid var(--c-text);
+    transform: rotate(45deg);
+    transition: transform var(--transition-base);
+  }
+  details[open] .chevron-wrapper {
+    background: var(--c-primary);
+  }
+  details[open] .chevron {
+    transform: rotate(-135deg);
+    border-color: #fff;
+    margin-top: 4px;
+  }
+
+  /* Animate Slide Down */
+  details[open] .animate-slide-down {
+    animation: slideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    transform-origin: top;
+  }
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-5px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .group-pill {
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 0.35rem 0.85rem;
+    border-radius: var(--r-pill);
+    letter-spacing: 0.05em;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+  }
+  .group-pill.diesel {
+    background: #fef08a;
+    color: #854d0e;
+  }
+  .group-pill.essence {
+    background: #bbf7d0;
+    color: #166534;
+  }
+  .group-pill.électrique {
+    background: #bfdbfe;
+    color: #1e40af;
+  }
+
+  /* ═══════════════════════════════════════════════════════════
+   TABLE SPACING & MICRO-INTERACTIONS
+═══════════════════════════════════════════════════════════ */
+  .tech-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 0.9rem;
+    min-width: 500px;
+  }
+  .tech-table th {
+    background: var(--c-bg-alt);
+    padding: 0.85rem 1rem;
+    text-align: center;
+    color: var(--c-text-light);
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 2px solid var(--c-border);
+    border-top: 1px solid var(--c-border);
+  }
+  .tech-table td {
+    padding: 1rem 1rem;
+    border-bottom: 1px solid var(--c-border-light);
+    vertical-align: middle;
+    transition: all var(--transition-fast);
+  }
+  .tech-table th.sticky,
+  .tech-table td.sticky {
+    text-align: left;
+    position: sticky;
+    left: 0;
+    background: inherit;
+    z-index: 2;
+  }
+
+  /* Row Hover Lift */
+  .engine-row {
+    background: var(--c-card);
+    transition: all 0.2s ease;
+  }
+  .engine-row:hover {
+    background: #f8fafc;
+    transform: scale(1.005) translateX(2px);
+    position: relative;
+    z-index: 5;
+    box-shadow:
+      inset 4px 0 0 var(--c-accent),
+      0 4px 12px -2px rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+  }
+  .engine-row:hover td {
+    border-bottom-color: transparent;
+  }
+  .engine-row:hover td.sticky {
+    background: #f8fafc;
+  }
+
+  .motor-name {
+    font-weight: 700;
+    color: var(--c-primary-dark);
+  }
+  .tnum {
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+  }
+  .muted {
+    color: var(--c-text-light);
+  }
+  .small {
+    font-size: 0.8rem;
+  }
+  .tc {
+    text-align: center;
+  }
+
+  /* Power Visualization Bar */
+  .power-bar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+  }
+  .power-val {
+    font-weight: 800;
+    color: var(--c-primary);
+  }
+  .power-bar-bg {
+    width: 60px;
+    height: 4px;
+    background: var(--c-border);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .power-bar-fill {
+    height: 100%;
+    background: var(--c-accent);
+    border-radius: 2px;
+    transition: width 0.5s ease-out;
+  }
+
+  /* Dist Tags */
+  .dist-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+    display: inline-block;
+    white-space: nowrap;
+  }
+  .tag-chain {
+    background: #ecfdf5;
+    color: #047857;
+    border: 1px solid #a7f3d0;
+  }
+  .tag-belt {
+    background: #fffbeb;
+    color: #b45309;
+    border: 1px solid #fde68a;
+  }
+  .tag-na {
+    color: var(--c-text-light);
+  }
+
+  /* ═══════════════════════════════════════════════════════════
+   SIDEBAR & PANELS
+═══════════════════════════════════════════════════════════ */
+  .side-panel {
+    background: var(--c-card);
+    border: 1px solid var(--c-border);
+    border-radius: var(--r-base);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--sh-base);
+    transition: box-shadow var(--transition-base);
+  }
+  .side-panel:hover {
+    box-shadow: var(--sh-hover);
+  }
+
+  .side-title {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--c-primary);
+    margin: 0 0 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .side-title .icon {
+    font-size: 1.2rem;
+  }
+
+  .pneus-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .pneu-card {
+    background: var(--c-bg-alt);
+    border: 1px solid var(--c-border);
+    border-radius: var(--r-sm);
+    padding: 1rem;
+    transition:
+      transform var(--transition-fast),
+      border-color var(--transition-fast);
+  }
+  .pneu-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--c-accent);
+  }
+  .pneu-size {
+    display: block;
+    font-family: "JetBrains Mono", monospace, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--c-primary);
+    margin-bottom: 0.5rem;
+  }
+  .pneu-metrics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    font-size: 0.75rem;
+  }
+  .metric {
+    background: #fff;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    border: 1px solid var(--c-border);
+    color: var(--c-text-light);
+  }
+  .metric strong {
+    color: var(--c-text);
+    font-weight: 700;
+  }
+
+  .specs-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .spec-entry {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px dashed var(--c-border);
+    padding-bottom: 0.5rem;
+    font-size: 0.9rem;
+    transition: all var(--transition-fast);
+  }
+  .spec-entry:hover {
+    border-bottom-color: var(--c-text-light);
+  }
+  .spec-entry dt {
+    color: var(--c-text-light);
+    font-weight: 500;
+  }
+  .spec-entry dd {
+    font-weight: 800;
+    color: var(--c-primary);
+    margin: 0;
+    text-align: right;
+  }
+
+  /* ═══════════════════════════════════════════════════════════
+   SEO Content
+═══════════════════════════════════════════════════════════ */
+  .seo-wrapper {
+    background: #fff;
+    border-top: 1px solid var(--c-border);
+    padding: 4rem 0;
+  }
+  .seo-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .seo-header h2 {
+    font-size: 2.2rem;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    color: var(--c-primary-dark);
+  }
+  .prose {
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--c-text);
+    line-height: 1.8;
+    font-size: 1.05rem;
+  }
+
+  @media (max-width: 1024px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .hero-summary {
+      max-width: 100%;
+    }
+    .main-layout {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .sidebar-area {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .ad-panel-sidebar {
+      grid-column: 1 / -1;
+    }
+  }
+  @media (max-width: 768px) {
+    .title {
+      font-size: 2.5rem;
+    }
+    .sum-card {
+      flex-direction: column;
+      gap: 1rem;
+      align-items: stretch;
+      text-align: center;
+    }
+    .sum-sep {
+      width: 100%;
+      height: 1px;
+    }
+    .dist-badge {
+      font-size: 0.75rem;
+      padding: 0.4rem 0.8rem;
+    }
+
+    /* Tables to Mobile Cards */
+    .table-overflow {
+      overflow-x: hidden;
+    }
+    .tech-table,
+    .tech-table tbody,
+    .tech-table tr,
+    .tech-table td {
+      display: block;
+      width: 100%;
+    }
+    .tech-table {
+      min-width: 0;
+    }
+    .tech-table thead {
+      display: none;
+    }
+
+    .engine-row {
+      margin-bottom: 0.5rem;
+      padding: 0.6rem 0.8rem;
+      border: 1px solid var(--c-border);
+      border-radius: var(--r-sm);
+      box-shadow: var(--sh-sm);
+    }
+    .engine-row:hover {
+      transform: none;
+      box-shadow: var(--sh-sm);
+    }
+
+    .tech-table td {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.35rem 0;
+      border-bottom: 1px dashed var(--c-border-light);
+      text-align: right;
+    }
+    .tech-table td:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .tech-table td.sticky {
+      position: static;
+      background: transparent;
+      padding-top: 0;
+      text-align: right;
+    }
+    .motor-name {
+      font-size: 0.95rem;
+    }
+
+    .tech-table td::before {
+      content: attr(data-label);
+      font-weight: 800;
+      color: var(--c-text-light);
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      text-align: left;
+      margin-right: 1rem;
+    }
+
+    /* Align values safely */
+    .power-bar-container {
+      align-items: flex-end;
+    }
+    .tc {
+      text-align: right;
+    }
+
+    /* Tech Infos Wrap */
+    .spec-entry {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.2rem;
+    }
+    .spec-entry dd {
+      text-align: left;
+    }
+  }
+</style>

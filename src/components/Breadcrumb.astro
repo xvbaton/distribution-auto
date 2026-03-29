@@ -1,0 +1,35 @@
+---
+interface Link {
+  label: string;
+  url?: string;
+}
+
+interface Props {
+  links: Link[];
+}
+
+const { links } = Astro.props;
+---
+<nav class="breadcrumb-container" aria-label="Fil d'ariane">
+  <div class="wrap">
+    {links.map((link, index) => (
+      <>
+        {link.url ? (
+          <a href={link.url}>{link.label}</a>
+        ) : (
+          <span class="active" aria-current="page">{link.label}</span>
+        )}
+        {index < links.length - 1 && <span class="separator" aria-hidden="true">›</span>}
+      </>
+    ))}
+  </div>
+</nav>
+
+<style>
+  .breadcrumb-container { background: #fff; border-bottom: 1px solid #e2e8f0; padding: 0.85rem 0; font-size: 0.85rem; color: #64748b; }
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 0 1.5rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+  .breadcrumb-container a { color: #64748b; text-decoration: none; font-weight: 500; transition: color 0.15s; }
+  .breadcrumb-container a:hover { color: #3b82f6; text-decoration: underline; }
+  .breadcrumb-container .active { color: #0f172a; font-weight: 700; }
+  .separator { color: #cbd5e1; user-select: none; margin: 0 0.1rem; }
+</style>
